@@ -1,0 +1,40 @@
+<view class="calendar">
+  <view class='tit'>
+    <view class='pre' bindtap='gotoPreMonth'>{{'《'}}</view>
+    <view class='current'>{{currentYear}}年{{currentMonth}}月</view>
+    <view class='next' bindtap='gotoNextMonth'>{{'》'}}</view>
+  </view>
+  <view class='w100P showData'>
+    <view class="week" style='color: #999'>日</view>
+    <view class="week">一</view>
+    <view class="week">二</view>
+    <view class="week">三</view>
+    <view class="week">四</view>
+    <view class="week">五</view>
+    <view class="week" style='color: #999'>六</view>
+  </view>
+  <view class='content'>
+    <view wx:for="{{allArr}}" wx:key="index" class='itemData' data-current="{{item.month == 'current' ? '1' : '0'}}" data-day='{{item.date}}' bindtap='clickDate'>
+      <view class="{{item.month == 'current' ? '' : 'gray'}}" style="height:44px;width:44px;line-height:30px;{{nowYear==currentYear&&currentMonth==nowMonth&&item.date==nowDate?'color:#fff;background:#33D4C5;border-radius:100px':''}};{{item.month == 'current'&&selectedYear==currentYear&&selectedMonth==currentMonth&&item.date==selectedDate?'color:#fff;background:orange;border-radius:100px':''}} ">
+        {{item.date}}
+        <view>
+          <icon wx:if="{{item.month == 'current'&&dataProcess.filterDate(currentPunchCardDate,item.date)}}" class="icon" color="#00AA00" type="success_no_circle" size="15"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-wrapper" bindtap="gotoToday">
+    <button class="btn">回今天</button>
+  </view>
+  <!-- wxs页面内脚本，在渲染层做数据处理 -->
+  <wxs module="dataProcess">
+    function filterDate(currentPunchCardDate, date) {
+      if (currentPunchCardDate.indexOf(date) !== -1) {
+        return true
+      }
+    }
+    module.exports = {
+      filterDate: filterDate
+    }
+  </wxs>
+</view>

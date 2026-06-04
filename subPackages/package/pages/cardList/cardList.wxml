@@ -1,0 +1,205 @@
+<view class="page-container">
+    <!-- 自定义导航栏（替代原生，包含返回按钮+加粗标题） -->
+    <view class="custom-nav-bar">
+        <!-- 返回按钮 -->
+        <view class="back-btn" bindtap="goback">
+            <view class="back-icon"></view>
+        </view>
+        <!-- 加粗的导航栏标题 -->
+        <text class="nav-title">套餐列表</text>
+    </view>
+    <!-- 套餐列表容器（调整margin-top避开导航栏） -->
+    <view class="card-list">
+        <!-- 套餐1：卡狄D套餐 -->
+        <view class="card-item">
+            <!-- 套餐头部 -->
+            <view class="item-header">
+                <view class="header-left">
+                    <text class="main-title">套餐</text>
+                    <text class="sub-title">卡狄D套餐</text>
+                </view>
+                <view class="header-right">
+                    <text class="tag">会员套餐</text>
+                </view>
+            </view>
+            <!-- 支付方式 -->
+            <view class="pay-row">
+                <text class="pay-label">支付：</text>
+                <text class="pay-money">余额 600.00</text>
+                <text class="pay-coupon">+ 咖啡券 或电子券400.00</text>
+            </view>
+            <!-- 套餐详情行 -->
+            <view class="detail-box">
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">咖啡券倍数</text>
+                        <text class="detail-value">1.7倍</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">赠送总咖啡券</text>
+                        <text class="detail-value">1700.00</text>
+                    </view>
+                </view>
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">总天数</text>
+                        <text class="detail-value">360天</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">每日释放</text>
+                        <text class="detail-value">4.72</text>
+                    </view>
+                </view>
+            </view>
+            <view class="purchase-row">
+                <view class="buy-btn" bindtap="gotoBuy" data-id="1">
+                    <text>立即购买</text>
+                </view>
+            </view>
+        </view>
+        <!-- 套餐2：卡狄C套餐 -->
+        <view class="card-item">
+            <!-- 套餐头部 -->
+            <view class="item-header">
+                <view class="header-left">
+                    <text class="main-title">套餐</text>
+                    <text class="sub-title">卡狄C套餐</text>
+                </view>
+                <view class="header-right">
+                    <text class="tag">会员套餐</text>
+                </view>
+            </view>
+            <!-- 支付方式 -->
+            <view class="pay-row">
+                <text class="pay-label">支付：</text>
+                <text class="pay-money">余额 1800.00</text>
+                <text class="pay-coupon">+ 咖啡券 或电子券1200.00</text>
+            </view>
+            <!-- 套餐详情行 -->
+            <view class="detail-box">
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">咖啡券倍数</text>
+                        <text class="detail-value">1.8倍</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">赠送总咖啡券</text>
+                        <text class="detail-value">5400.00</text>
+                    </view>
+                </view>
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">总天数</text>
+                        <text class="detail-value">360天</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">每日释放</text>
+                        <text class="detail-value">15.00</text>
+                    </view>
+                </view>
+            </view>
+            <view class="purchase-row">
+                <view class="buy-btn" bindtap="gotoBuy" data-id="2">
+                    <text>立即购买</text>
+                </view>
+            </view>
+        </view>
+        <!-- 套餐3：卡狄B套餐 -->
+        <view class="card-item">
+            <!-- 套餐头部 -->
+            <view class="item-header">
+                <view class="header-left">
+                    <text class="main-title">套餐</text>
+                    <text class="sub-title">卡狄B套餐</text>
+                </view>
+                <view class="header-right">
+                    <text class="tag">会员套餐</text>
+                </view>
+            </view>
+            <!-- 支付方式 -->
+            <view class="pay-row">
+                <text class="pay-label">支付：</text>
+                <text class="pay-money">余额 5400.00</text>
+                <text class="pay-coupon">+ 咖啡券 或电子券3600.00</text>
+            </view>
+            <!-- 套餐详情行 -->
+            <view class="detail-box">
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">咖啡券倍数</text>
+                        <text class="detail-value">1.9倍</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">赠送总咖啡券</text>
+                        <text class="detail-value">17100.00</text>
+                    </view>
+                </view>
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">总天数</text>
+                        <text class="detail-value">360天</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">每日释放</text>
+                        <text class="detail-value">47.50</text>
+                    </view>
+                </view>
+            </view>
+            <view class="purchase-row">
+                <view class="buy-btn" bindtap="gotoBuy" data-id="3">
+                    <text>立即购买</text>
+                </view>
+            </view>
+        </view>
+        <!-- 套餐4：卡狄A套餐 -->
+        <view class="card-item">
+            <!-- 套餐头部 -->
+            <view class="item-header">
+                <view class="header-left">
+                    <text class="main-title">套餐</text>
+                    <text class="sub-title">卡狄A套餐</text>
+                </view>
+                <view class="header-right">
+                    <text class="tag">会员套餐</text>
+                </view>
+            </view>
+            <!-- 支付方式 -->
+            <view class="pay-row">
+                <text class="pay-label">支付：</text>
+                <text class="pay-money">余额 16200.00</text>
+                <text class="pay-coupon">+ 咖啡券 或电子券10800.00</text>
+            </view>
+            <!-- 套餐详情行 -->
+            <view class="detail-box">
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">咖啡券倍数</text>
+                        <text class="detail-value">2倍</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">赠送总咖啡券</text>
+                        <text class="detail-value">54000.00</text>
+                    </view>
+                </view>
+                <view class="detail-row">
+                    <view class="detail-item">
+                        <text class="detail-label">总天数</text>
+                        <text class="detail-value">360天</text>
+                    </view>
+                    <view class="detail-item">
+                        <text class="detail-label">每日释放</text>
+                        <text class="detail-value">150.00</text>
+                    </view>
+                </view>
+            </view>
+            <view class="purchase-row">
+                <view class="buy-btn" bindtap="gotoBuy" data-id="4">
+                    <text>立即购买</text>
+                </view>
+            </view>
+        </view>
+        <view class="none">
+            <text class="">没有更多了</text>
+        </view>
+    </view>
+</view>

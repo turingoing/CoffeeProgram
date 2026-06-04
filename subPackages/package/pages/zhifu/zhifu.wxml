@@ -1,0 +1,3 @@
+<sqb-pay bindnavigateTo="navigateTo" return_url="/pages/payResult/index" total_amount="1" terminal_sn="tsn-100000330007352422" client_sn="{{ client_sn }}" subject="测试商品" subject_img="https://images.wosaimg.com/ba/a2b7c33c51258846fcc7bd8af95a12c093aa56.jpeg" merchant_name="测试商户" store_name="测试门店">
+  <button>去支付</button>
+</sqb-pay>

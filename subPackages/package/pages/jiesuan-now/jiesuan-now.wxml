@@ -1,0 +1,134 @@
+<view class="container">
+  <view class="order-settlement">
+    <view class="shop-info">
+      <view class="info-detail">
+        <text class="item-adress" wx:if="{{selected === '外送'}}">{{address}}</text>
+        <text class="item-adress" wx:else>{{storeName}}</text>
+        <text class="user-id" wx:if="{{selected === '外送'}}">{{phone}} {{username}}</text>
+      </view>
+      <view class="pickup-delivery-group">
+        <view class="pickup-button {{selected === '自提' ? 'active' : ''}}" bindtap="onTapPickup">
+          <text>自提</text>
+        </view>
+        <view class="delivery-button {{selected === '外送' ? 'active' : ''}}" bindtap="onTapDelivery">
+          <text>外送</text>
+        </view>
+      </view>
+    </view>
+    <view class="order-list">
+      <view class="order-item" wx:for="{{items}}" wx:key="id">
+        <view class="item">
+          <image class="item-image" src="{{item.imageUrl || item.image}}" mode="aspectFit" />
+          <view class="item-details">
+            <text decode="true">{{item.name}}</text>
+            <text class="item-price">¥{{item.price}}</text>
+            <text class="item-quantity">数量: {{item.num}}</text>
+            <text class="item-customizations">定制选项：{{item.add}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 优惠券选择 -->
+    <view class="coupon-row" bindtap="couponSelect">
+      <text class="label" style="margin-left: 30rpx;">优惠券</text>
+      <text class="value" style="margin-right: 30rpx;">{{selectedCouponText || (couponAvailable ? '可用优惠券' : '暂无可用券')}}</text>
+    </view>
+    <view class="coupon-row" wx:if="{{selected === '外送'}}">
+      <text class="label" style="margin-left: 30rpx;">配送费</text>
+      <text class="value" style="margin-right: 30rpx;">¥{{delivery}}</text>
+    </view>
+    <view class="coupon-row">
+      <text class="label" style="margin-left: 30rpx;">实付</text>
+      <text class="value" style="margin-right: 30rpx;">¥{{payableAmount || totalPrice}}</text>
+    </view>
+    
+    <!-- 支付方式 -->
+   <view class="pay-methods coupon-row" style="margin-top: 20rpx; background: #fff; border-radius: 16rpx; padding: 20rpx;">
+      <text class="section-title" style="margin-left: 10rpx;">支付方式</text>
+      <radio-group bindchange="choosePayMethod">
+        <label class="pay-item">
+          <view class="pm-left">
+            <image class="func-icon" src="{{tupianUrl}}/new/jiesuan/wechat.svg" mode="aspectFit" />
+            <text class="pm-text">微信支付</text>
+          </view>
+          <radio class="pm-radio" value="wechat" checked="{{payMethod==='wechat'}}"></radio>
+        </label>
+        <label class="pay-item {{balanceDisabled ? 'disabled' : ''}}" bindtap="guardBalancePay">
+          <view class="pm-left">
+            <image class="func-icon" src="{{tupianUrl}}/new/jiesuan/yuer.svg" mode="aspectFit" />
+            <text class="pm-text">余额支付</text>
+            <text class="pm-hint">可用 ¥{{funds.balance}}</text>
+          </view>
+          <radio class="pm-radio" value="balance" disabled="{{balanceDisabled}}" checked="{{payMethod==='balance'}}"></radio>
+        </label>
+        <label class="pay-item {{coffeeDisabled ? 'disabled' : ''}}" bindtap="guardCoffeePay">
+          <view class="pm-left">
+            <image class="func-icon" src="{{tupianUrl}}/new/jiesuan/coffee.svg" mode="aspectFit" />
+            <text class="pm-text">咖啡券支付</text>
+            <text class="pm-hint">可用 ¥{{funds.coffee}}</text>
+          </view>
+          <radio class="pm-radio" value="coffee" disabled="{{coffeeDisabled}}" checked="{{payMethod==='coffee'}}"></radio>
+        </label>
+        <label class="pay-item {{depositDisabled ? 'disabled' : ''}}" bindtap="guardDepositPay">
+          <view class="pm-left">
+            <image class="func-icon" src="{{tupianUrl}}/new/jiesuan/chuzhi.svg" mode="aspectFit" />
+            <text class="pm-text">储值卡支付</text>
+            <text class="pm-hint">可用 ¥{{funds.deposit}}</text>
+          </view>
+          <radio class="pm-radio" value="deposit" disabled="{{depositDisabled}}" checked="{{payMethod==='deposit'}}"></radio>
+        </label>
+        <label wx:if="{{hasStoreCard}}" class="pay-item {{storecardDisabled ? 'disabled' : ''}}" bindtap="guardStoreCardPay">
+          <view class="pm-left">
+            <image class="func-icon" src="{{tupianUrl}}/new/jiesuan/chuzhi.svg" mode="aspectFit" />
+            <text class="pm-text">门店储值卡支付</text>
+            <text class="pm-hint">可用 ¥{{funds.storecard}}</text>
+          </view>
+          <radio class="pm-radio" value="storecard" disabled="{{storecardDisabled}}" checked="{{payMethod==='storecard'}}"></radio>
+        </label>
+      </radio-group>
+    </view>
+    <view class="section-box pickup-box" wx:if="{{selected === '自提'}}">
+      <view class="section-title">取餐方式</view>
+      <view class="pickup-options">
+        <view class="pickup-btn {{dineType==='dine_in' ? 'active' : ''}}" bindtap="setDineType" data-type="dine_in">
+          店内用餐
+        </view>
+        <view class="pickup-btn {{dineType==='takeaway' ? 'active' : ''}}" bindtap="setDineType" data-type="takeaway">
+          自提带走
+        </view>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="section-box remark-box">
+      <view class="section-title">备注特殊要求</view>
+      <textarea class="remark-textarea" placeholder="请输入备注内容" bindinput="inputRemark" value="{{remark}}"></textarea>
+    </view>
+  </view>
+</view>
+<!-- 支付按钮 -->
+<view class="zhifu">
+  <view wx:if="{{isShow && !creatingWxOrder}}" class="pay-button" bindtap="initiatePayment">提交订单</view>
+  <view wx:else class="pay-button disabled">{{creatingWxOrder ? '创建支付中...' : '提交订单'}}</view>
+</view>
+<!-- 取餐方式 -->
+<!-- 交易码弹窗 -->
+<view wx:if="{{showCodeDialog}}" class="code-dialog-mask">
+  <view class="code-content">
+    <view class="img">
+      <image bindtap="closeDialog" src="{{tupianUrl}}/new/close.png" mode="" />
+    </view>
+    <view class="title1">请输入交易码</view>
+    <view class="input-container">
+      <block wx:for="{{inputBoxes}}" wx:key="index">
+        <view class="input-box">
+          <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+        </view>
+        <view class="overlay" bind:tap="handleGetFocus"></view>
+      </block>
+    </view>
+    <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+    <view class="dialog-buttons">
+      <view class="btn" bindtap="verifyCode">确定</view>
+    </view>
+  </view>
+</view>

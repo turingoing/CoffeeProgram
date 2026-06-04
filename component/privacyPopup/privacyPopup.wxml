@@ -1,0 +1,28 @@
+<!--component/privacyPopup/privacyPopup.wxml-->
+<!-- 隐私声明弹窗 -->
+<view class="privacy-modal" wx:if="{{innerShow}}">
+  <view class="privacy-content">
+    <view class="privacy-title">隐私保护指引</view>
+    <view class="privacy-text">
+      <text>感谢您选择卡狄咖啡小程序。我们非常重视您的个人信息和隐私保护。在您使用我们的服务前，请您务必审慎阅读并了解</text>
+      <text class="privacy-link" bindtap="viewPrivacyDetail">《caldicoffee卡狄咖啡用户隐私使用协议》</text>
+      <text>和</text>
+      <text class="privacy-link" bindtap="viewUserAgreement">《caldicoffee卡狄咖啡用户服务协议》</text>
+      <text>的全部内容。</text>
+      <view class="privacy-detail">
+        <text>我们会收集您的以下信息：</text>
+        <text>• 您的基本信息（微信昵称、手机号码等）</text>
+        <text>• 位置信息（用于门店推荐和配送）</text>
+        <text>• 设备信息（用于提供基础服务功能）</text>
+        <text>• 订单及交易信息（用于订单处理和支付）</text>
+      </view>
+      <text>您有权拒绝我们使用您的信息，但这会导致您无法使用我们的部分服务功能。</text>
+    </view>
+    <view class="privacy-buttons">
+      <!-- <button class="reject-btn" bindtap="rejectPrivacy">不同意并退出</button>
+      <button class="agree-btn" bindtap="agreePrivacy">同意</button> -->
+      <button class="reject-btn" id="disagree-btn" bindtap="handleDisagree">不同意并退出</button>
+      <button class="agree-btn" id="agree-btn" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgree">同意</button>
+    </view>
+  </view>
+</view>

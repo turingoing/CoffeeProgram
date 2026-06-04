@@ -1,0 +1,13 @@
+<!-- pages/totalEarnings/totalEarnings.wxml -->
+<view class="header">
+  <text class="title">门店收益</text>
+  <text class="total-earnings">{{totalProfit}}</text>
+  <navigator url="/pages/rules/rules" class="rule-link">了解收益规则 ></navigator>
+</view>
+<block wx:for="{{earningsList}}" wx:key="id">
+  <!-- 建议用唯一标识如id代替index -->
+  <view class="earnings-item" bindtap="navigateToStoreDailyEarnings" data-storeid="{{item.id}}" data-storenamegd="{{item.storeNamegd}}">
+    <text class="earnings-date">{{item.storeNamegd}} ></text>
+    <text class="earnings-amount">+ {{item.amount}}</text>
+  </view>
+</block>

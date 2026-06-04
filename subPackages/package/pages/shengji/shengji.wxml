@@ -1,0 +1,53 @@
+<!-- <view class="container">
+  <view class="info">
+    <text>账户名：{{name}}</text>
+    <text>余额：{{money}}元</text>
+    <text>消费券：{{content}}</text>
+  </view>
+  <button bindtap="upgradeAccount">升级账户</button>
+  <view wx:if="{{isUpgraded}}">
+    <text>交易码：{{transactionCode}}</text>
+  </view>
+</view> -->
+<view class="container">
+  <!-- 余额显示 -->
+  <view class="balance">
+    <text class="yue">账户余额(元)</text>
+    <text class="balance-amount">{{money}}</text>
+    <text class="quan">消费券</text>
+    <text class="quan-amount">{{content}}</text>
+  </view>
+</view>
+<view class="benefits">
+  <view class="recharge-info">
+    <text class="recharge-title">选择</text>
+    <t-radio-group t-class="horizontal-box" value="{{value1}}" bind:change="onChange1">
+      <view wx:for="{{buttons}}" wx:key="value" class="card {{value1 == item.value ? 'card--active' : ''}}">
+        <t-icon wx:if="{{value1 == item.value}}" name="check" t-class="card__icon" />
+
+
+        <t-radio style="{{value1 === item.value ? 'background-color: rgb(225, 225, 225);' : ''}}" value="{{item.value}}" label="{{item.label}}" icon="none" borderless />
+      </view>
+    </t-radio-group>
+  </view>
+
+</view>
+<view class="shuoming">
+  <view class="tishi" style="width: 55rpx; height: 55rpx; display: flex; position: relative; left: 30rpx;">
+    <image src="/subPackages/package/pages/images/提示.png" style="width: 55rpx; height: 55rpx;"></image>
+  </view>
+  <view class="content" style="display: flex; flex-direction: column; align-items: center; width: 650rpx;margin-top: -35rpx;">
+    <text class="xu">需要60%现金和40%消费券</text>
+    <view class="amounts" style="display: flex; align-items: center;">
+      <view class="cash" style="margin-right: 20rpx;">
+        <text>现金</text>
+        <text class="highlight" style="font-weight: bold; font-size: 35rpx;">{{cashAmount}}</text>
+      </view>
+      <view class="points">
+        <text>消费券</text>
+        <text class="highlight" style="font-weight: bold; font-size: 35rpx;">{{pointsAmount}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<button class="gocharge-button" bindtap="confirmChange">激活会员</button>

@@ -1,0 +1,108 @@
+<view wx:if="{{agreementType === 'recharge'}}" class="agreement-shell">
+  <view class="agreement-page">
+    <view class="hero-card">
+      <view class="hero-glow hero-glow-left"></view>
+      <view class="hero-glow hero-glow-right"></view>
+      <view class="doc-title">卡狄咖啡充值协议</view>
+      <view class="intro-block">
+        <view class="intro-title">尊敬的客户：</view>
+        <view class="paragraph lead-paragraph">
+          在您使用深圳市卡狄咖啡有限公司（以下简称“caldicoffee卡狄咖啡”）及其关联公司（以下统称“caldicoffee卡狄咖啡”或“我们”）提供的会员充值服务前，请仔细阅读本《充值协议》（以下简称“本协议”）。您通过线上或线下渠道进行充值即视为已充分理解并同意本协议的全部内容。
+        </view>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第一条 充值方式</view>
+      <view class="paragraph">
+        <text class="label">充值渠道：</text>
+        <text>您可通过卡狄咖啡官方APP、微信小程序、线下门店等指定渠道进行充值。</text>
+      </view>
+      <view class="paragraph">
+        <text class="label">充值金额：</text>
+        <text>充值金额需符合本公司设定的最低限额（如50元起充），具体以页面提示为准。</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第二条 账户余额使用规则</view>
+      <view class="paragraph">
+        <text class="label">适用范围：</text>
+        <text>充值余额可用于购买卡狄咖啡门店内的饮品、食品及其他指定商品。</text>
+      </view>
+      <view class="paragraph">
+        <text class="label">不可提现：</text>
+        <text>充值金额为预付款性质，不支持提现、转账或兑换现金。</text>
+      </view>
+      <view class="paragraph">
+        <text class="label">余额有效期：</text>
+      </view>
+      <view class="paragraph">若账户长期无交易记录（如12个月），本公司有权对账户余额进行调整或冻结。</view>
+      <view class="paragraph">具体有效期以官方公告或用户协议为准。</view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第三条 充值优惠活动</view>
+      <view class="paragraph">
+        <text class="label">活动规则：</text>
+        <text>本公司可能推出“充100送10”等优惠活动，具体规则以活动页面说明为准。</text>
+      </view>
+      <view class="paragraph">
+        <text class="label">优惠限制：</text>
+        <text>赠送金额或优惠券可能设有使用期限或适用范围，逾期未使用将自动失效。</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第四条 退款与转让</view>
+      <view class="paragraph">
+        <text class="label">退款政策：</text>
+      </view>
+      <view class="paragraph">充值金额原则上不支持退款，除非因本公司原因导致服务无法提供。</view>
+      <view class="paragraph">如遇特殊情况需退款，请联系客服申请，本公司将根据实际情况处理。</view>
+      <view class="paragraph">
+        <text class="label">禁止转让：</text>
+        <text>充值账户及余额仅限本人使用，不得转让、出售或出借给他人。</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第五条 风险与责任</view>
+      <view class="paragraph">
+        <text class="label">账户安全：</text>
+        <text>您需要妥善保管账户信息，因泄露、盗刷等导致的损失由您自行承担。</text>
+      </view>
+      <view class="paragraph">
+        <text class="label">系统故障：</text>
+        <text>如因网络、技术等问题导致充值失败，本公司将协助核实处理，但不承担额外赔偿责任。</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第六条 协议修改与终止</view>
+      <view class="paragraph">
+        <text class="label">协议变更：</text>
+        <text>本公司有权根据法律法规或运营需要修改本协议，并通过官方渠道公告生效。</text>
+      </view>
+      <view class="paragraph">
+        <text class="label">服务终止：</text>
+        <text>如因不可抗力或业务调整需终止充值服务，本公司将提前通知并妥善处理用户余额。</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <view class="section-title">第七条 法律适用与争议解决</view>
+      <view class="paragraph">本协议适用中华人民共和国法律。如发生争议，双方应友好协商；协商不成的，提交本公司所在地人民法院诉讼解决。</view>
+    </view>
+
+    <view class="section-card section-card--notice">
+      <view class="section-title warm-title">温馨提示</view>
+      <view class="paragraph">充值前请确认金额及活动规则，避免误操作。</view>
+      <view class="paragraph">如有疑问，请联系卡狄咖啡客服</view>
+      <view class="paragraph">卡狄公司邮箱：huchen@caldicoffee.com</view>
+      <view class="paragraph final-line">卡狄咖啡保留对本协议的最终解释权。</view>
+    </view>
+  </view>
+</view>
+
+<rich-text wx:else nodes="{{content}}" />

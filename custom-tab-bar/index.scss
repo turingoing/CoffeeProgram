@@ -1,0 +1,21 @@
+.custom-tabbar {
+  position: fixed;
+  bottom: 0rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: white;
+  // border-radius: 50rpx;
+  // box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 10rpx 20rpx;
+}
+
+.custom-tabbar .van-tabbar-item--active .van-tabbar-item__text {
+  color: #9e0606;
+  /* 选中状态的文本颜色 */
+}
+
+.custom-tabbar .van-tabbar-item__text {
+  color: #000;
+  /* 默认文本颜色 */
+}

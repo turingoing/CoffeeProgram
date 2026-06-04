@@ -1,0 +1,44 @@
+/* pages/login/login.wxss */
+.ipt{
+    display: flex;  
+    justify-content: center; /* 水平居中 */  
+    align-items: center; /* 垂直居中 */  
+    height: 50vh;
+}
+.gender_input{
+  background-color: rgb(27,26,44) !important;
+  --td-picker-confirm-color:rgb(134,134,134);
+}
+.gendertxt{
+  position: absolute;
+  color:white;
+  z-index: 101;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  left: 30rpx;
+}
+.avatar-wrapper{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 20%;
+  margin-bottom: 5%;
+  display: flex;
+  padding: 0;
+}
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+}
+.weixin{
+    text-align: center;
+    background-color: rgb(0,178,106);
+    color: white;
+    font-size: 30rpx;
+    padding: 20rpx 30rpx;
+    width: 30%;
+    border-radius: 15rpx;
+    /* position: absolute; */
+    /* bottom: 30rpx; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%);  */
+}

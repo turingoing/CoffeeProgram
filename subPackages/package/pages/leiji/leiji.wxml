@@ -1,0 +1,28 @@
+<!-- pages/totalEarnings/totalEarnings.wxml -->
+<view class="header">
+  <text class="title">累计收益</text>
+  <text class="total-earnings">2358</text>
+  <navigator url="/pages/rules/rules" class="rule-link">了解收益规则 ></navigator>
+</view>
+
+<!-- <view class="earnings-list">
+  <view class="earnings-month">
+    <text class="month-title">2024年6月 收益 ¥0.02</text>
+  </view>
+  <block wx:for="{{earningsList}}" wx:key="index">
+    <view class="earnings-item">
+      <text class="earnings-date">{{item.date}}</text>
+      <text class="earnings-amount">¥{{item.amount}}</text>
+    </view> -->
+<!-- </block> -->
+<view class="earnings-list">
+  <view class="earnings-month">
+    <text class="month-title">2025年1月 </text>
+  </view>
+  <block wx:for="{{result}}" wx:key="day" class="item">
+    <view class="earnings-item">
+      <text class="earnings-date">1月{{item.day}}日</text>
+      <text class="earnings-amount">+ ¥{{item.accumulated_profit}}</text>
+    </view>
+  </block>
+</view>

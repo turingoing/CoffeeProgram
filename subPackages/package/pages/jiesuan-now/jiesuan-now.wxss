@@ -1,0 +1,358 @@
+page {
+  background: #f6f7fb;
+  /* background-color: #d1cdd7; */
+}
+
+.section-box {
+  background: #fff;
+  border-radius: 16rpx;
+  margin: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 6rpx 20rpx rgba(0,0,0,0.04);
+}
+.coupon-row {
+  background: #fff;
+  border-radius: 16rpx;
+  margin: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 6rpx 20rpx rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pay-methods {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section-title {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+.pay-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 16rpx 0;
+}
+.pay-item .pm-left {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.func-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.pm-icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #eee;
+}
+.icon-wechat { background: #28c445; }
+.icon-balance { background: #67a3ff; }
+.icon-coffee { background: #ffb6a1; }
+.icon-deposit { background: #66e0e6; }
+.pm-text {
+  color: #333;
+}
+.pm-hint {
+  color: #999;
+  margin-left: 10rpx;
+  font-size: 26rpx;
+}
+.pay-item .pm-radio {
+  margin-left: auto;
+}
+.pay-item.disabled {
+  opacity: 0.5;
+}
+.pickup-box .pickup-options {
+  display: flex;
+  gap: 20rpx;
+}
+.pickup-btn {
+  padding: 16rpx 24rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid #ddd;
+  color: #666;
+  background: #f7f7f7;
+}
+.pickup-btn.active {
+  background: #5e4ddb;
+  color: #fff;
+  border-color: #5e4ddb;
+}
+.remark-box .remark-textarea {
+  margin-top: 16rpx;
+  min-height: 160rpx;
+  width: 100%;
+  border: 1rpx solid #eee;
+  border-radius: 12rpx;
+  padding: 16rpx;
+  background: #fafafa;
+}
+.zhifu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20rpx;
+  background: linear-gradient(180deg, rgba(246,247,251,0) 0%, rgba(246,247,251,1) 60%);
+}
+.pay-button {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  border-radius: 44rpx;
+  background: linear-gradient(90deg, #ff7b7b, #ffad5b);
+}
+
+/* 合并 SCSS 中的样式（已展开嵌套） */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+}
+.order-settlement {
+  padding: 16rpx;
+  background-color: #f8f8f8;
+  width: 100%;
+  position: absolute;
+  top: 10rpx;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 85vh;
+}
+.shop-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx;
+  padding: 12rpx 24rpx 40rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 12rpx 24rpx 40rpx;
+  box-shadow: 0 6rpx 20rpx rgba(0,0,0,0.04);
+}
+.info-detail {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.info-detail .item-adress {
+  margin-top: 25rpx;
+  font-size: 32rpx;
+  font-weight: bolder;
+}
+.info-detail .user-id {
+  margin-top: 15rpx;
+  color: rgb(61, 61, 61);
+  font-size: 14px;
+  position: relative;
+  top: 20rpx;
+  left: 30rpx;
+}
+.pickup-delivery-group {
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 50rpx;
+  position: relative;
+  left: 0rpx;
+  top: 30rpx;
+  height: 50rpx;
+}
+.pickup-button,
+.delivery-button {
+  font-size: 22rpx;
+  padding: 10rpx 20rpx;
+  color: #000;
+  background-color: #f5f5f5;
+  border-radius: 50rpx;
+  transition: background-color 0.3s, color 0.3s;
+}
+.pickup-button.active,
+.delivery-button.active {
+  background-color: rgb(205, 174, 242);
+  color: #fff;
+}
+.order-list {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-shadow: 0 6rpx 20rpx rgba(0,0,0,0.04);
+}
+.order-item {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.item-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.item-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.item-description {
+  font-size: 14px;
+  color: #666;
+}
+.item-price {
+  font-size: 14px;
+  color: #333;
+}
+.item-quantity,
+.item-customizations {
+  font-size: 12px;
+  color: #999;
+}
+.points-option {
+  padding: 20rpx;
+  background-color: rgba(100, 100, 100, .1);
+  border-radius: 10rpx;
+  margin: 20rpx;
+  font-size: 28rpx;
+}
+.checkbox {
+  margin-right: 10rpx;
+}
+.zhifu {
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pay-button.disabled {
+  background-color: #cccccc;
+}
+button {
+  background-color: #007aff;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+.dialog-btn {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 32rpx;
+}
+.confirm {
+  background: #07c160;
+  color: white;
+}
+.cancel {
+  background: #f0f0f0;
+  color: #333;
+}
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.code-dialog-mask{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, .7);
+  z-index: 5;
+}
+.code-dialog-mask .code-content{
+  margin: 0 auto;
+  margin-top: 40%;
+  height: 450rpx; 
+  width: 90%;  
+  border-radius: 30rpx;
+  background-color: rgb(255, 255, 255);
+}
+.code-dialog-mask .code-content .img{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: flex-end;
+}
+.code-dialog-mask .code-content .img image{
+  margin-right: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.code-dialog-mask .code-content .title1 {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.code-dialog-mask .code-content .input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.code-dialog-mask .code-content .input-container .input-box input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 15rpx;
+  margin: 0 2px;
+  text-align: center;
+  font-size: 18px;
+}
+.code-dialog-mask .code-content .input-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.code-dialog-mask .code-content .ipt {
+  position: absolute;
+  margin: 0 auto;
+  top: -100vh;
+  width: 200rpx;
+  height: 10rpx;
+  border: 0px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+.code-dialog-mask .code-content .dialog-buttons {
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.code-dialog-mask .code-content .dialog-buttons .btn{
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220rpx;
+  height: 70rpx;
+  border-radius: 60rpx;
+  background-color: rgb(205, 174, 242);
+  color: white;
+  font-size: 32rpx;
+}

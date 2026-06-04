@@ -1,0 +1,48 @@
+/* subPackages/package/pages/storeDailyEarnings/storeDailyEarnings.wxss */
+.container {
+  padding: 20px;
+  background-color: #b1aeae;
+  width: 100%;
+  height: 390rpx;
+  display: flex;
+  justify-content: center;
+
+}
+
+.name {
+  color: rgb(0, 0, 0);
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.ri {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 10rpx;
+  // border-bottom: 1px solid #eee;
+  height: 80rpx;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* 垂直居中 */
+  padding: 10rpx;
+  border-bottom: 1px solid #eee;
+  height: 60rpx;
+}
+
+.date {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.amount {
+  font-size: 30rpx;
+  color: #000000;
+}

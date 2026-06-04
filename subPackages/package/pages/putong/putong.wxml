@@ -1,0 +1,30 @@
+<view class="page">
+  <view class="custom-nav" style="padding-top: {{statusBarHeight}}px;">
+    <view class="custom-nav-bar" style="height: {{navBarHeight}}px;">
+      <view class="nav-side" bindtap="handleBack">
+        <text class="nav-back-icon">&lt;</text>
+      </view>
+      <text class="nav-title">{{memberTitle}}</text>
+      <view class="nav-side nav-side-placeholder"></view>
+    </view>
+  </view>
+
+  <view class="container" style="padding-top: {{contentTop}}px;">
+    <view class="qrcode-container">
+      <view class="member-badge">{{leixing}}</view>
+
+      <view class="qrcode-wrapper">
+        <image
+          class="qrcode-image"
+          src="{{'https://api.kuleu.com/api/qrcode?frame=1&e=L&text=' + newQRCODE + '&size=200'}}"
+          mode="aspectFit"
+        />
+      </view>
+
+      <view class="info-container">
+        <text class="account-info">账号：{{name}}</text>
+        <text class="recommend-info">推荐码：{{randomId}}</text>
+      </view>
+    </view>
+  </view>
+</view>

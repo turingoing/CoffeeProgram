@@ -1,0 +1,78 @@
+/* subPackages/package3/pages/chooseLocation/chooseLocation.wxss */
+page {
+  background-color: rgb(240, 240, 240);
+  --td-button-primary-bg-color: rgb(205, 174, 242);
+  --td-button-primary-border-color: rgb(205, 174, 242);
+  --td-button-primary-active-bg-color: rgb(183, 137, 238);
+  --td-button-primary-active-border-color: rgb(183, 137, 238);
+}
+
+.scroll-content {
+  height: calc(100vh - 100rpx);
+  /* 根据实际需要调整高度 */
+  overflow-y: auto;
+  /* 确保可以滚动 */
+}
+
+.content {
+  margin-bottom: 50rpx;
+
+  .item {
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    // justify-content: center;
+    padding-left: 25rpx;
+    width: 92%;
+    height: 150rpx;
+    // border: 1px solid #000;
+    border-radius: 20rpx;
+    margin: 0 auto;
+    margin-bottom: 30rpx;
+    background-color: white;
+
+    &:nth-child(1) {
+      margin-top: 50rpx;
+    }
+
+    .left {
+      width: 90%;
+      height: 100%;
+      // border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .person {
+        display: flex;
+        align-items: center;
+
+        .name {
+          margin-right: 10rpx;
+          font-size: 34rpx;
+          font-weight: 600;
+        }
+
+        .phone {
+          font-size: 28rpx;
+          color: gray;
+        }
+      }
+
+      .address {
+        font-size: 28rpx;
+        color: gray;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .address-desc {
+        font-size: 30rpx;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

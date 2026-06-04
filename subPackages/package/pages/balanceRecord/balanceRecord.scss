@@ -1,0 +1,185 @@
+page {
+  height: 100%;
+  background: #f5f5f8;
+}
+
+.container {
+  height: 100vh;
+  padding: 22rpx 24rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.balance-card {
+  width: 90%;
+  padding: 32rpx 30rpx 38rpx;
+  border-radius: 30rpx;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6558c7 0%, #8e83eb 100%);
+  box-shadow: 0 18rpx 40rpx rgba(104, 90, 196, 0.18);
+}
+
+.balance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  opacity: 0.96;
+}
+
+.action-btn {
+  min-width: 112rpx;
+  height: 54rpx;
+  padding: 0 20rpx;
+  border-radius: 27rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 24rpx;
+}
+
+.transfer-btn {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.amount {
+  display: block;
+  margin-top: 30rpx;
+  font-size: 64rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tabs {
+  width: 100%;
+  height: 96rpx;
+  margin-top: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ffffff;
+  border-radius: 24rpx 24rpx 0 0;
+  border-bottom: 1rpx solid #ececf3;
+  flex-shrink: 0;
+}
+
+.tab-item {
+  height: 96rpx;
+  padding: 0 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tab-text {
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.tab-item.active .tab-text {
+  color: #6658c7;
+  font-weight: 600;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 46rpx;
+  height: 6rpx;
+  border-radius: 999rpx;
+  background: #6658c7;
+  transform: translateX(-50%);
+}
+
+.records-scroll {
+  flex: 1;
+  min-height: 0;
+}
+
+.records-list {
+  background: #ffffff;
+  border-radius: 0 0 24rpx 24rpx;
+  overflow: hidden;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26rpx 28rpx;
+  border-bottom: 1rpx solid #f0f1f5;
+}
+
+.record-item:last-child {
+  border-bottom: 0;
+}
+
+.record-item.header {
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  background: #fafaff;
+}
+
+.record-item.header .left,
+.record-item.header .right {
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.left,
+.right {
+  width: 50%;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.right {
+  text-align: right;
+  font-weight: 600;
+}
+
+.loading-wrap,
+.empty-state {
+  min-height: 720rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.empty-image {
+  width: 280rpx;
+  height: 280rpx;
+  opacity: 0.68;
+}
+
+.empty-text {
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  color: #b4b4b4;
+}
+
+/* 【新增】全部Tab下收入金额的橙黄色样式 */
+.money-income {
+  color: #ff9500 !important;
+}

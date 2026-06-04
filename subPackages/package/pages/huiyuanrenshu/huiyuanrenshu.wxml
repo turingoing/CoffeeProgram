@@ -1,0 +1,21 @@
+<view class="container">
+  <block wx:if="{{familyMembers.length === 0}}">
+    <view class="no-data">暂无分享</view>
+  </block>
+
+  <block wx:else>
+    <view class="table-container">
+      <view class="table-header">
+        <view class="table-cell">用户名</view>
+        <view class="table-cell">用户类型</view>
+      </view>
+
+      <block wx:for="{{familyMembers}}" wx:key="usernameen">
+        <view class="table-row">
+          <view class="table-cell">{{item.maskedUsernameen || ''}}</view>
+          <view class="table-cell">{{item.usertitle || '用户'}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

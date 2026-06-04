@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="title" style="font-weight: bolder;">修改密码</view>
+  <text class="a" style="font-size: 28rpx;position: relative;top: -20rpx;">请输入原始交易码，以验证身份</text>
+  <view class="input-container">
+    <block wx:for="{{inputBoxes}}" wx:key="index">
+      <view class="input-box">
+        <!-- input 输入框 -->
+        <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+      </view>
+      <view class="overlay" bind:tap="handleGetFocus"></view> <!-- 蒙层 -->
+    </block>
+  </view>
+  <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+  <view class="confirm-btn" bindtap="confirmUpgrade">确认</view>
+</view>

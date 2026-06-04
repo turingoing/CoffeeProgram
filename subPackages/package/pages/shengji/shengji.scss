@@ -1,0 +1,609 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  width: 100%;
+  height: 16vh;
+  background: linear-gradient(to bottom, #ffffff, #eeeeee);
+}
+
+.balance {
+  margin-bottom: 33rpx;
+}
+
+.yue {
+  font-size: 33rpx;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 40rpx;
+  left: 50rpx;
+}
+
+.balance-amount {
+  font-size: 69rpx;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  position: absolute;
+  top: 85rpx;
+  left: 55rpx;
+  letter-spacing: 10rpx;
+}
+
+.balance-link {
+  color: #323333;
+  position: absolute;
+  top: 43rpx;
+  left: 580rpx;
+}
+
+.benefits {
+  position: absolute;
+  top: 200rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  // height: 86.2vh;
+  height: 1200rpx;
+  background-color: #ffffff;
+  /* 设置一个明显的背景颜色 */
+  border-top-left-radius: 40rpx;
+  /* 左上圆角半径 */
+  border-top-right-radius: 40rpx;
+  /* 右上圆角半径 */
+  box-shadow: 0px -2px 5px rgba(129, 128, 128, 0.2);
+  /* 增加阴影的模糊半径和扩展半径 */
+  overflow: hidden;
+  /* 确保内容不会超出圆角和阴影范围 */
+}
+
+.recharge-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  flex-wrap: wrap;
+  /* 与充值福利的间距 */
+}
+
+.recharge-title {
+  font-size: 42rpx;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 20rpx;
+  left: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.horizontal-box {
+  width: 100%;
+}
+
+// .box {
+//   padding: 32rpx;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   background-color: var(--td-bg-color-container, #fff);
+// }
+.card {
+  /* 每个按钮占48%的宽度，留出一些间距 */
+  margin: 0 0 28rpx 0;
+  height: 90rpx;
+  width: 300rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 3rpx solid var(--td-bg-color-container, rgb(131, 131, 131));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex: 0 0 calc(70% - 42rpx);
+  position: relative;
+}
+
+.card--active {
+  border-color: var(--td-brand-color, #000000);
+  background-color: rgb(225, 225, 225);
+}
+
+.card--active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  border-width: 38rpx 38rpx 38rpx 0;
+  border-style: solid;
+  border-color: var(--td-brand-color, #000000) transparent transparent transparent;
+
+}
+
+.card__icon {
+  color: var(--td-bg-color-container, rgb(255, 255, 255));
+  font-size: 20rpx;
+  position: absolute;
+  left: 1.5rpx;
+  top: 1.5rpx;
+  z-index: 1;
+
+}
+
+/* 横向布局 */
+.t-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20rpx;
+  // flex: 0 0 calc(50% - 12rpx);
+  margin: 0 0 24rpx 0;
+  position: relative;
+  top: 98rpx;
+}
+
+
+// .text-container {
+//   border: 1rpx solid rgb(138, 138, 138);
+//   /* 边框 */
+//   padding: 5rpx;
+//   /* 内边距 */
+//   border-radius: 2rpx;
+//   /* 圆角 */
+//   width: 320rpx;
+//   /* 设置容器宽度 */
+//   height: 70rpx;
+//   /* 设置容器高度 */
+//   position: relative;
+//   /* 设置定位 */
+//   top: 70rpx;
+//   /* 设置距离顶部的距离 */
+//   left: 260rpx;
+//   /* 设置距离左侧的距离 */
+//   display: flex;
+//   /* 使用 flexbox 来居中内容 */
+//   justify-content: center;
+//   /* 水平居中 */
+//   align-items: center;
+//   /* 垂直居中 */
+//   border: 1.8rpx solid rgb(224, 222, 222);
+//   letter-spacing: 1.5rpx;
+// }
+
+.recharge-title2 {
+  font-size: 50rpx;
+  /* 设置字体大小 */
+  color: rgb(0, 0, 0);
+  /* 设置字体颜色 */
+}
+
+.shuliang {
+  font-size: 42rpx;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 300rpx;
+  left: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.quantity-text {
+  font-size: 30rpx;
+  color: rgb(90, 87, 87);
+  position: absolute;
+  top: 306rpx;
+  left: 319rpx;
+  background-color: #f0f0f0;
+  /* 设置背景颜色为灰色 */
+  padding: 5rpx 35rpx;
+}
+
+/* 设置按钮的通用样式 */
+.decrease,
+.increase {
+  position: absolute;
+  top: 50%;
+  /* 垂直居中 */
+  transform: translateY(-50%);
+  /* 垂直居中调整 */
+  color: rgb(54, 46, 46);
+  background-color: #f1f1f1;
+  border: none;
+  padding: 5rpx;
+  border-radius: 2rpx;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rpx;
+  /* 按钮宽度 */
+  height: 45rpx;
+  /* 按钮高度 */
+  font-size: 55rpx;
+}
+
+.decrease {
+  left: 250rpx;
+  top: 330rpx;
+}
+
+.increase {
+  right: 260rpx;
+  top: 330rpx;
+}
+
+.shuoming {
+  width: 92%;
+  height: 160rpx;
+  position: relative;
+  top: 500rpx;
+  left: 18px;
+  box-shadow: 4rpx 4rpx 8rpx 4rpx rgba(0, 0, 0, 0.2);
+  border-radius: 20rpx;
+}
+
+.tishi {
+  display: flex;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+.benefits-title {
+  font-size: 35rpx;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  position: absolute;
+  top: 780rpx;
+  left: 40rpx;
+  letter-spacing: 1rpx;
+}
+
+.benefits-icons {
+  display: flex;
+  /* 使容器成为弹性盒子 */
+  justify-content: space-between;
+  /* 子元素之间的间隔平均分布 */
+  padding: 30rpx;
+  /* 根据需要调整内边距 */
+  position: absolute;
+  top: 820rpx;
+  left: 10rpx;
+  width: 90%;
+  height: 25%;
+}
+
+.icon-item {
+  flex: 1;
+  /* 每个子元素占据相同的空间 */
+  text-align: center;
+  /* 文本居中对齐 */
+  margin: 0 5rpx;
+  /* 如果需要，可以添加一些外边距 */
+}
+
+.avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 20rpx;
+  position: absolute;
+  top: 52rpx;
+  left: 40rpx;
+}
+
+.avatar1 {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 20rpx;
+  position: absolute;
+  top: 52rpx;
+  left: 305rpx;
+}
+
+.icon-item image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.a {
+  font-size: 27rpx;
+  color: rgb(65, 65, 65);
+  position: absolute;
+  top: 150rpx;
+  left: 44rpx;
+  letter-spacing: 1rpx;
+}
+
+.b {
+  font-size: 27rpx;
+  color: rgb(65, 65, 65);
+  position: absolute;
+  top: 150rpx;
+  left: 300rpx;
+  letter-spacing: 1rpx;
+}
+
+.c {
+  font-size: 27rpx;
+  color: rgb(65, 65, 65);
+  position: absolute;
+  top: 150rpx;
+  left: 550rpx;
+  letter-spacing: 1rpx;
+}
+
+.container1 {
+  // padding: 10rpx;
+  margin-left: 35rpx;
+  display: flex;
+  flex-direction: row;
+  /* 水平排列列 */
+  position: absolute;
+  top: 950rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+
+}
+
+.description {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.tiers-container {
+  position: absolute;
+  display: flex;
+  // flex-direction: column;
+  top: 1030rpx;
+}
+
+.tiers {
+  display: flex;
+  // flex-direction: column;
+}
+
+.box {
+  width: 180rpx;
+  height: 100rpx;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5rpx;
+}
+
+.txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tier {
+  width: 200rpx;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tier-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cash-cell-null {
+  height: 80rpx;
+}
+
+.tier-cell {
+  flex: 1;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 40%;
+}
+
+
+.cash-multiplier-row .tier-cell {
+  flex: 1;
+  /* 现金+积分和倍数并排 */
+}
+
+.period-points-row .tier-cell {
+  flex: 1;
+
+}
+
+
+.amount-row .tier-cell {
+  flex: 2;
+
+}
+
+.cash-cell {
+  flex: 1;
+
+}
+
+.multiplier-cell {
+  flex: 1;
+
+}
+
+.period-cell {
+  flex: 2;
+
+}
+
+.points-cell {
+  flex: 1;
+
+}
+
+.sharing-acceleration {
+  display: grid;
+  align-items: center;
+  position: relative;
+  top: 1090rpx;
+
+}
+
+.sharing-acceleration-title {
+  /* margin-right: 10px; */
+  font-weight: 600;
+  width: 380rpx;
+  margin: 10rpx 0 10rpx 25rpx;
+}
+
+.sharing-acceleration-details {
+  flex-grow: 1;
+
+}
+
+/* 容器样式 */
+.button-container {
+  position: fixed;
+  bottom: 25rpx;
+  /* 距离底部的距离 */
+  left: 25rpx;
+  /* 距离左边的距离 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 按钮之间的间距 */
+  width: 700rpx;
+  /* 容器宽度 */
+}
+
+/* 按钮样式 */
+.recharge-button {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50rpx;
+  padding: 1rpx 15rpx;
+  width: 330rpx;
+  height: 100rpx;
+  top: 800rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gocharge-button {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50rpx;
+  padding: 1rpx 15rpx;
+  width: 330rpx;
+  height: 100rpx;
+  top: 800rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.useless {
+  position: absolute;
+  width: 100%;
+  height: 0rpx;
+  top: 1550rpx;
+}
+
+.quan {
+  font-size: 33rpx;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 40rpx;
+  // left: 50rpx;
+}
+
+.quan-amount {
+  font-size: 69rpx;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  position: absolute;
+  top: 85rpx;
+  // left: 55rpx;
+  letter-spacing: 10rpx;
+}
+
+/* 交易码弹窗样式 */
+.title1 {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  left: 210rpx;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin: 0 2px;
+  text-align: center;
+  font-size: 18px;
+}
+
+button {
+  background-color: #007aff;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.ipt {
+  position: absolute;
+  margin: 0 auto;
+  top: 10rpx;
+  width: 200rpx;
+  height: 10rpx;
+  border: 0px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+
+.dialog-btn {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 32rpx;
+}
+
+.confirm {
+  background: #07c160;
+  color: white;
+}
+
+.cancel {
+  background: #f0f0f0;
+  color: #333;
+}

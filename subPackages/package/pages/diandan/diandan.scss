@@ -1,0 +1,379 @@
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+//   height: 16vh;
+// }
+
+// .image {
+//   width: 100%;
+//   height: 520rpx;
+// }
+
+// .image-item {
+//   width: 100%;
+//   height: 520rpx;
+//   position: absolute;
+//   top: 0rpx;
+// }
+
+// .dan {
+//   position: absolute;
+//   top: 435rpx;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   width: 100%;
+//   height: 70vh;
+//   background-color: #ffffff;
+//   /* 设置一个明显的背景颜色 */
+//   border-top-left-radius: 40rpx;
+//   /* 左上圆角半径 */
+//   border-top-right-radius: 40rpx;
+//   /* 右上圆角半径 */
+//   box-shadow: 0px -2px 5px rgba(129, 128, 128, 0.2);
+//   /* 增加阴影的模糊半径和扩展半径 */
+//   overflow: hidden;
+//   /* 确保内容不会超出圆角和阴影范围 */
+// }
+
+// .mingchen {
+//   font-size: 34rpx;
+//   font-weight: bold;
+//   position: absolute;
+//   left: 40rpx;
+//   top: 500rpx;
+// }
+
+// .option-group {
+//   margin-bottom: 20rpx;
+//   position: absolute;
+//   top: 150rpx;
+//   width: 100%;
+// }
+
+// .option-group2 {
+//   margin-bottom: 20rpx;
+//   position: absolute;
+//   top: 350rpx;
+//   width: 100%;
+// }
+
+// .option-group3 {
+//   margin-bottom: 20rpx;
+//   position: absolute;
+//   top: 550rpx;
+//   width: 100%;
+// }
+
+// .option-label {
+//   color: rgb(0, 0, 0);
+//   margin-bottom: 10rpx;
+//   position: absolute;
+//   top: 0rpx;
+//   left: 40rpx;
+//   font-size: 30rpx;
+// }
+
+// .option-label2 {
+//   color: rgb(0, 0, 0);
+//   margin-bottom: 10rpx;
+//   position: absolute;
+//   top: 0rpx;
+//   left: 40rpx;
+//   font-size: 30rpx;
+// }
+
+// .option-label3 {
+//   color: rgb(0, 0, 0);
+//   margin-bottom: 10rpx;
+//   position: absolute;
+//   top: 0rpx;
+//   left: 40rpx;
+//   font-size: 30rpx;
+// }
+
+// .option-buttons {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .option-button5 {
+//   flex: 1;
+//   margin: 10rpx;
+//   padding: 10rpx;
+//   background-color: #ffffff;
+//   /* 默认底色 */
+//   border: 2px solid rgb(255, 255, 255);
+//   /* 默认边框颜色 */
+//   border-radius: 4rpx;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: background-color 0.3s, border-color 0.3s;
+//   /* 平滑过渡效果 */
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .option-button6 {
+//   background-color: #ffffff;
+//   /* 默认底色 */
+//   border: 2px solid rgb(255, 255, 255);
+//   /* 默认边框颜色 */
+//   border-radius: 4rpx;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: background-color 0.3s, border-color 0.3s;
+//   /* 平滑过渡效果 */
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 28rpx;
+
+// }
+
+// .option-button1,
+// .option-button2,
+// .option-button3,
+// .option-button4,
+// .option-button5,
+// .option-button11,
+// .option-button12 {
+//   background-color: #ffffff;
+//   /* 默认底色 */
+//   border: 2px solid rgb(255, 255, 255);
+//   /* 默认边框颜色 */
+//   border-radius: 4rpx;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: background-color 0.3s, border-color 0.3s;
+//   /* 平滑过渡效果 */
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 28rpx;
+// }
+
+// .option-button.selected,
+// .option-button1.selected,
+// .option-button2.selected,
+// .option-button3.selected,
+// .option-button4.selected,
+// .option-button5.selected,
+// .option-button6.selected,
+// .option-button11.selected,
+// .option-button12.selected {
+//   background-color: #c3c3c4;
+//   /* 选中后的底色 */
+//   border-color: #ffffff;
+//   /* 选中后的边框颜色 */
+// }
+
+.selection-result {
+  width: 100%;
+  height: 180rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 24rpx;
+  color: rgb(128, 120, 120);
+  z-index: 0;
+  background-color: white;
+}
+
+.selection-result::before {
+  border-top: 2rpx solid #ccc;
+  content: '';
+  /* 伪元素需要content属性 */
+  position: absolute;
+  /* 绝对定位 */
+  top: -20rpx;
+  /* 位于border-top的上方 */
+  left: 0;
+  right: 0;
+  height: 6rpx;
+  /* 与border-top相同高度 */
+  background: rgb(241, 239, 239);
+  /* 与border-top相同颜色 */
+  box-shadow: 0 2rpx 4rpx rgba(255, 255, 255, 0.945);
+  /* 添加阴影效果 */
+  z-index: -1;
+  /* 确保伪元素在border-top上方 */
+}
+
+
+/* 主图规范 [1,3](@ref) */
+.product-image {
+  width: 100%;
+  height: 100%;
+  /* 1:1比例 */
+}
+
+/* 价格样式 */
+.price-section {
+  padding: 20rpx;
+  background: #fff;
+}
+
+.current-price {
+  color: #e4393c;
+  font-size: 36rpx;
+}
+
+.old-price {
+  color: #999;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+
+/* 规格选择器 */
+.spec-group {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.spec-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.spec-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15rpx;
+}
+
+.spec-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  margin: 0 10rpx 10rpx 0;
+  border-radius: 10rpx;
+  background-color: #f5f5f5;
+  border: 1rpx solid transparent;
+  font-size: 27rpx;
+  width: 120rpx;
+  height: 50rpx;
+}
+
+.spec-btn.active {
+  background-color: rgb(205, 174, 242);
+  color: white;
+}
+
+.spec-btn.disabled {
+  background-color: #f4f1ee;
+  border-color: #e3d9d0;
+  color: #b7aca2;
+}
+
+.spec-btn.disabled .spec-text {
+  color: #b7aca2;
+}
+
+.spec-text {
+  /* 确保文字在 flex 容器中居中 */
+  text-align: center;
+}
+
+.spec-img {
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.shu {
+  display: flex;
+}
+
+.quantity-text {
+  font-size: 30rpx;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 1rpx;
+  left: 593rpx;
+  background-color: #f0f0f0;
+  /* 设置背景颜色为灰色 */
+  padding: 5rpx 35rpx;
+}
+
+/* 设置按钮的通用样式 */
+.decrease,
+.increase {
+  position: absolute;
+  top: 50%;
+  /* 垂直居中 */
+  transform: translateY(-50%);
+  /* 垂直居中调整 */
+  color: rgb(54, 46, 46);
+  background-color: #f1f1f1;
+  padding: 5rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rpx;
+  /* 按钮宽度 */
+  height: 50rpx;
+  /* 按钮高度 */
+  font-size: 55rpx;
+}
+
+.decrease {
+  left: 530rpx;
+  top: 25rpx;
+}
+
+.increase {
+  right: 15rpx;
+  top: 25rpx;
+}
+
+.cart-button {
+  font-size: 30rpx;
+  width: 45%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  color: rgb(255, 255, 255);
+  background-color: rgb(205, 174, 242);
+  /* 默认底色 */
+  border: 2px solid rgb(255, 255, 255);
+  /* 默认边框颜色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0rpx;
+  left: 50%;
+  transform: translateX(-102%);
+}
+
+.jiesuan-button {
+  font-size: 30rpx;
+  width: 45%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  color: rgb(255, 255, 255);
+  background-color: #9b59b6;
+  /* 默认底色 */
+  border: 2px solid rgb(255, 255, 255);
+  /* 默认边框颜色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0rpx;
+  left: 50%;
+  transform: translateX(-97%);
+}
+
+.qq {
+  position: relative;
+  top: 20rpx;
+}

@@ -1,0 +1,139 @@
+<privacy-popup bind:agree="agree" bind:disagree="disagree"></privacy-popup>
+<!-- <view> -->
+<!-- 头像上传部分 -->
+<!-- <view class="avatar-section">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button>
+  <text class="avatar-tip">点击上方录入头像</text>
+</view> -->
+
+<!-- 通用表单部分 -->
+<!-- <view class="form-section"> -->
+<!-- 昵称输入 -->
+<!-- <t-input class="nickname_input" placeholder="点击获取微信名" label="昵称" type="nickname" value="{{value}}" bind:change="nameInput" bindtap="getUserGender" bind:focus="nameFocus" />  -->
+
+<!-- 性别选择 -->
+<!-- <view class="form-item">
+  <view class="gender-section">
+    <text class="gendertxt" style="position:relative ; left: 2rpx;">性别</text>
+    <t-cell class="gender_input" arrow hover note="{{genderText}}" bind:click="onGenderPicker" />
+    <t-picker visible="{{genderVisible}}" value="{{genderValue}}" data-key="gender" title="选择性别" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindcancel="onPickerCancel">
+      <t-picker-item options="{{genders}}" />
+    </t-picker>
+  </view>
+</view> -->
+
+<!-- </view> -->
+
+<!-- 注册方式切换 -->
+<view class="register-switch">
+  <text wx:if="{{RegWay === 'shouji'}}" bindtap="toggleRegisterType" class="phone-tip {{isPhoneRegister ? 'phone-tip-active' : ''}}" data-type="phone"></text>
+  <!-- <text wx:if="{{RegWay === 'shouji'}}" bindtap="toggleRegisterType" class="phone-tip {{isEmailRegister ? 'phone-tip-active' : ''}}" data-type="email">邮箱登录</text> -->
+  <!-- <text class="switch-item" bindtap="toggleRegisterType" data-type="phone" wx:if="{{!isPhoneRegister && !isPhoneRegister}}">手机号注册</text> -->
+  <text wx:if="{{RegWay === 'youxiang'}}" class="phone-tip" data-type="email">子账号注册</text>
+  <!-- <text class="switch-item" bindtap="toggleRegisterType" data-type="back" wx:if="{{isPhoneRegister || isEmailRegister}}">返回微信注册</text> -->
+</view>
+
+<view class="kd-title">
+  <view class="kd-imgCon">
+    <image class="kd-img" src="../../../../images/caldi logo紫色透明.gif"></image>
+  </view>
+
+  <text class="kd-head">滴萃卡狄 慢享生活</text>
+
+  <view class="kd-textarea">
+    <text class="kd-text">感谢您选择卡狄咖啡CALDI COFFEE,我们热忱欢迎您成为其中的一员，以享受更多权益，包括并不限于获取更多优惠信息，参与卡狄咖啡的更多活动等。</text>
+    <text class="kd-text">让我们一起用一杯咖啡的温度，点燃青春梦想的星辰大海！</text>
+  </view>
+
+</view>
+
+<!-- 手机注册部分 -->
+<view wx:if="{{RegWay === 'shouji'}}" class="phone-register">
+  <!-- <view class="phone-tip">手机号注册</view> -->
+  <block wx:if="{{isPhoneRegister}}">
+    <view class="agreement-fixed">
+      <checkbox checked="{{agreed}}" bindtap="toggleAgreement" />
+      <text>我已阅读并同意《</text>
+      <text class="link" bindtap="goToAgreement">用户协议</text>
+      <block wx:if="{{!guestOrder && !hidePrivacy}}">
+        <text>》《</text>
+        <text class="link" bindtap="goToPrivacy">隐私协议</text>
+      </block>
+      <text>》</text>
+    </view>
+    <!-- 隐藏手机号安全登录入口，保留原逻辑备用
+    <button wx:if="{{agreed}}" id="getPhoneBtn" class="phone-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      手机号安全登录
+    </button>
+    <button wx:else class="phone-btn" bind:tap="handleGetPhone">
+      手机号安全登录
+    </button>
+    -->
+    <button data-agreed="{{agreed}}" data-registerType="2" class="openidLogin {{isWechatLoginSubmitting ? 'openidLogin-disabled' : ''}}" bind:tap="openidLogin" disabled="{{isWechatLoginSubmitting}}">
+      {{isWechatLoginSubmitting ? '登录中' : '微信一键登录'}}
+    </button>
+
+    <!-- 手动免登录下单入口已隐藏，保留原逻辑备用
+    <view wx:if="{{guestOrder}}" style="color: rgb(0, 102, 255);font-weight: bold;margin-top: 10px;" data-agreed="{{agreed}}" data-registerType="0" bind:tap="openidLogin">免登录下单</view>
+    -->
+    <button wx:if="{{!guestOrder}}" class="rejectGetPhone" bind:tap="rejectGetPhone">放弃权益，暂不注册</button>
+
+    <!-- <button wx:if="{{agreed}}" id="getUserBtn" class="user-btn" open-type="getUserInfo" bindgetuserinfo="getUserNumber">
+      账号注册登录
+    </button>
+    <button wx:else class="user-btn" bind:tap="handleGetUser">
+      账号注册登录
+    </button> -->
+
+  </block>
+  <block wx:else>
+    <view class="email-register">
+      <view class="form-item">
+        <input class="email-input" placeholder="请输入邮箱" value="{{email}}" bindinput="onEmailInput" />
+      </view>
+      <!-- <view class="form-item">
+        <input class="email-input" placeholder="请输入密码" value="{{password}}" bindinput="onPasswordInput" />
+      </view> -->
+      <view class="agreement-fixed">
+        <checkbox checked="{{agreed}}" bindtap="toggleAgreement" />
+        <text>我已阅读并同意《</text>
+        <text class="link" bindtap="goToAgreement">用户协议</text>
+        <text>》《</text>
+        <text class="link" bindtap="goToPrivacy">隐私协议</text>
+        <text>》</text>
+      </view>
+      <button class="phone-btn" bind:tap="handleEmailLogin">
+        登录
+      </button>
+    </view>
+  </block>
+</view>
+
+<!-- 邮箱注册部分 -->
+<view class="phone-register">
+  <view wx:if="{{RegWay === 'youxiang'}}" class="email-register">
+    <view class="form-item">
+      <input class="email-input" placeholder="请输入帐号名" value="{{email}}" bindinput="onEmailInput" />
+    </view>
+    <!-- <view class="form-item code-item">
+      <input class="code-input" placeholder="请输入验证码" value="{{code}}" bindinput="onCodeInput" />
+      <button class="code-btn" disabled="{{countdown > 0}}" bindtap="getVerificationCode">
+        {{countdown > 0 ? countdown + 's后重试' : '获取验证码'}}
+      </button>
+    </view> -->
+    <view class="agreement-fixed">
+      <checkbox checked="{{agreed}}" bindtap="toggleAgreement" />
+      <text>我已阅读并同意《</text>
+      <text class="link" bindtap="goToAgreement">用户协议</text>
+      <text>》《</text>
+      <text class="link" bindtap="goToPrivacy">隐私协议</text>
+      <text>》</text>
+    </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="submit-section" wx:if="{{RegWay === 'youxiang'}}">
+    <view class="shengqin_botton1" hover-class="shengqin_botton2" bindtap="submit">提交</view>
+  </view>
+</view>

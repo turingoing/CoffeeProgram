@@ -1,0 +1,186 @@
+/* 全局样式 */
+page {
+  background-color: #f5f5f5;
+}
+
+.page-container {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 顶部渐变栏（含右上角二维码） */
+.top-bar {
+  background: linear-gradient(to bottom, #8c7cf5, #7267d9, #6960c5, #916bd1, #c086e8);
+  color: #fff;
+  box-shadow: 0 12rpx 36rpx rgba(105, 96, 197, 0.38);
+  padding: 210rpx 30rpx 90rpx;
+  display: flex;
+  justify-content: space-between;
+  /* 左右分布：头像+用户信息 与 二维码 */
+  align-items: center;
+  border-radius: 40rpx;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.left-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 20rpx;
+}
+
+.user-info-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.card-tag {
+  background-color: #ff9500;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  width: fit-content;
+}
+
+.card-tag-notlogin {
+  padding: 0;
+}
+.erweima {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: -40rpx;
+  z-index: 999;
+}
+/* 右上角二维码图标 */
+.qrcode-icon {
+  width: 100%;
+  height: 100%;
+  margin-right: 10rpx;
+  /* 占位背景，替换真实二维码图标后可删除 */
+  border-radius: 8rpx;
+}
+
+/* 卡狄D套餐模块 */
+.card-module {
+  position: absolute;
+  background-color: #fff;
+  margin: 20px 20rpx;
+  border-radius: 16rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  top: 310rpx;
+  left: 0;
+  /* 靠左对齐父元素 */
+  right: 0;
+  /* 靠右对齐父元素 */
+}
+
+.card-title {
+  font-size: 32rpx;
+  color: #451a9b;
+  font-weight: bold;
+}
+
+.card-detail {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 资产模块 */
+.asset-module {
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  padding: 40rpx 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 90rpx;
+}
+.asset-module-putong {
+  justify-content: flex-start;
+  gap: 50rpx;
+  padding-left: 40rpx;
+}
+.asset-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.asset-num {
+  font-size: 32rpx;
+  color: #e63946;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.asset-name {
+  font-size: 24rpx;
+  color: #000000;
+
+}
+
+/* 功能网格模块 */
+.func-grid-module {
+  background-color: #fff;
+  margin: 30rpx 20rpx;
+  border-radius: 16rpx;
+  padding: 40rpx 20rpx 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.func-grid-notlogin {
+  margin: 100rpx 20rpx 30rpx 20rpx;
+
+}
+
+.func-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.func-item-notlogin {
+  margin-bottom: -6rpx;
+}
+
+.func-item.empty {
+  visibility: hidden;
+}
+
+.func-icon {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 8rpx;
+}
+
+.func-text {
+  font-size: 24rpx;
+  /* color: #422e75 */
+  /* color: #724e99; */
+  color: #554ea2;
+}

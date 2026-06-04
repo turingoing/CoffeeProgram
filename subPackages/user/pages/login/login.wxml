@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<!-- <text>pages/login/login.wxml</text> -->
+<privacy-popup bind:agree="agree" bind:disagree="disagree"></privacy-popup>
+<view>
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button>
+  <text style="font-size: 25rpx;margin-top:-20rpx;text-align: center;display: flex;justify-content: center; ">点击上方录入头像</text>
+  <view>
+
+    <t-input class="nickname_input" placeholder="点击获取微信名" label="昵称" type="nickname" value="{{nickname}}" bindchange="nameInput" bind:focus="nameFocus" />
+
+  </view>
+
+  <view style="display: flex;justify-content: space-around;margin-top: 800rpx;">
+    <view class="weixin" bind:tap="goindex" style="bottom: 130rpx;">注册</view>
+    <view class="weixin" bind:tap="login">登录</view>
+  </view>
+
+</view>

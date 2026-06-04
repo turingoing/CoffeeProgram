@@ -1,0 +1,32 @@
+<view class="pay-container">
+  <view class="header-section">
+    <image class="icon-safe" src="/images/safe-pay.png" mode="aspectFit"></image> <text class="title">支付剩余时间 14:59</text>
+  </view>
+
+  <view class="amount-card">
+    <view class="amount-label">需支付金额</view>
+    <view class="amount-value">
+      <text class="symbol">￥</text>
+      <text class="num">{{amt || '0.00'}}</text>
+    </view>
+  </view>
+
+  <view class="detail-card">
+    <view class="detail-row">
+      <text class="label">收款方</text>
+      <text class="value">官方自营平台</text>
+    </view>
+    <view class="detail-row">
+      <text class="label">订单编号</text>
+      <text class="value">{{orderid || '--'}}</text>
+    </view>
+    <view class="detail-row">
+      <text class="label">商品名称</text>
+      <text class="value">账户余额充值</text>
+    </view>
+  </view>
+
+  <view class="footer-btn">
+    <view class="pay-btn" bindtap="executePay">立即支付</view>
+  </view>
+</view>

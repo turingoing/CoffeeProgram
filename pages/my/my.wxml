@@ -1,0 +1,113 @@
+<view class="page-container">
+  <!-- 顶部渐变背景栏（含右上角二维码） -->
+  <view class="top-bar">
+    <!-- 左侧头像+用户信息 -->
+    <view class="left-wrap" bindtap="tapLeftWrap"> 
+      <image class="avatar" src="{{AUrl}}/jy/wxuser/106/images/new/avatar.png" mode="aspectFill"></image>
+      <view class="user-info-wrap">
+        <text class="username">{{isLogin ? (name || '已登录') : '登录注册'}}</text>
+        <view class="card-tag ">{{isLogin ? leixing+" "+agent : '用户'}}</view>
+      </view>
+    </view>
+    <view class="erweima">
+      <image class="qrcode-icon" src="{{tupianUrl}}/new/my/erweima.svg" mode="widthFix" bindtap="gotoQrcode"></image>
+    </view>
+    <!-- 右上角二维码图标 -->
+    
+  </view>
+
+  <!-- 模块1：卡狄D套餐 -->
+  <view class="card-module" bindtap="cardLoginPrompt">
+    <text class="card-title">{{isLogin ? '卡狄套餐' : '请先登录'}}</text>
+    <text class="card-detail">{{isLogin ? '查看详情>' : '点击此处登录'}}</text>
+  </view>
+
+  <!-- 模块2：资产模块（个人余额/咖啡券/储值卡/电子券 横向排列） -->
+  <view class="asset-module {{leixing === '用户' ? 'asset-module-putong' : ''}}"  wx:if="{{isLogin === true}}">
+    <view class="asset-item" bindtap="gotoBalanceRecord">
+      <text class="asset-num">{{money || 0.00}}</text>
+      <text class="asset-name">个人余额</text>
+    </view>
+    <view class="asset-item" bindtap="gotoCoffeeRecord" wx:if="{{leixing !== '用户'}}">
+      <text class="asset-num">{{coffeeCoupon || 0.00}}</text>
+      <text class="asset-name">咖啡券</text>
+    </view>
+    <view class="asset-item" bindtap="gotoDepositRecord">
+      <text class="asset-num">{{depositCard || 0.00}}</text>
+      <text class="asset-name">储值卡</text>
+    </view>
+    <view class="asset-item" bindtap="gotoElectronicRecord" wx:if="{{leixing !== '用户'}}">
+      <text class="asset-num">{{electronicCoupon || 0.00}}</text>
+      <text class="asset-name">电子券</text>
+    </view>
+  </view>
+
+  <!-- 模块3：功能图标网格 -->
+  <view class="func-grid-module {{isLogin === false ? 'func-grid-notlogin' : ''}}">
+    <!-- 第一行 -->
+    <view class="func-item" bindtap="gotoEcommerceOrder" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/ecommerce-order.jpg" mode="aspectFit"></image>
+      <text class="func-text">电商订单</text>
+    </view>
+    <!-- <view class="func-item" bindtap="gotoTasteCustom" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/taste-custom.jpg" mode="aspectFit"></image>
+      <text class="func-text">口味定制</text>
+    </view> -->
+    <view class="func-item {{isLogin === false ? 'func-item-notlogin' : ''}}" bindtap="gotoNoticePage">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/notice.jpg" mode="aspectFit"></image>
+      <text class="func-text">公告</text>
+    </view>
+    <view class="func-item {{isLogin === false ? 'func-item-notlogin' : ''}}" bindtap="gotoCouponCenter">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/coupon-center.jpg" mode="aspectFit"></image>
+      <text class="func-text">领券中心</text>
+    </view>
+
+    <!-- 第二行 -->
+    <view class="func-item" bindtap="gotoMyCoupon" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/my-coupon.jpg" mode="aspectFit"></image>
+      <text class="func-text">我的优惠券</text>
+    </view>
+    <view class="func-item" bindtap="gotoAddress" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/address.jpg" mode="aspectFit"></image>
+      <text class="func-text">收货地址</text>
+    </view>
+    <view class="func-item" bindtap="gotoCollection" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/collection.jpg" mode="aspectFit"></image>
+      <text class="func-text">我的收藏</text>
+    </view>
+    <view class="func-item" bindtap="gotoMemberOrder" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/member-order.jpg" mode="aspectFit"></image>
+      <text class="func-text">会员套餐</text>
+    </view>
+
+    <!-- 第三行 -->
+    <view class="func-item" bindtap="gotoShareholderStore" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/shareholder-store.jpg" mode="aspectFit"></image>
+      <text class="func-text">微股东门店</text>
+    </view>
+    <view class="func-item" bindtap="gotoSubAccount" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/sub-account.jpg" mode="aspectFit"></image>
+      <text class="func-text">子账户</text>
+    </view>
+    <view class="func-item" bindtap="gotoMyFriend" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/my-friend.jpg" mode="aspectFit"></image>
+      <text class="func-text">我的好友</text>
+    </view>
+    <view class="func-item" bindtap="gotoInvoice" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/invoice.jpg" mode="aspectFit"></image>
+      <text class="func-text">发票管理</text>
+    </view>
+
+    <!-- 第四行 -->
+    <view class="func-item" bindtap="gotoInviteCode" wx:if="{{isLogin === true}}">
+      <image class="func-icon" src="{{tupianUrl}}/new/my/invite-code.jpg" mode="aspectFit"></image>
+      <text class="func-text">邀请码</text>
+    </view>
+    <view class="func-item {{isLogin === false ? 'func-item-notlogin' : ''}}" bindtap="gotoSetting"> 
+      <image class="func-icon" src="{{tupianUrl}}/new/my/setting.jpg" mode="aspectFit"></image>
+      <text class="func-text">设置</text>
+    </view>
+    <view class="func-item empty"></view>
+    <view class="func-item empty"></view>
+  </view>
+</view>

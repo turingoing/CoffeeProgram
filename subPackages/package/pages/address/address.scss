@@ -1,0 +1,68 @@
+/* subPackages/package3/pages/address/address.wxss */
+
+page{
+  --td-button-primary-bg-color: rgb(205, 174, 242);
+  --td-button-primary-border-color: rgb(205, 174, 242);
+  --td-button-primary-active-bg-color: rgb(183, 137, 238);
+  --td-button-primary-active-border-color: rgb(183, 137, 238);
+}
+
+.main-content {
+  width: 92%;
+  height: 1200rpx;
+  // border: 1px solid #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  /* 添加阴影效果 */
+  border-radius: 20rpx;
+  margin: 50rpx auto;
+
+  .alter-btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30rpx;
+    top: 30rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 100rpx;
+
+    // border: 1px solid #000;
+    .txt {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 68%;
+      height: 100%;
+      // border: 1px solid red;
+      font-size: 36rpx;
+      font-weight: 600;
+
+      text {
+        white-space: nowrap;
+        /* 不换行 */
+        overflow: hidden;
+        /* 隐藏超出部分 */
+        text-overflow: ellipsis;
+        /* 超出部分用省略号表示 */
+      }
+
+      .desc {
+        font-size: 26rpx;
+        color: gray;
+        font-weight: normal;
+      }
+    }
+
+    // .btn{
+  }
+
+
+
+
+  // --td-radio-content-font-size: 20rpx; 
+  // --td-radio-content-line-height: ;
+  // --td-radio-font-size: 28rpx;
+  --td-radio-icon-size: 40rpx;
+  // --td-radio-vertical-padding: 100rpx
+}

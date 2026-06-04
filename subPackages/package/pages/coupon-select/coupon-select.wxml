@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="list">
+    <block wx:for="{{coupons}}" wx:key="cardid">
+      <view class="coupon-card {{item.disabled ? 'disabled' : ''}} {{selectedId===item.cardid?'selected':''}}" bindtap="selectOne" data-id="{{item.cardid}}" data-disabled="{{item.disabled}}">
+        <view class="left">
+          <view class="amount">¥{{item.atm}}</view>
+        </view>
+        <view class="center">
+          <text class="title">{{item.cardName}}</text>
+          <text class="sub">有效期至 {{item.endTime}}</text>
+        </view>
+        <view class="right">
+          <view class="tick"></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="footer">
+    <button class="btn" bindtap="confirm">使用此优惠券</button>
+  </view>
+</view>

@@ -1,0 +1,147 @@
+<view class="container">
+  <!-- 余额显示 -->
+  <view class="balance">
+    <text class="yue">账户余额</text>
+    <text class="balance-amount">{{money}}</text>
+    <text class="quan">消费券</text>
+    <text class="quan-amount">{{score}}</text>
+  </view>
+</view>
+<!--充值-->
+<view class="benefits">
+  <view class="recharge-info">
+    <!-- <text class="recharge-title">选择</text> -->
+    <t-radio-group t-class="horizontal-box" value="{{value1}}" bind:change="onChange1">
+      <view wx:for="{{buttons}}" wx:key="value" class="card {{value1 == item.value ? 'card--active' : ''}}">
+        <t-icon wx:if="{{value1 == item.value}}" name="check" t-class="card__icon" />
+        <t-radio style="width: 95%; height: 95%; display: flex; align-items: center; text-align: center;{{value1 === item.value ? 'background-color: rgba(205, 174, 242, .06)' : ''}}" value="{{item.value}}" label="{{item.label}}" icon="none" borderless />
+      </view>
+    </t-radio-group>
+  </view>
+
+  <!-- <text class="shuliang">数量</text>
+  <button class="decrease" data-quantity="{{quantity}}" bindtap="onDecrease">-</button>
+  <text class="quantity-text">{{quantity}}</text>
+  <button class="increase" data-quantity="{{quantity}}" bindtap="onIncrease">+</button> -->
+</view>
+<view class="shuoming">
+  <view class="tishi" style="width: 55rpx; height: 55rpx; display: flex; position: relative; left: 30rpx; top: 20rpx;">
+    <image src="/subPackages/package/pages/images/提示.png" style="width: 55rpx; height: 55rpx;"></image>
+  </view>
+  <view class="content" style="display: flex; flex-direction: column; align-items: center; width: 650rpx;margin-top: -25rpx;gap:15rpx">
+    <text class="xu">需要60%现金和40%消费券</text>
+    <view class="amounts" style="display: flex; align-items: center;">
+      <view class="cash" style="margin-right: 20rpx;">
+        <text>现金</text>
+        <text class="highlight" style="font-weight: bold; font-size: 35rpx;">{{cashAmount}}</text>
+      </view>
+      <view class="points">
+        <text>消费券</text>
+        <text class="highlight" style="font-weight: bold; font-size: 35rpx;">{{pointsAmount}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <text class=" benefits-title">充值福利</text>
+<view class="benefits-icons">
+  <view class="icon-item">
+    <image class="avatar" src="{{tupianUrl}}/info/huiyuankaidian.jpg" mode="aspectFill"></image>
+    <text class="a">会员开店</text>
+  </view>
+  <view class="icon-item">
+    <image class="avatar1" src="{{tupianUrl}}/info/touzi.jpg" mode="aspectFill"></image>
+    <text class="b">体验馆投资</text>
+  </view>
+  <view class="icon-item">
+    <image src="{{tupianUrl}}/info/coupon.png" mode="aspectFill"></image>
+    <text class="c">兑换消费券</text>
+  </view>
+</view> -->
+
+<!-- <view class="container1">
+  <view class="title">{{membershipRechargePlans.title}}</view>
+  <view class="description">({{membershipRechargePlans.description}})</view>
+</view> -->
+
+<!-- <view class="tiers-container">
+  <view class="tiers">
+    <view class="null">
+      <view class="box kong"></view>
+      <view class="box txt">({{membershipRechargePlans.tiers[0].cashPlusPoints}})</view>
+      <view class="box txt">释放周期: {{membershipRechargePlans.tiers[0].releasePeriod}}天</view>
+    </view>
+    <view class="body" wx:for="{{membershipRechargePlans.tiers}}" wx:key="amount">
+      <view class="tiers-item">
+        <view class="box txt">{{item.amount}}({{item.quantity}}份)</view>
+        <view class="box txt">{{item.multiplier}}倍</view>
+        <view class="box txt">≈{{item.pointsPerDay}}积分/天</view>
+      </view>
+    </view> -->
+<!-- <view class="tier" wx:for="{{membershipRechargePlans.tiers}}" wx:key="amount">
+        <view class="tier-row amount-row">
+          <view class="tier-cell">{{item.amount}}({{item.quantity}}份)</view>
+        </view>
+        <view class="tier-row cash-multiplier-row">
+          <view class="tier-cell cash-cell">({{item.cashPlusPoints}})</view>
+          <view class="tier-cell multiplier-cell">{{item.multiplier}}</view>
+        </view>
+        <view class="tier-row period-points-row">
+          <view class="tier-cell period-cell">释放周期: {{item.releasePeriod}}天</view>
+          <view class="tier-cell points-cell">≈{{item.pointsPerDay}}积分/天</view>
+        </view>
+      </view> -->
+<!-- </view>
+</view> -->
+
+<!-- <view class="sharing-acceleration">
+  <view class="sharing-acceleration-title" style="position: relative; left: 11rpx; top: -102rpx">分享加速:</view>
+  <text decode="{{true}}" class="sharing-acceleration-details" style="display: flex;justify-content: center; position: relative; top: -100rpx;">&nbsp;&nbsp;&nbsp;{{membershipRechargePlans.sharingAccelerationDetails}}</text>
+</view> -->
+<view style="display: flex;justify-content: space-around; position: absolute; bottom: 150rpx;left: 50%; transform: translateX(-50%);">
+  <view class="recharge-button" bindtap="onRecharge">立即充值</view>
+  <view class="gocharge-button" bindtap="confirmChange">立即升级</view>
+</view>
+<view class="useless"></view>
+
+<!-- 交易码弹窗 -->
+<!-- <view wx:if="{{showCodeDialog}}" class="code-dialog-mask" style="position: fixed; top:30%;transform: translateY(-50%); left:50%;transform: translateX(-50%); right:0; bottom:0;  z-index: 1;background-color: rgb(255, 255, 255); height: 350rpx; width: 90%;  box-shadow: -5px  -5rpx 10px 10px rgba(129, 128, 128, 0.2); border-radius: 20rpx;">
+  <view class="title1">请输入六位数交易码</view>
+  <view class="input-container">
+    <block wx:for="{{inputBoxes}}" wx:key="index">
+      <view class="input-box">
+        --input 输入框--
+        <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+      </view>
+      --蒙层--
+      <view class="overlay" bind:tap="handleGetFocus"></view>
+    </block>
+  </view>
+  <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+  <view class="dialog-buttons">
+    <button class="dialog-btn cancel" bindtap="closeDialog">取消</button>
+    <button class="dialog-btn confirm" bindtap="verifyCode">确认</button>
+  </view>
+</view> -->
+
+<!-- 新版交易码弹窗 -->
+<view wx:if="{{showCodeDialog}}" class="code-dialog-mask">
+  <view class="code-content">
+    <view class="img">
+      <image bindtap="closeDialog" src="{{tupianUrl}}/new/close.png" mode=""/>
+    </view>
+    <view class="title1">请输入交易码</view>
+    <view class="input-container">
+      <block wx:for="{{inputBoxes}}" wx:key="index">
+        <view class="input-box">
+          <!-- input 输入框 -->
+          <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+        </view>
+        <view class="overlay" bind:tap="handleGetFocus"></view> <!-- 蒙层 -->
+      </block>
+    </view>
+    <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+    <view class="dialog-buttons">
+      <view class="btn" bindtap="verifyCode">确定</view>
+    </view>
+  </view>
+</view>

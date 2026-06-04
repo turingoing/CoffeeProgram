@@ -1,0 +1,23 @@
+/* subPackages/package/pages/shareholder-payResult/shareholder-payResult.wxss */
+.comment{
+  .img{
+    margin: 20rpx auto;
+    width: 120rpx;
+    height: 120rpx;
+    image{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .txt{
+    margin: 30rpx;
+    display: flex;
+    justify-content: center;
+    font-size: 34rpx;
+  }
+  .btn{
+    color: white;
+    width: 40%;
+    background-color: rgb(7, 193, 96);
+  }
+}

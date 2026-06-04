@@ -1,0 +1,71 @@
+/* subPackages/package/pages/pingjia/pingjia.wxss */
+
+// 评价
+.pingjia-container{
+  padding-bottom: 50rpx;
+  .pingjia-item{
+    .pingjia-avatar{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      image{
+        margin-left: 20rpx;
+        width: 70rpx;
+        height: 70rpx;
+      }
+      .pingjia-name{
+        margin-left: 20rpx;
+      }
+    }
+    .pingjia-star{
+      padding: 14rpx 100rpx;
+      display: flex;
+      image{
+        width: 40rpx;
+        height: 40rpx;
+      }
+    }
+    .pingjia-content{
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      text{
+        margin-left: 100rpx;
+        margin-right: 20rpx;
+        font-size: 26rpx;
+        color: gray;
+      }
+    }
+    .pingjia-image{
+      image{
+        margin-left: 100rpx;
+        margin-top: 20rpx;
+        margin-bottom: 20rpx;
+        width: 300rpx;
+        height: 200rpx;
+      }
+    }
+  }
+  .divider{
+    margin: 10rpx auto;
+    width: 94%;
+    background-color: gray;
+    height: 1px;
+  }
+  .pingjia-empty{
+    height: 1000rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .img{
+      image{
+        width: 600rpx;
+        height: 500rpx;
+      }
+    }
+    .txt{
+      color: gray;
+    }
+  }
+}

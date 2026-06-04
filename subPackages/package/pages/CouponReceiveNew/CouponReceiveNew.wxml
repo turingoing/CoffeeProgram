@@ -1,0 +1,36 @@
+<view class="page-container">
+  <view class="page-title">新店领券</view>
+
+  <view wx:if="{{loading}}" class="status-wrap">
+    <text class="status-text">加载中...</text>
+  </view>
+
+  <view wx:elif="{{!loading && couponList.length === 0}}" class="status-wrap">
+    <text class="status-text">暂无可领取电子券</text>
+  </view>
+
+  <view wx:else class="coupon-list">
+    <block wx:for="{{couponList}}" wx:key="cardid">
+      <view class="coupon-card">
+        <view class="card-left">
+          <text class="amount">¥{{item.atm}}</text>
+        </view>
+        <view class="card-center">
+          <text class="coupon-name">{{item.cardName}}</text>
+          <text class="coupon-date">{{item.startTime}} - {{item.endTime}}</text>
+          <text class="coupon-rule">{{item.requestment}} {{item.note}}</text>
+        </view>
+        <view class="card-right">
+          <button
+            class="receive-btn {{item.isReceived ? 'receive-btn-disabled' : ''}}"
+            disabled="{{item.isReceived || item.receiving}}"
+            data-cardid="{{item.cardid}}"
+            bindtap="getCoupon"
+          >
+            {{item.isReceived ? '已领取' : (item.receiving ? '领取中...' : '立即领取')}}
+          </button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,153 @@
+.container {
+  padding: 40rpx;
+  font-size: 30rpx;
+  background-color: rgb(247, 247, 247);
+}
+
+.order-list {
+  margin-bottom: 60rpx;
+  width: 700rpx;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+
+.order-radio {
+  margin-right: 30rpx;
+}
+
+.order-info {
+  flex: 1;
+  display: grid;
+}
+
+.amount {
+  color: #000000;
+  margin-left: 20rpx;
+}
+
+.order-number {
+  color: rgb(0, 0, 0);
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.order-time {
+  color: rgb(0, 0, 0);
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.ww {
+  color: #000;
+  margin-left: 10rpx;
+  text-align: left;
+}
+
+.ww1 {
+  color: #000;
+  margin-left: 45rpx;
+  text-align: left;
+}
+
+.ww2 {
+  color: #000;
+  margin-left: 25rpx;
+  text-align: left;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 40rpx;
+  background-color: #ffffff;
+  // box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-all {
+  color: #333;
+}
+
+.total-amount {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.next-button {
+  background-color: rgb(205, 174, 242);
+  color: white;
+  padding: 20rpx 40rpx;
+  border-radius: 5rpx;
+}
+
+.order-checkbox {
+  /* 原有样式保持不变 */
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.order-checkbox.active {
+  border-color: rgb(205, 174, 242);
+  background-color: rgb(205, 174, 242);
+  transform: scale(0.95);
+}
+
+.order-checkbox::after {
+  content: '✓';
+  /* 改用更清晰的对号符号 */
+  font-size: 28rpx;
+  color: white;
+  /* 改为白色 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 居中定位 */
+  display: none;
+}
+
+.order-checkbox.active::after {
+  display: block;
+}
+
+/* 全选按钮样式 */
+.select-all {
+  width: 100rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  /* 圆形关键样式 */
+  border: 1px solid #cccccc;
+  /* 默认边框颜色 */
+  background-color: #ffffff;
+  /* 默认背景色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+  color: #333333;
+  /* 字体颜色 */
+}
+
+.select-all.active {
+  background-color: rgb(205, 174, 242);
+  /* 选中时背景色 */
+  color: #ffffff;
+  /* 选中时字体颜色 */
+}

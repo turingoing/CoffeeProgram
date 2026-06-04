@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calendar": "/subPackages/package/pages/calendar/calendar"
+  },
+  "navigationBarTitleText": "咖啡日历"
+}

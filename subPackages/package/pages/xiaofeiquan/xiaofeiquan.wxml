@@ -1,0 +1,107 @@
+<view class="container">
+  <view class="custom-navigation"></view>
+  <view class="back-button" bindtap="onBackClick" style="position: absolute; top: 100rpx; left: 20rpx;">
+    <image src="/subPackages/package/pages/images/返回图标.png" style="width: 40rpx; height: 40rpx;"></image>
+  </view>
+
+  <text class="tlite" style="font-size: 35rpx;position: absolute;top: 110rpx;color: rgb(0, 0, 0);">消费券</text>
+  <view class="top">
+    <text class="jifen" style="font-size: 60rpx; position: absolute;top: 300rpx;left: 50%;transform: translateX(-50%);">{{content}}</text>
+  </view>
+  <button class="zhuanzeng-button" bindtap="onzengclik" style="position: absolute;top: 400rpx;left: 50%;transform: translateX(-50%);width: 200rpx; height: 80rpx; border-radius: 40rpx; background-color: rgb(205, 174, 242);">
+    <text class="hua" style="display: flex;justify-content: center;align-items:center; text-align: center; color: white;">转赠</text>
+  </button>
+  <view wx:if="{{isTransferPopupShow}}" class="transfer-popup" catchtouchmove="true">
+    <view class="popup-content">
+      <text class="popup-title">转赠消费券</text>
+      <input class="popup-input" type="text" placeholder="请输入对方邀请码" bindinput="onTransferPhoneInput" />
+      <input class="popup-input" type="number" placeholder="请输入转赠消费券数量" bindinput="onTransferScoreInput" />
+      <input class="popup-input" type="text" placeholder="请输入对方账号" bindinput="onPhoneNumber" />
+      <view class="button-group">
+        <button class="cancel-button" bindtap="onCancelTransfer">取消</button>
+        <button class="confirm-button" bindtap="onConfirmTransfer">确认转赠</button>
+      </view>
+    </view>
+  </view>
+
+  <text class="a" style="position: absolute;top: 540rpx;font-weight: bolder">转赠记录</text>
+
+
+
+
+
+  <view class="earningslist">
+    <!-- 顶部显示转赠人、收到人、消费券、时间 -->
+    <view class="header-component">
+      <view class="info-item">
+        <text class="info-label">转赠人:</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">收到人:</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">消费券:</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">时间:</text>
+      </view>
+    </view>
+
+    <block wx:for="{{List}}" wx:key="index">
+      <view class="earningsitem">
+        <!-- 逐行显示内容 -->
+        <view class="content-row">
+          <text class="content-value">{{item.give}}</text>
+          <text class="content-value">{{item.userid}}</text>
+          <text class="content-value">{{item.score}}</text>
+          <text class="content-value">{{item.date}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<!-- 交易码弹窗 -->
+<!-- <view wx:if="{{showCodeDialog}}" class="code-dialog-mask" style="position: fixed; top:30%;transform: translateY(-50%); left:50%;transform: translateX(-50%); right:0; bottom:0; background-color: rgb(255, 255, 255); height: 350rpx; width: 90%;  box-shadow: -5px  -5rpx 10px 10px rgba(129, 128, 128, 0.2); border-radius: 20rpx;">
+  <view class="title1">请输入六位数交易码</view>
+  <view class="input-container">
+    <block wx:for="{{inputBoxes}}" wx:key="index">
+      <view class="input-box">
+        -- input 输入框 --
+        <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+      </view>
+      -- 蒙层 --
+      <view class="overlay" bind:tap="handleGetFocus"></view>
+    </block>
+  </view>
+  <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+  <view class="dialog-buttons">
+    <button class="dialog-btn cancel" bindtap="closeDialog">取消</button>
+    <button class="dialog-btn confirm" bindtap="verifyCode">确认</button>
+  </view>
+</view> -->
+
+
+<!-- 新版交易码弹窗 -->
+<view wx:if="{{showCodeDialog}}" class="code-dialog-mask">
+  <view class="code-content">
+    <view class="img">
+      <image bindtap="closeDialog" src="{{tupianUrl}}/new/close.png" mode="" />
+    </view>
+    <view class="title1">请输入交易码</view>
+    <view class="input-container">
+      <block wx:for="{{inputBoxes}}" wx:key="index">
+        <view class="input-box">
+          <!-- input 输入框 -->
+          <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+        </view>
+        <view class="overlay" bind:tap="handleGetFocus"></view> <!-- 蒙层 -->
+      </block>
+    </view>
+    <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+    <view class="dialog-buttons">
+      <view class="btn" bindtap="verifyCode">确定</view>
+    </view>
+  </view>
+</view>

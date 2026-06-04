@@ -1,0 +1,253 @@
+page {
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f7 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', sans-serif;
+}
+
+.container {
+  padding: 32rpx;
+  padding-bottom: 200rpx;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: #ffffff;
+  border-radius: 28rpx;
+  padding: 48rpx 36rpx;
+  box-shadow: 0 8rpx 32rpx rgba(117, 70, 175, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 48rpx;
+  gap: 16rpx;
+}
+
+.package-tag {
+  font-size: 24rpx;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8a5acf 0%, #7546af 100%);
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  font-weight: 500;
+}
+
+.package-name {
+  font-size: 36rpx;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 1rpx;
+}
+
+/* 支付信息 - 三列小卡片 */
+.payment-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-bottom: 36rpx;
+}
+
+.info-card {
+  flex: 1;
+  background: linear-gradient(135deg, #fafbfc 0%, #f7f8fa 100%);
+  border-radius: 16rpx;
+  padding: 24rpx 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1rpx solid #f0f2f5;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #f8f4ff 0%, #f0e8ff 100%);
+  border-color: #e8d9ff;
+}
+
+.info-card .label {
+  font-size: 24rpx;
+  color: #8a8f99;
+  margin-bottom: 12rpx;
+}
+
+.info-card .value {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.highlight-card .value {
+  color: #7546af;
+}
+
+/* 分割线 */
+.divider {
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent 0%, #e8eaf0 50%, transparent 100%);
+  margin: 40rpx 0;
+}
+
+/* 进度区域 */
+.progress-section {
+  margin-bottom: 20rpx;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.progress-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.status {
+  font-size: 26rpx;
+  color: #7546af;
+  font-weight: 500;
+  background: #f8f4ff;
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+/* 核心优化：统一盒子 上2下2 超紧凑布局 */
+.progress-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx 12rpx;
+  margin-bottom: 24rpx;
+  background: #fafbfc;
+  border-radius: 16rpx;
+  padding: 20rpx 16rpx;
+  border: 1rpx solid #f0f2f5;
+}
+
+.data-item {
+  width: calc(50% - 6rpx);
+  display: flex;
+  flex-direction: column;
+}
+
+.data-item .label {
+  font-size: 24rpx;
+  color: #8a8f99;
+  margin-bottom: 6rpx;
+}
+
+.data-item .value {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.data-item .value.highlight {
+  color: #7546af;
+}
+
+/* 进度条 */
+.progress-bar-container {
+  margin-top: 8rpx;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.progress-text {
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.progress-percent {
+  font-size: 26rpx;
+  color: #7546af;
+  font-weight: 600;
+}
+
+.progress-bg {
+  height: 12rpx;
+  background-color: #f0f2f5;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8a5acf 0%, #7546af 50%, #9d6fd9 100%);
+  border-radius: 6rpx;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12rpx rgba(117, 70, 175, 0.3);
+}
+
+/* 底部提示文本 */
+.no-more {
+  text-align: center;
+  font-size: 24rpx;
+  color: #c4c8d0;
+  margin-top: 60rpx;
+  letter-spacing: 4rpx;
+}
+
+/* 底部固定购买按钮 */
+.bottom-btn-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24rpx 32rpx 64rpx;
+  background: linear-gradient(180deg, transparent 0%, rgba(248, 249, 250, 0.95) 40%, #eef2f7 100%);
+  box-sizing: border-box;
+}
+
+.buy-btn {
+  background: linear-gradient(135deg, #8a5acf 0%, #7546af 100%);
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 600;
+  border-radius: 50rpx;
+  width: 100% !important;
+  height: 96rpx;
+  line-height: 96rpx;
+  padding: 0;
+  box-shadow: 0 8rpx 24rpx rgba(117, 70, 175, 0.3);
+  border: none;
+}
+
+.buy-btn-hover {
+  opacity: 0.85;
+  transform: scale(0.98);
+  transition: all 0.2s ease;
+}
+
+/* 空状态 */
+.empty-state {
+  min-height: 1200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24rpx;
+}
+
+.empty-image {
+  width: 400rpx;
+  height: 400rpx;
+  opacity: 0.9;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: #5a5f69;
+  font-weight: 500;
+}
+
+.empty-sub {
+  font-size: 24rpx;
+  color: #a8adb8;
+}

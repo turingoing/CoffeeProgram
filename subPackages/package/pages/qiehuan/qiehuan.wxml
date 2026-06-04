@@ -1,0 +1,20 @@
+<!--subPackages/package/pages/qiehuan/qiehuan.wxml-->
+<view class="list">
+  <view class="item">
+    <navigator url="/subPackages/user/pages/register/register?regway=youxiang" style="width: 100%; height: 100%; display: flex; align-items: center;">
+      <view class="left">
+        <view class="name">注册子账号</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
+  </view>
+  <view class="item" wx:for="{{list}}" bind:tap="handleLogin" data-email="{{item.email}}">
+    <!-- <block bind:tap="handleChange"> -->
+    <view class="left">
+      <view class="name">子账号名：{{item.account}}</view>
+      <!-- <view class="email">邮箱：{{item.email}}</view> -->
+    </view>
+    <view class="right">></view>
+    <!-- </block> -->
+  </view>
+</view>

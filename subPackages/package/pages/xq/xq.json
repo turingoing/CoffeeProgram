@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "t-progress": "tdesign-miniprogram/progress/progress"
+  },
+  "navigationBarTitleText": "我的"
+}

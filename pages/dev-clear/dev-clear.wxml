@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="title">开发调试工具</view>
+  
+  <view class="content">
+    <view class="status">
+      <text>隐私协议缓存状态：</text>
+      <text class="{{cleared ? 'cleared' : 'not-cleared'}}">{{cleared ? '已清除' : '未清除'}}</text>
+    </view>
+    
+    <view class="action-btns">
+      <button class="btn clear-btn" bindtap="clearAgain">再次清除缓存</button>
+      <button class="btn home-btn" bindtap="backToHome">返回首页重新加载</button>
+    </view>
+    
+    <view class="notice">
+      <text>注意：这个页面仅用于开发测试，发布前应移除</text>
+    </view>
+  </view>
+</view> 

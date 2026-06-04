@@ -1,0 +1,69 @@
+<view class="container">
+  <view class="custom-navigation"></view>
+  <view class="back-button" bindtap="onBackClick" style="position: absolute; top: 100rpx; left: 20rpx;">
+    <image src="/subPackages/package/pages/images/返回图标.png" style="width: 40rpx; height: 40rpx;"></image>
+  </view>
+
+  <text class="tlite" style="font-size: 35rpx;position: absolute;top: 110rpx;color: rgb(0, 0, 0);">可用积分</text>
+  <view class="top">
+    <text class="jifen" style="font-size: 60rpx; position: absolute;top: 300rpx;left: 50%;transform: translateX(-50%);">{{score}}</text>
+  </view>
+  <button class="zhuanzeng-button" bindtap="onzengclik" style="position: absolute;top: 400rpx;left: 50%;transform: translateX(-50%);width: 150rpx;height: 90rpx;"><text class="hua" style="display: flexbox;justify-content: center;align-items:center; text-align: center;position: absolute;top: 5rpx;left: 40rpx;"> 划转</text></button>
+  <view wx:if="{{isTransferPopupShow}}" class="transfer-popup" catchtouchmove="true">
+    <view class="popup-content">
+      <text class="popup-title">划转积分</text>
+      <input class="popup-input" type="text" placeholder="请输入划转积分数量" bindinput="onTransferScoreInput" />
+      <text class="coupon-text" style="position: relative;top: 30rpx;">划转为消费券金额：¥{{couponAmount}}</text>
+      <view class="button-group">
+        <button class="confirm-button" bindtap="onConfirmTransfer">确认划转</button>
+        <button class="cancel-button" bindtap="onCancelTransfer">取消</button>
+      </view>
+    </view>
+  </view>
+
+  <text class="a" style="position: absolute;top: 500rpx;left: 20rpx;">收益进度</text>
+  <t-progress class="jindu" theme="plump" percentage="{{progressPercentage}}" style="width: 650rpx;position: absolute;top: 570rpx; " />
+  <!-- <view class="earnings-list">
+    <view class="earnings-month">
+      <text class="month-title">{{earningsMonth}} 收益 ¥{{totalEarnings}}</text>
+    </view>
+    <block wx:for="{{earningsList}}" wx:key="index">
+      <view class="earnings-item">
+        <text class="earnings-date">{{item.date}}</text>
+        <text class="earnings-amount">¥{{item.amount}}</text>
+      </view>
+    </block>
+  </view> -->
+  <view class="return-records" wx:if="{{dailyReturnList.length > 0}}">
+    <view class="record-header">
+      <text class="header-text">返还日期</text>
+      <text class="header-text">返还积分</text>
+    </view>
+
+    <block wx:for="{{dailyReturnList}}" wx:key="index">
+      <view class="record-item">
+        <text class="record-date">{{item.date}}</text>
+        <text class="record-score">{{item.returnscore}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 交易码弹窗 -->
+<view wx:if="{{showCodeDialog}}" class="code-dialog-mask" style="position: fixed; top:30%;transform: translateY(-50%); left:50%;transform: translateX(-50%); right:0; bottom:0; background-color: rgb(255, 255, 255); height: 350rpx; width: 90%;  box-shadow: -5px  -5rpx 10px 10px rgba(129, 128, 128, 0.2); border-radius: 20rpx;">
+  <view class="title1">请输入六位数交易码</view>
+  <view class="input-container">
+    <block wx:for="{{inputBoxes}}" wx:key="index">
+      <view class="input-box">
+        <!-- input 输入框 -->
+        <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+      </view>
+      <view class="overlay" bind:tap="handleGetFocus"></view> <!-- 蒙层 -->
+    </block>
+  </view>
+  <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+  <view class="dialog-buttons">
+    <button class="dialog-btn cancel" bindtap="closeDialog">取消</button>
+    <button class="dialog-btn confirm" bindtap="verifyCode">确认</button>
+  </view>
+
+</view>

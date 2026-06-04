@@ -1,0 +1,52 @@
+<view class="container">
+  <form bindsubmit="submitInvoice">
+    <view class="form-section" style="display: flex;">
+      <view class="form-title">发票类型</view>
+      <view class="form-title1" style="position: relative; left: -420rpx;top: -5rpx;">电子发票</view>
+    </view>
+    <view class="form-section" style="display: flex;">
+      <view class="form-title">发票金额</view>
+      <view class="form-title1" style="flex: 1; margin-left: 50rpx;">￥{{totalAmount}}</view>
+    </view>
+
+    <view class="form-section">
+      <view class="form-title">开票方式</view>
+      <radio-group name="invoiceMethod" class="radio-group" style="position: relative;left: -60rpx;" bindchange="onMethodChange">
+        <label class="radio-item">
+          <radio value="categories" checked /> 商品类别
+        </label>
+        <label class="radio-item">
+          <radio value="details" /> 商品明细
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="form-section">
+      <view class="form-title">抬头类型</view>
+      <radio-group name="type" class="radio-group" style="position: relative;left: -20rpx;" bindchange="onTypeChange">
+        <label class="radio-item">
+          <radio value="personal" checked /> 个人/非企业单位
+        </label>
+        <label class="radio-item">
+          <radio value="company" /> 企业
+        </label>
+      </radio-group>
+    </view>
+    <view class="form-section">
+      <view class="form-title">发票抬头</view>
+      <input name="title" placeholder="请输入发票抬头  (必填)" class="input" />
+    </view>
+
+    <view class="form-section" wx:if="{{type === 'company'}}">
+      <view class="form-title">税号</view>
+      <input name="taxId" placeholder="请输入纳税人识别号  (必填)" class="input1" />
+    </view>
+
+    <view class="form-section">
+      <view class="form-title">电子邮箱</view>
+      <input name="email" placeholder="请输入接收发票的邮箱  (必填)" class="input2" />
+    </view>
+
+    <button form-type="submit" class="submit-btn">提交开票申请</button>
+  </form>
+</view>

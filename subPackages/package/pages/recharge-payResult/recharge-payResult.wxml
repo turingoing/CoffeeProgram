@@ -1,0 +1,15 @@
+<!--subPackages/package/pages/recharge-payResult/recharge-payResult.wxml-->
+<view wx:if="{{is_success}}" class="comment">
+  <view class="img">
+    <image src="/images/成功.png" mode=""/>
+  </view>
+  <view class="txt">订单支付成功！</view>
+  <button class="btn" bind:tap="goBackHome">返回</button>
+</view>
+<view wx:else class="comment">
+  <view class="img">
+    <image src="/images/失败.png" mode=""/>
+  </view>
+  <view class="txt">支付失败！请重新下单</view>
+  <button class="btn" bind:tap="goBackRecharge">返回</button>
+</view>

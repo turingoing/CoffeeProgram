@@ -1,0 +1,48 @@
+.container {
+  padding: 20rpx;
+  display: flex;
+  // justify-content: center;
+  // /* 水平居中 */
+  // align-items: center;
+  /* 垂直居中 */
+  min-height: 100vh;
+
+}
+
+.records-list {
+  width: 100%;
+  max-width: 600px;
+
+}
+
+.record-item {
+  display: flex;
+  // justify-content: space-around;
+  align-items: center;
+  /* 垂直居中对齐 */
+  padding: 20rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  border: 1px solid #ddd;
+  /* 添加灰色边框 */
+  .left{
+    width: 50%;
+    text-align: center;
+  }
+  .right{
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.record-time {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.record-money {
+  font-size: 32rpx;
+  color: #ff5722;
+  font-weight: bold;
+}

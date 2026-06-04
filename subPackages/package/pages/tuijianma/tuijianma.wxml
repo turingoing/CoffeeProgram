@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="input-group">
+    <text>请输入推荐码：</text>
+    <input type="text" placeholder="请输入推荐码" bindinput="onInput" />
+  </view>
+  <button bindtap="confirmCode">确认</button>
+</view>

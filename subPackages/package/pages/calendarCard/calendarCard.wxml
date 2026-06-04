@@ -1,0 +1,21 @@
+<view class="page-wrapper">
+  <calendar bind:sendObj="getObj" currentPunchCardDate="{{punchCardDateArr}}"></calendar>
+  <!-- <view class="btn-wrapper">
+    <button class="btn" type="primary" disabled="{{ disabledFlag}}" bindtap="punchCard">打 卡</button>
+  </view> -->
+  <view class="record-wrapper">
+    <view class="title">
+      购买统计
+    </view>
+    <view class="record">
+      <view class="record-item">
+        <view class="top"><text class="num">{{monthDays}}</text> 天</view>
+        <view class="bottom">本月购买天数</view>
+      </view>
+      <!-- <view class="record-item">
+        <view class="top"><text class="num"> {{totalDays}}</text> 天</view>
+        <view class="bottom">总共购买天数</view>
+      </view> -->
+    </view>
+  </view>
+</view>

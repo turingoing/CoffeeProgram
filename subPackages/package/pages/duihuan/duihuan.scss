@@ -1,0 +1,309 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.image-item {
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  top: -28rpx;
+}
+
+.neirong {
+  width: 100%;
+  height: 270rpx;
+  position: absolute;
+  top: 480rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  // border-radius: 10rpx;
+
+}
+
+.jifen {
+  font-size: 40rpx;
+  color: rgb(255, 79, 79);
+  letter-spacing: 3rpx;
+  font-weight: bolder;
+  position: relative;
+  top: 20rpx;
+  left: 35rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  display: grid;
+  margin-left: 30rpx;
+  position: relative;
+  top: 50rpx;
+}
+
+// .jifen1 {
+//   font-size: 28rpx;
+//   color: rgb(255, 79, 79);
+//   letter-spacing: 3rpx;
+//   font-weight: bolder;
+//   position: relative;
+//   top: 8rpx;
+//   left: 40rpx;
+// }
+
+.li {
+  font-size: 22rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  color: rgb(128, 123, 123);
+}
+
+.pingjia {
+  width: 100%;
+  // height: 800rpx;
+  min-height: 630rpx;
+  position: absolute;
+  top: 800rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+}
+
+.dw {
+  display: flex;
+  justify-content: space-between;
+  /* 使子元素在主轴上平均分布 */
+  align-items: center;
+  /* 使子元素在交叉轴上居中对齐 */
+  height: 50px;
+  /* 根据需要调整高度 */
+  padding: 0 10px;
+  /* 根据需要调整左右内边距 */
+}
+
+// .pj,
+.action-button {
+  color: gray;
+}
+
+.exchange-button-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.exchange-button {
+  position: fixed;
+  bottom: 80rpx;
+  width: 80%;
+  /* 按钮宽度 */
+  height: 80rpx;
+  /* 按钮高度 */
+  line-height: 80rpx;
+  /* 使文字垂直居中 */
+  background-color: rgb(205, 174, 242);
+  /* 按钮背景颜色 */
+  color: #ffffff;
+  /* 文字颜色 */
+  font-size: 32rpx;
+  /* 文字大小 */
+  border-radius: 40rpx;
+  /* 按钮圆角 */
+  text-align: center;
+  /* 文字水平居中 */
+}
+
+
+// 评价
+.pingjia-item{
+  margin-bottom: 30rpx;
+  .pingjia-avatar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    image{
+      margin-left: 20rpx;
+      width: 70rpx;
+      height: 70rpx;
+    }
+    .pingjia-name{
+      margin-left: 20rpx;
+    }
+  }
+  .pingjia-star{
+    padding: 14rpx 100rpx;
+    display: flex;
+    image{
+      width: 40rpx;
+      height: 40rpx;
+    }
+  }
+  .pingjia-content{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    text{
+      margin-left: 100rpx;
+      margin-right: 20rpx;
+      font-size: 26rpx;
+      color: gray;
+    }
+  }
+  .pingjia-image{
+    image{
+      margin-left: 100rpx;
+      margin-top: 20rpx;
+      width: 300rpx;
+      height: 200rpx;
+    }
+  }
+}
+
+// 兑换弹窗
+.duihuan-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(20,20,20,.5);
+  .top{
+    width: 100%;
+    height: 300rpx;
+  }
+  .bottom{
+    padding-top: 30rpx;
+    width: 100%;
+    height: calc(100vh - 300rpx);
+    background-color: #fff;
+    border-radius: 30rpx;
+    overflow-y: auto;
+  // 地址
+    .address{
+      .title {
+        margin-left: 30rpx;
+        font-weight: 600;
+      }
+      .content{
+        margin: 0 auto;
+        margin-top: 10rpx;
+        width: 90%;
+        height: 68rpx;
+        display: flex;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 20rpx;
+        image{
+          margin-left: 10rpx;
+          width: 40rpx;
+          height: 40rpx;
+        }
+        .text{
+          margin-left: 10rpx;
+          width: 84%;
+        }
+        .jiantou{
+          margin-left: 10rpx;
+        }
+      }
+    }
+    // 商品信息
+    .info{
+      .title{
+        margin-top: 40rpx;
+        margin-left: 30rpx;
+        font-weight: 600;
+      }
+      .content{
+        display: flex;
+        margin-top: 20rpx;
+        .left{
+          margin-left: 20rpx;
+          image{
+            width: 200rpx;
+            height: 200rpx;
+          }
+        }
+        .right{
+          margin-left: 20rpx;
+          display: flex;
+          flex-direction: column;
+          .right-title{
+            margin-top: 20rpx;
+          }
+          .right-desc{
+            
+          }
+          .right-price{
+            margin-top: 30rpx;
+            color: red;
+            font-size: 32rpx;
+          }
+        }
+      }
+    }
+    // 数量
+    .amount{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title{
+        margin-top: 40rpx;
+        margin-left: 30rpx;
+        font-weight: 600;
+      }
+      .content{
+        margin-top: 40rpx;
+        margin-right: 30rpx;
+        display: flex;
+        align-items: center;
+        image{
+          width: 50rpx;
+          height: 50rpx;
+        }
+        text{
+          margin: 0 30rpx;
+        }
+      }
+    }
+    // 应付
+    .pay{
+      display: flex;
+      justify-content: space-between;
+      .title{
+        margin-top: 40rpx;
+        margin-left: 30rpx;
+        font-weight: 600;
+      }
+      .content{
+        margin-right: 30rpx;
+        margin-top: 40rpx;
+        text{
+          color: red;
+          font-size: 34rpx;
+        }
+      }
+    }
+    // 按钮
+    .btn{
+      position: absolute;
+      bottom: 80rpx;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 80rpx;
+      background-color: rgb(205, 174, 242);
+      border-radius: 40rpx;
+      color: white;
+      font-size: 34rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

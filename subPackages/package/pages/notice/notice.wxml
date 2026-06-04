@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="empty-wrap" wx:if="{{!loading && !list.length}}">
+    <text class="empty-text">{{emptyText}}</text>
+  </view>
+
+  <view wx:else>
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="notice-group">
+        <text wx:if="{{item.publishTimeText}}" class="notice-time">{{item.publishTimeText}}</text>
+
+        <view class="notice-card" bindtap="handleNoticeTap" data-id="{{item.id}}">
+          <text class="notice-title">{{item.title}}</text>
+
+          <image
+            wx:if="{{item.coverImage}}"
+            class="notice-cover"
+            src="{{item.coverImage}}"
+            mode="widthFix"
+          ></image>
+
+          <text wx:if="{{item.summary}}" class="notice-summary">{{item.summary}}</text>
+
+          <view class="notice-footer">
+            <text class="notice-more">{{moreText}}</text>
+            <text class="notice-arrow">></text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class="finished-wrap" wx:if="{{!loading && list.length}}">
+      <view class="finished-line"></view>
+      <text class="finished-text">{{finishedText}}</text>
+      <view class="finished-line"></view>
+    </view>
+  </view>
+</view>

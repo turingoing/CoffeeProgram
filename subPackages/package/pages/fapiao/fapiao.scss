@@ -1,0 +1,46 @@
+/* 设置.container的样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(235, 235, 235);
+  height: 100vh;
+  padding-top: 20rpx;
+}
+
+/* 设置.a的样式 */
+.a {
+  width: 95%;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  /* 为每个.a元素的底部添加20rpx的间距 */
+  border-radius: 18rpx;
+
+}
+
+.b {
+  width: 95%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 100rpx;
+  border-radius: 18rpx;
+}
+
+/* 设置.zi的样式 */
+.zi {
+  display: flex;
+  align-items: center;
+  /* 垂直居中对齐 */
+  justify-content: space-between;
+  /* 水平两端对齐 */
+  padding: 15rpx 0;
+  /* 可以根据需要调整上下内边距 */
+  margin-left: 20rpx;
+}
+
+/* 设置.fuhao的样式 */
+.fuhao {
+  margin-right: 20rpx;
+  /* 可以根据需要调整与文字的间距 */
+}

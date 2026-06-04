@@ -1,0 +1,66 @@
+<t-tabs animation="{{ { duration: 0.6 } }}" defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
+  <t-tab-panel label="全部" value="0">
+    <view class="custom-panel__content">
+      <!-- <view class="coupon">
+        <text class="amount">5元</text>
+        <view class="details">
+          <text class="title">咖啡优惠券</text>
+          <text class="date">2025.01.20-2025.09.10</text>
+          <text class="validity">适用范围：所有产品可用</text>
+        </view>
+        <button class="use-button">立即使用</button>
+      </view>
+      <view class="coupon2">
+        <text class="amount">10元</text>
+        <view class="details">
+          <text class="title">咖啡优惠券</text>
+          <text class="date">2025.01.20-2025.09.10</text>
+          <text class="validity">适用范围：所有产品可用</text>
+        </view>
+        <button class="use-button">立即使用</button>
+      </view>
+    </view> -->
+      <block wx:for="{{List}}" wx:key="index">
+        <view class="coupon">
+          <text class="amount">{{item.atm}}元</text>
+          <view class="details">
+            <text class="title">{{item.cardName}}</text>
+            <text class="date">{{item.startTime}}~{{item.endTime}}</text>
+            <text class="validity">{{item.note}}</text>
+          </view>
+          <button class="use-button" bind:tap="onclink">立即使用</button>
+        </view>
+      </block>
+    </view>
+  </t-tab-panel>
+  <t-tab-panel label="最新获得" value="1">
+    <view class="custom-panel__content">
+      <block wx:for="{{List1}}" wx:key="index">
+        <view class="coupon">
+          <text class="amount">{{item.atm}}元</text>
+          <view class="details">
+            <text class="title">{{item.cardName}}</text>
+            <text class="date">{{item.startTime}}~{{item.endTime}}</text>
+            <text class="validity">{{item.note}}</text>
+          </view>
+          <button class="use-button" bind:tap="onclink">立即使用</button>
+        </view>
+      </block>
+    </view>
+  </t-tab-panel>
+  <t-tab-panel label="即将过期" value="2">
+    <view class="custom-panel__content">
+      <block wx:for="{{List2}}" wx:key="*this">
+        <view class="coupon">
+          <text class="amount">{{item.atm}}元</text>
+          <view class="details">
+            <text class="title">{{item.cardName}}</text>
+            <text class="date">{{item.startTime}}~{{item.endTime}}</text>
+            <text class="validity">{{item.note}}</text>
+          </view>
+          <button class="use-button" bind:tap="onclink">立即使用</button>
+        </view>
+      </block>
+    </view>
+  </t-tab-panel>
+</t-tabs>

@@ -1,0 +1,95 @@
+<!-- 背景图part1 -->
+<view class="part1" style="height: 1417rpx;width: 100%; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <view class="txt" style="margin-top: 60rpx; margin-left: 150rpx;">C A L D I <text class="black">卡 狄</text></view>
+  <view class="txt" style="margin-top: 20rpx; margin-left: 260rpx;"><text class="black">咖 啡</text> C a f e</view>
+  <view class="img">
+    <view class="gray-img">
+      <image src="{{tupianUrl}}/info/storyimg1.jpg" style="width: 300rpx; height: 400rpx;" />
+      <view class="overlay" style="background-color: rgba(175, 174, 174, 0.6);"></view> <!--  图片蒙层  -->
+    </view>
+    <image src="{{tupianUrl}}/info/storyimg2.jpg" style="width: 240rpx; height: 300rpx; position: relative; left: 0rpx; top: -20rpx" />
+  </view>
+  <image class="float-img" src="{{tupianUrl}}/info/storyimg1.jpg" style="width: 170rpx; height: 225rpx; position: absolute; top: 377rpx; left: 204rpx" />
+  <view class="float-txt1" style="position: absolute; left: 329rpx; top: 612rpx">公元6至8世纪</view>
+  <view class="float-txt2" style="position: relative; left: -20rpx; top: -30rpx">热果汁“咖瓦”</view>
+  <view class="float-txt3" style="letter-spacing: 2rpx;">在6至8世纪的埃塞俄比亚，牧羊少年卡狄偶然发现，他的羊群在吃了一种红色果实后变得异常活跃。好奇之下，他尝试了这些果实，随即感到精神焕发。这种果实，就是后来的咖啡豆。卡狄的发现很快引起了一位伊斯兰教长老的注意，长老尝试后也感到精神倍增。这一神奇的效果迅速传开，人们开始用这种红果子煮水，称之为“咖瓦”。如今，我们以卡狄的名字创立了“卡狄咖啡(caldi coffee)”，以此纪念这位咖啡的发现者。卡狄咖啡继承了那份古老的神奇力量，每一杯都是对卡狄精神的致敬，旨在为现代人带来活力与清醒，让每一次品鉴都成为一段穿越时光的旅程。</view>
+</view>
+<!-- 分割 -->
+<view class="devider" style="height: 28rpx; display: block; box-sizing: border-box">
+  <view class="color color1"></view>
+</view>
+<!-- 背景图part2 -->
+<view class="part2">
+  <view class="img">
+    <image src="{{tupianUrl}}/info/storyimg3.png" style="width: 220rpx; height: 300rpx;" />
+    <image src="{{tupianUrl}}/info/storyimg4.png" style="width: 400rpx; height: 300rpx;" />
+  </view>
+  <view class="txt">
+    <view class="float-txt2" style="position: absolute; left: -152rpx; top: 1896rpx;color: black;">公元6至8世纪</view>
+    <view class="txt2" style="position: relative; left: -311rpx; top: 158rpx; width: 295rpx; display: block; box-sizing: border-box;color: black;">牧童卡狄</view>
+    <view class="txt2" style="position: relative; left: -339rpx; top: 150rpx; width: 323rpx; display: block; box-sizing: border-box;color: black;">创立卡狄咖啡</view>
+    <view class="t1" style="font-size: 30rpx; width: 294rpx; display: block; box-sizing: border-box; position: relative; left: 428rpx; top: -133rpx; color: rgb(53, 51, 51)">卡狄被其独特的果香和细腻口感深深吸引。怀揣着将这份美味传递给世界的梦想，他在家乡小镇开设了第一家卡狄咖啡，标志着卡狄咖啡的诞生。</view>
+  </view>
+</view>
+<!-- 分割 -->
+<view class="devider" style="height: 28rpx; display: block; box-sizing: border-box">
+  <view class="color color2"></view>
+</view>
+<!-- 背景图part3 -->
+<view class="part3">
+  <view class="img">
+    <image src="{{tupianUrl}}/info/storyimg5.jpg" style="width: 220rpx; height: 300rpx; position: relative; left: 0rpx; top: -35rpx" />
+    <view class="gray-img">
+      <image src="{{tupianUrl}}/info/storyimg6.jpg" style="width: 290rpx; height: 400rpx; position: relative; left: -13rpx; top: 0rpx" />
+      <view class="overlay" style="position: absolute; left: -19rpx; top: 0rpx"></view> <!--  图片蒙层  -->
+    </view>
+  </view>
+  <image class="float-img" src="{{tupianUrl}}/info/storyimg6.jpg" style="width: 170rpx; height: 230rpx; position: absolute; left: 330rpx; top: 138rpx" />
+  <view class="txt">
+    <view class="txt1" style="position: absolute; left: 201rpx; top: 367rpx">公元6至8世纪</view>
+    <view class="txt2" style="position: relative; left: -274rpx; top: -32rpx">探索与崛起</view>
+    <view class="t1" style="font-size: 30rpx; width: 98%; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: 3rpx; letter-spacing: 5rpx;font-weight: normal;color: rgb(53, 51, 51)">随着卡狄咖啡店的逐渐走红，创始人开始深入研究咖啡的烘焙工艺和调配艺术。他游历世界各地，从不同产地带回优质咖啡豆，不断尝试和创新。这一时期，卡狄咖啡以其独特的风味和品质赢得了越来越多的忠实顾客。</view>
+    <view class="t1" style="font-size: 30rpx; width: 98%; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: 10rpx;font-weight: normal; letter-spacing: 5rpx;color: rgb(53, 51, 51)">卡狄咖啡开始规模化生产，并在全国范围内开设连锁店。品牌积极拓展市场，引入了先进的咖啡烘焙设备和技术，确保每杯咖啡都能保持一致的口感。同时，卡狄咖啡还开始参与国际咖啡大赛，屡获殊荣，提升了品牌的国际知名度。</view>
+  </view>
+</view>
+<!-- 分割 -->
+<view class="devider" style="height: 28rpx; display: block; box-sizing: border-box">
+  <view class="color color3"></view>
+</view>
+<!-- 背景图part4 -->
+<view class="part4">
+  <view class="img">
+    <image src="{{tupianUrl}}/info/storyimg7.jpg" style="width: 400rpx; height: 300rpx;" />
+    <image src="{{tupianUrl}}/info/storyimg8.jpg" style="width: 230rpx; height: 300rpx;" />
+  </view>
+  <view class="txt">
+    <view class="txt1" style="position: absolute; left: 520rpx; top: 414rpx">公元19世纪末</view>
+    <view class="txt2" style="position: relative; left: 56rpx; top: 129rpx; height: 68rpx; display: block; box-sizing: border-box;letter-spacing: 6rpx;">文化传承</view>
+    <view class="t1" style="font-size: 26rpx; width: 58%; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: -20rpx;font-weight: normal; letter-spacing: 10rpx;color: rgb(53, 51, 51)">卡狄咖啡不仅仅是一家咖啡店，它更是咖啡文化的传播者。品牌开始举办咖啡知识讲座、咖啡品鉴会等活动，让更多人了解和喜爱咖啡。卡狄咖啡还致力于保护咖啡豆的产地文化，与当地农民建立合作关系，支持可持续农业。</view>
+  </view>
+</view>
+<!-- 分割 -->
+<view class="devider" style="height: 28rpx; display: block; box-sizing: border-box">
+  <view class="color color4"></view>
+</view>
+<!-- 背景图part5 -->
+<view class="part5">
+  <view class="img">
+    <view class="gray-img">
+      <image src="{{tupianUrl}}/info/storyimg9.jpg" style="width: 300rpx; height: 400rpx;" />
+      <view class="overlay"></view> <!--  图片蒙层  -->
+    </view>
+    <image src="{{tupianUrl}}/info/storyimg10.jpg" style="width: 220rpx; height: 300rpx;" />
+  </view>
+  <image class="float-img" src="{{tupianUrl}}/info/storyimg9.jpg" style="width: 160rpx; height: 230rpx;" />
+  <view class="txt">
+    <view class="txt1" style="position: absolute; left: 375rpx; top: 385rpx">公元21世纪至未来</view>
+    <view class="txt2" style="position: relative; left: -69rpx; top: -10rpx">全球视野</view>
+    <view class="t1" style="font-size: 29rpx; width: 98%; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: -20rpx;font-weight: normal; letter-spacing: 10rpx;color: rgb(53, 51, 51)">展望未来，卡狄咖啡计划将品牌推向全球市场。通过开设海外分店、在线销售和咖啡文化交流，让世界各地的消费者都能品尝到卡狄咖啡的独特风味。同时，卡狄咖啡将继续秉承"品质至上，文化传承"的理念，为全球咖啡爱好者带来更多惊喜。卡狄咖啡的发展史，是一部关于梦想、探索和传承的传奇。从一家小镇咖啡店到国际知名品牌，卡狄咖啡以其对咖啡的热爱和对品质的执着，书写了一段时光流转中的香醇传奇。</view>
+  </view>
+</view>
+
+
+
+<!-- 占位盒子(没用的，但也不能删) -->
+<view class="useless"></view>

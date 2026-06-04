@@ -1,0 +1,18 @@
+<view class="container">
+  <!-- <view class="header">
+    <text>当月报表</text>
+  </view> -->
+
+  <view class="report-container">
+    <view class="report-item">
+      <view class="amount">日期</view>
+      <view class="date">消费券</view>
+    </view>
+    <block wx:for="{{list}}" wx:key="index">
+      <view class="report-item">
+        <view class="amount">{{item.date}}</view>
+        <view class="date">{{item.dan}}</view>
+      </view>
+    </block>
+  </view>
+</view>

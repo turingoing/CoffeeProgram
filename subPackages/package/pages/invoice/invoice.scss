@@ -1,0 +1,77 @@
+.container {
+  padding: 30rpx;
+}
+
+.form-section {
+  margin-bottom: 20rpx;
+  background: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  /* 垂直居中对齐 */
+  justify-content: space-between;
+  /* 水平对齐方式 */
+  width: 730rpx;
+}
+
+.form-title {
+  color: #333;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  width: 120rpx;
+  /* 固定宽度 */
+  flex-shrink: 0;
+  /* 防止收缩 */
+}
+
+.radio-group {
+  display: flex;
+}
+
+.radio-item {
+  margin-right: 60rpx;
+}
+
+.input {
+  border-bottom: 1rpx solid #eee;
+  padding: 0rpx 60rpx;
+  width: 100%;
+  /* 占据剩余宽度 */
+  box-sizing: border-box;
+  /* 确保内边距、边界不影响总体布局 */
+}
+
+.input1 {
+  border-bottom: 1rpx solid #eee;
+  padding: 0rpx 60rpx;
+  width: 100%;
+  /* 占据剩余宽度 */
+  box-sizing: border-box;
+}
+
+.input2 {
+  border-bottom: 1rpx solid #eee;
+  padding: 0rpx 60rpx;
+  width: 100%;
+  /* 占据剩余宽度 */
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  position: fixed;
+  bottom: 50rpx;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(205, 174, 242);
+  color: white;
+  margin-top: 60rpx;
+  border-radius: 50rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border-color: rgb(205, 174, 242) !important; /* 边框颜色 */
+  background: rgb(205, 174, 242) !important;    /* 背景颜色 */
+}

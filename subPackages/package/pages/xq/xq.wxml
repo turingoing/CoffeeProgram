@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 非分享页面内容 -->
+  <block wx:if="{{!isSharePage}}">
+    <view class="icon" style="width: 60rpx; height: 60rpx;position: absolute;left: 30rpx;top: 30rpx;">
+      <image class="tu" src="/subPackages/package/pages/images/身份认证.png" style="width: 60rpx; height: 60rpx; "></image>
+    </view>
+    <text class="leixing">{{leixing}}</text>
+
+    <view class="kapian">
+      <navigator url="/subPackages/package/pages/huiyuanrenshu/huiyuanrenshu" class="chengyuan" style="position: relative;top: 20rpx;left: 20rpx;">卡狄会员分享 {{sum}} ></navigator>
+      <navigator url="/subPackages/package/pages/jiatingchengyuan/jiatingchengyuan" class="chengyuan" style="position: relative;top: 30rpx;left: 20rpx;">卡狄家庭成员 {{subCount}} ></navigator>
+    </view>
+    <view class="jifen">
+      <text class="li" style="position: relative;top: 40rpx;">消费券加速</text>
+      <t-progress wx:if="{{!skylineRender}}" theme="circle" percentage="{{percentage}}" style="position: relative;top: -40rpx; left: 200rpx;" />
+    </view>
+  </block>
+
+  <!-- 所有人可见的二维码区域 -->
+  <!-- <view class="qrcode-container" style="margin-top: {{isSharePage ? '200rpx' : '0'}}">
+    <view class="yaoqing">
+      <canvas wx:if="{{!qrcodeSrc}}" style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+      <image class="pic" show-menu-by-longpress="{{true}}" src="{{qrcodeSrc}}" mode="aspectFit" style="width: 200px; height: 200px;{{isSharePage ? 'margin: 0 auto;' : ''}}"></image>
+    </view>
+
+    <view class="recommend-code" style="position:absolute;left: 50%;transform: translateX(-50%);top: 1300rpx;">
+      <text class="zi" style="position:absolute;left: 50%;transform: translateX(-50%);top: -600rpx;width: 170rpx;">我的邀请码</text>
+      <view style="margin-top: 10rpx;">
+      <text style="font-size: 32rpx;color: #333;display: grid;">帐号：{{name}}</text>
+      <text style="font-size: 32rpx;color: #333;position: relative;left: 50rpx;">推荐码：{{randomId}}</text>
+
+    </view>
+
+  </view> -->
+
+  <!-- 非分享页面操作按钮 -->
+  <!-- <block wx:if="{{!isSharePage}}">
+    <button bindtap="saveQRCodeImage" style="position: absolute;top: 1200rpx;background: #07c160;color: white;">
+      保存二维码
+    </button>
+  </block> -->
+</view>

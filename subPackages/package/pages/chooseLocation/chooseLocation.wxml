@@ -1,0 +1,29 @@
+<!--subPackages/package3/pages/chooseLocation/chooseLocation.wxml-->
+<van-empty wx:if="{{0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂时没有地址" />
+<view class="content" wx:else>
+  <view class="item" wx:for="{{list}}" wx:key="uniqueId">
+    <view class="left" bind:tap="gobackPublish" data-username="{{item.username}}" data-addressdesc="{{item.address}}" data-phone="{{item.phone}}" data-selected="外送">
+      <view class="person">
+        <view style="margin-right: 10rpx;" wx:if="{{tagIndex === item.id}}">
+          <t-tag class="margin-16" theme="primary">默认</t-tag>
+        </view>
+        <text class="name">{{item.username}}{{item.gender===0 ? '女士' : '先生'}}</text>
+        <text class="phone">{{item.phone}}</text>
+      </view>
+      <view class="address">{{item.province}}{{item.city}}{{item.street}}</view>
+      <view class="address-desc">{{item.address}}</view>
+
+    </view>
+
+    <!-- 编辑按钮 -->
+    <view class="right">
+      <van-icon size="50rpx" name="/subPackages/package/pages/images/edit.png" bind:tap="gotoAddress" data-id="{{item.id}}" />
+    </view>
+  </view>
+  <view class="kong" style="height: 120rpx;width: 100%;"></view>
+</view>
+
+<view class="footer-btn">
+  <t-button style="width: 94%; position: fixed; bottom: 50rpx; left: 50%; transform: translateX(-50%);" theme="primary" size="large" block bind:tap="gotoAddress" data-id="{{0}}">新增常用地址</t-button>
+</view>
+<view class="useless"></view>

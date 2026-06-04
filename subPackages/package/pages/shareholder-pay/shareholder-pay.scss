@@ -1,0 +1,32 @@
+/* subPackages/package/pages/shareholder-pay/shareholder-pay.wxss */
+
+.header{
+  .img{
+    margin: 20rpx auto;
+    width: 100rpx;
+    height: 100rpx;
+    image{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.body{
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .money{
+    display: flex;
+    align-items: center;
+    .amt{
+      font-size: 50rpx;
+      font-weight: 600;
+    }
+  }
+}
+.btn{
+  color: white;
+  width: 90%;
+  background-color: rgb(7, 193, 96);
+}

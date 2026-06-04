@@ -1,0 +1,292 @@
+/* subPackages/package/pages/exchangeResult/exchangeResult.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.result {
+  width: 98%;
+  height: 160rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  background-color: #ffffff;
+}
+
+.dingwei {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 50rpx;
+}
+
+.title {
+  width: 90%;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-42%);
+
+}
+
+.phone {
+  position: absolute;
+  top: 90rpx;
+  left: 12%;
+  // transform: translateX(-100%);
+}
+
+.biao {
+  position: absolute;
+  top: 40%;
+  left: 700rpx;
+}
+
+.dingdan {
+  width: 98%;
+  height: 370rpx;
+  position: absolute;
+  top: 200rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  background-color: #ffffff;
+}
+
+.tu {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: 10rpx;
+  left: 30rpx;
+}
+
+.ming {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 15rpx;
+  left: 90rpx;
+}
+
+.min {
+  position: absolute;
+  top: 95rpx;
+  left: 190rpx;
+}
+
+
+
+.tupian {
+  width: 120rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 30rpx;
+}
+
+.zhifu-button-container {
+  width: 100%;
+  height: 100rpx;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heji {
+  position: absolute;
+  left: 20rpx;
+}
+
+.jia {
+  position: absolute;
+  left: 90rpx;
+  font-size: 40rpx;
+}
+
+.zhifu {
+  width: 230rpx;
+  height: 75rpx;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  background-color: rgb(205, 174, 242);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 490rpx;
+}
+
+/* 交易码弹窗样式 */
+// .title1 {
+//   font-size: 30rpx;
+//   font-weight: bold;
+//   margin-bottom: 20px;
+//   position: relative;
+//   left: 210rpx;
+// }
+
+// .input-container {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-bottom: 20px;
+// }
+
+// .input-box input {
+//   width: 40px;
+//   height: 40px;
+//   border: 1px solid #ccc;
+//   margin: 0 2px;
+//   text-align: center;
+//   font-size: 18px;
+// }
+
+button {
+  background-color: #007aff;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 5;
+// }
+
+// .ipt {
+//   position: absolute;
+//   margin: 0 auto;
+//   top: 10rpx;
+//   width: 200rpx;
+//   height: 10rpx;
+//   border: 0px solid rgb(255, 255, 255);
+//   color: rgb(255, 255, 255);
+// }
+
+// .dialog-buttons {
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: 40rpx;
+// }
+
+.dialog-btn {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 32rpx;
+}
+
+.confirm {
+  background: #07c160;
+  color: white;
+}
+
+.cancel {
+  background: #f0f0f0;
+  color: #333;
+}
+
+
+
+// 新版交易码弹窗
+.code-dialog-mask{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, .7);
+  z-index: 5;
+  .code-content{
+    margin: 0 auto;
+    margin-top: 40%;
+    height: 450rpx; 
+    width: 90%;  
+    border-radius: 30rpx;
+    background-color: rgb(255, 255, 255);
+    .img{
+      display: flex;
+      width: 100%;
+      height: 80rpx;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      image{
+        margin-right: 30rpx;
+        width: 40rpx;
+        height: 40rpx;
+      }
+    }
+    .title1 {
+      text-align: center;
+      font-size: 32rpx;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .input-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      .input-box input {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 15rpx;
+        margin: 0 2px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+      }
+    }
+    .ipt {
+      position: absolute;
+      margin: 0 auto;
+      top: -100vh;
+      width: 200rpx;
+      height: 10rpx;
+      border: 0px solid rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+    }
+    .dialog-buttons {
+      border: 1px solid rgba(0, 0, 0, 0);
+      .btn{
+        margin: 20rpx auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 220rpx;
+        height: 70rpx;
+        border-radius: 60rpx;
+        background-color: rgb(205, 174, 242);
+        color: white;
+        font-size: 32rpx;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="card" wx:if="{{packageName !== '用户'}}">
+    <view class="card-header">
+      <text class="package-tag">会员套餐</text>
+      <text class="package-name">{{packageName}}</text>
+    </view>
+    
+    <view class="payment-info">
+      <view class="info-card">
+        <text class="label">订单金额</text>
+        <text class="value">{{orderAmount}}</text>
+      </view>
+      <view class="info-card">
+        <text class="label">余额支付</text>
+        <text class="value">{{balancePayment}}</text>
+      </view>
+      <view class="info-card highlight-card">
+        <text class="label">咖啡券支付</text>
+        <text class="value">{{voucherPayment}}</text>
+      </view>
+    </view>
+    
+    <view class="divider"></view>
+    
+    <view class="progress-section">
+      <view class="progress-header">
+        <text class="progress-title">咖啡券释放进度</text>
+        <text class="status">{{status}}</text>
+      </view>
+      
+      <!-- 四个数据统一收拢在同一个盒子 上2下2 超紧凑布局 -->
+      <view class="progress-data">
+        <view class="data-item">
+          <text class="label">每日释放</text>
+          <text class="value">{{dailyRelease}}</text>
+        </view>
+        <view class="data-item">
+          <text class="label">已释放</text>
+          <text class="value highlight">{{releasedAmount}}</text>
+        </view>
+        <view class="data-item">
+          <text class="label">待释放</text>
+          <text class="value">{{pendingAmount}}</text>
+        </view>
+        <view class="data-item">
+          <text class="label">总额度</text>
+          <text class="value">{{totalQuota}}</text>
+        </view>
+      </view>
+      
+      <view class="progress-bar-container">
+        <view class="progress-meta">
+          <text class="progress-text">{{currentDays}}/{{totalDays}}天</text>
+          <text class="progress-percent">{{progressPercent}}%</text>
+        </view>
+        <view class="progress-bg">
+          <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="no-more">
+      <text>— 没有更多了 —</text>
+    </view>
+  </view>
+  
+  <view wx:else class="empty-state">
+    <image class="empty-image" src="/subPackages/package/pages/images/暂无积分明细.png" mode="aspectFit" />
+    <text class="empty-text">还没有会员套餐哦~</text>
+    <text class="empty-sub">点击下方按钮立即解锁</text>
+  </view>
+  
+  <view class="bottom-btn-container">
+    <button class="buy-btn" bindtap="handleBuyClick" hover-class="buy-btn-hover">
+      立即购买套餐
+    </button>
+  </view>
+</view>

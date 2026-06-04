@@ -1,0 +1,24 @@
+<!-- subPackages/package/pages/chongzhijilu/chongzhijilu.wxml -->
+<view class="container">
+  <block wx:if="{{records.length > 0}}">
+    <!-- 显示充值记录的列表 -->
+    <view class="records-list">
+      <view class="record-item">
+        <text class="left">充值时间</text>
+        <text class="right">充值金额</text>
+      </view>
+      <block wx:for="{{records}}" wx:key="uniqueKey">
+        <view class="record-item">
+          <text class="left">{{item.time}}</text>
+          <text class="right">{{item.money}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <!-- 显示无数据提示 -->
+    <view class="no-data">
+      暂无充值记录
+    </view>
+  </block>
+</view>

@@ -1,0 +1,33 @@
+/* subPackages/package/pages/qiehuan/qiehuan.wxss */
+page{
+  background-color: rgb(245, 245, 245);
+}
+.list{
+  .item{
+    margin: 40rpx auto;
+    width: 90%;
+    height: 140rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    // justify-content: center;
+    .left{
+      width: 90%;
+      .name{
+        margin-left: 30rpx;
+        margin-bottom: 10rpx;
+        font-size: 32rpx;
+      }
+      .email{
+        margin-left: 30rpx;
+      }
+    }
+    .right{
+      font-size: 40rpx;
+      color: gray;
+      margin-left: 10rpx;
+    }
+  }
+}

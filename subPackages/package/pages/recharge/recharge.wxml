@@ -1,0 +1,85 @@
+<!-- 新版交易码弹窗 -->
+<view wx:if="{{showCodeDialog}}" class="code-dialog-mask">
+  <view class="code-content">
+    <view class="img">
+      <image bindtap="closeDialog" src="{{tupianUrl}}/new/close.png" mode="" />
+    </view>
+    <view class="title1">请输入交易码</view>
+    <view class="input-container" bindtap="handleGetFocus">
+      <block wx:for="{{inputBoxes}}" wx:key="index">
+        <view class="input-box">
+          <!-- input 输入框 -->
+          <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+        </view>
+      </block>
+    </view>
+    <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bindblur="handleNotFocus" />
+    <view class="dialog-buttons">
+      <!-- <button class="dialog-btn cancel" bindtap="closeDialog">取消</button> -->
+      <!-- <button class="dialog-btn confirm" bindtap="verifyCode">确认</button> -->
+      <view class="btn" bindtap="verifyCode">确定</view>
+    </view>
+  </view>
+</view>
+<!-- 新版“申请股东” -->
+<view class="view-comtainer">
+  <view class="account">
+    <image src="{{tupianUrl}}/new/gd-bgimg.png" mode="" />
+    <view class="amount-content">
+      <view class="content">
+        <view class="money">{{money || 0}}</view>
+        <view class="txt">账户余额(元)</view>
+      </view>
+      <view class="content">
+        <view class="money">{{score || 0}}</view>
+        <view class="txt">消费券余额</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 新版“立即充值” -->
+<view class="lijichongzhi">
+  <view class="title">立即充值</view>
+  <view class="content">
+    <view class="price">
+      <text>￥{{pricePerUnit || 0}}</text>
+    </view>
+    <view class="amount">
+      <view class="img img--disabled" bindtap="onDecrease">
+        <image src="{{tupianUrl}}/new/gd-decrease.png" mode="" />
+      </view>
+      <text>{{quantity}}</text>
+      <view class="img img--disabled" bindtap="onIncrease">
+        <image src="{{tupianUrl}}/new/gd-increase.png" mode="" />
+      </view>
+    </view>
+  </view>
+  <view class="desc">
+    <view class="pay-type-wrap">
+      <text class="pay-type-tip">请选择支付方式</text>
+      <view class="pay-type-row">
+        <view class="pay-type-item {{selectedCouponType === 'kafei' ? 'pay-type-item--active' : ''}}" data-type="kafei" bindtap="onSelectCouponType">
+          <text>需要60%现金和40%消费券</text>
+          <view class="pay-type-check {{selectedCouponType === 'kafei' ? 'pay-type-check--active' : ''}}"></view>
+        </view>
+        <view class="pay-type-item {{selectedCouponType === 'dianzi' ? 'pay-type-item--active' : ''}}" data-type="dianzi" bindtap="onSelectCouponType">
+          <text>需要60%现金和40%电子券</text>
+          <view class="pay-type-check {{selectedCouponType === 'dianzi' ? 'pay-type-check--active' : ''}}"></view>
+        </view>
+      </view>
+      <text class="selected-pay-tip">
+        {{selectedCouponType === 'kafei' ? '已选择：消费券支付' : (selectedCouponType === 'dianzi' ? '已选择：电子券支付' : '未选择支付方式')}}
+      </text>
+    </view>
+    <view class="price-content">
+      <text>金额:</text>
+      <text style="font-weight: 600;" class="money2">{{showMoney}}</text>
+      <text>{{selectedCouponType === 'dianzi' ? '电子券' : (selectedCouponType === 'kafei' ? '消费券' : '券')}}:</text>
+      <text style="font-weight: 600;" class="quan">{{showQuan}}</text>
+    </view>
+  </view>
+  <view style="display: flex;justify-content: center; position: absolute; bottom: 150rpx;left: 50%; transform: translateX(-50%);">
+    <view class="gocharge-button" bindtap="onRecharge">立即升级</view>
+  </view>
+  <view class="useless"></view>
+</view>

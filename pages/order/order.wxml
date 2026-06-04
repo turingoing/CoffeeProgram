@@ -1,0 +1,156 @@
+﻿<view class="order-layout">
+  <view class="order-confirm">
+    <view class="pickup-delivery-group">
+      <view class="pickup-button {{selected === '自提' ? 'active' : ''}}" bindtap="selectOption" data-option="自提">
+        <text>自提</text>
+      </view>
+      <view class="delivery-button {{selected === '外送' ? 'active' : ''}}" bindtap="handleDeliveryClick">
+        <text>外送</text>
+      </view>
+    </view>
+    <navigator url="/subPackages/package/pages/search/search" class="example-search">
+      <view class="search-bar">
+        <icon class="search-icon" type="search" size="14"></icon>
+        <input class="search-input" placeholder="拿铁" bindinput="onSearchInput" value="{{searchValue}}" />
+      </view>
+    </navigator>
+    <view class="ad">
+      <view class="ad-card ad-card-store" wx:if="{{selected === '自提'}}">
+        <view class="ad-main ad-main-clickable" hover-class="ad-main-hover" bindtap="handleChooseStoreClick">
+          <view class="ad-line ad-line-store">
+            <text class="ad-value">{{storeName || '未选择店铺，点击选择'}}</text>
+            <text class="ad-arrow">></text>
+            <view class="store-distance" wx:if="{{selectedStoreDistance}}">
+              <image class="store-distance-icon" src="{{tupianUrl}}/new/location.png" mode="aspectFit"></image>
+              <text class="store-distance-label">距离:</text>
+              <text class="store-distance-text">{{selectedStoreDistance}}</text>
+            </view>
+            <view class="order-store-status {{selectedStoreIsOpen ? 'order-store-status-open' : 'order-store-status-closed'}}" wx:if="{{storeName && selectedStoreBusinessStatusText}}">
+              <text>{{selectedStoreBusinessStatusText}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="ad-card" wx:else>
+        <view class="ad-main">
+          <view class="ad-line">
+            <text class="ad-prefix">地址:</text>
+            <text class="ad-value ad-value-address">{{address || '请选择收货地址'}}</text>
+          </view>
+        </view>
+        <view class="ad-action ad-action-ghost" hover-class="ad-action-hover" bindtap="handleDeliveryClick">
+          更换地址
+        </view>
+      </view>
+    </view>
+  </view>
+  <image class="order-middle-banner" src="https://www.caldicoffee.com.cn/jy/wxuser/106/images/new/order/background.jpg" mode="aspectFill" />
+  <view class="side-bar-wrapper">
+    <view class="side-bar-content" wx:if="{{menuReady}}">
+      <scroll-view class="side-nav-scroll" enhanced scroll-y show-scrollbar="{{false}}">
+        <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange" style="--td-side-bar-height: auto;">
+          <t-side-bar-item wx:for="{{categories}}" wx:key="id" value="{{index}}" label="{{item.text}}" disabled="{{item.disabled}}" badge-props="{{item.badgeProps}}" />
+        </t-side-bar>
+      </scroll-view>
+      <scroll-view class="content content-scroll-view" enhanced scroll-y scroll-with-animation show-scrollbar="{{false}}" scroll-into-view="{{contentScrollTarget}}" bindscroll="onContentScroll">
+        <block wx:for="{{categories}}" wx:for-index="cIndex" wx:key="id">
+          <view id="category-section-{{cIndex}}" class="section menu-section-anchor">
+            <view class="title">{{item.text}}</view>
+            <t-cell-group>
+              <view class="dishItem" wx:for="{{item.children}}" wx:for-item="dItem" wx:for-index="dIndex" wx:key="id" bindtap="navigateToDianDan" data-dishId="{{dItem.id}}" data-img="{{dItem.image}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">
+                <view class="left">
+                  <image class="image {{item.text === '嘎嘣脆系列' || item.text === '咖啡豆' ? 'specialImage' : ''}}" src='{{AUrl}}/jy/wxUserImg/106/{{dItem.image}}' mode="aspectFit" bindload="handleDishImageLoad" />
+                </view>
+                <view class="right">
+                  <view class="name" style="font-size: 32rpx;">{{dItem.name}}</view>
+                  <view class="desc">{{dItem.desc}}</view>
+                  <view class="price-action-row">
+                    <view class="price">¥{{dItem.price}}</view>
+                    <view class="action-wrap">
+                      <view class="add-button" catchtap="navigateToDianDan" data-dishId="{{dItem.id}}" data-img="{{dItem.image}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">
+                        <text>+</text>
+                      </view>
+                      <view wx:if="{{dItem.num > 0}}" class="number-box">
+                        <text class="number">{{dItem.num}}</text>
+                      </view>
+                    </view>
+                  </view>
+                  <!-- <t-stepper class="stepper" value="{{dItem.num}}" theme="filled" bind:change="handelChange" data-id="{{cIndex + 1}}" data-dishId="{{dIndex + 1}}" /> -->
+                </view>
+              </view>
+            </t-cell-group>
+          </view>
+        </block>
+        <view class="kong" style="height: 120rpx; width: 100%;"></view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<view class="bottom" wx:if="{{sum}}">
+  <view class="left">
+    <!-- <image src="/images/头像.jpg" /> -->
+    <!-- 共 {{sum}}  杯 -->
+    <image src="/images/购物袋.png" bindtap="toggleCartPopup"></image>
+    <text style="font-size: 34rpx;">预计到手¥{{totalprice}}</text>
+  </view>
+  <view class="right">
+    <t-button theme="primary" bind:tap="gobackPublish" disabled="{{isCheckoutSubmitting || isGuestOrdering}}" loading="{{isCheckoutSubmitting || isGuestOrdering}}" style="background-color: rgb(205, 174, 242);">
+      {{isGuestOrdering ? '免登录中' : '去结算'}}
+    </t-button>
+  </view>
+</view>
+<!-- 推荐门店弹窗 -->
+<view wx:if="{{showRecommendationPopup}}" class="recommendation-popup" style="position: fixed; top:0; left:0; right:0; bottom:0;  z-index: 300;">
+  <view class="popup-content">
+    <view class="popup-header">
+      <text>离你最近</text>
+      <view class="close-icon" bindtap="closeRecommendationPopup">×</view>
+    </view>
+    <view class="popup-body">
+      <view class="store-info" bindtap="selectRecommendedStore">
+        <text>门店名称：{{recommendedStore ? recommendedStore.name : '暂无数据'}}</text>
+        <text>地址：{{recommendedStore ? recommendedStore.add : '暂无数据'}}</text>
+        <text>距离：{{recommendedStore ? recommendedStore.distance : '暂无数据'}} 公里</text>
+      </view>
+      <button class="navigate-button" bindtap="navigateToStore" style="position: absolute; right: 90rpx; top: 50%; transform: translateY(-30%); background: #f5f5f5; color: white; border: none; padding: 10rpx 20rpx; border-radius: 10rpx; width: 100rpx; height: 100rpx;">
+        <image src="/images/导航.png" style="width: 50rpx; height: 50rpx;"></image>
+      </button>
+    </view>
+  </view>
+</view>
+<!-- 购物车弹窗 -->
+<view wx:if="{{showCartPopup && sum > 0}}" class="cart-popup" bindtap="toggleCartPopup">
+  <view class="popup-content1" catchtap="stopPropagation">
+    <view class="cart-sheet-handle"></view>
+    <view class="popup-header cart-popup-header">
+      <view class="cart-popup-title-wrap">
+        <text class="cart-popup-title">购物车</text>
+        <text class="cart-popup-count">共{{sum}}件</text>
+      </view>
+    </view>
+    <scroll-view class="popup-body cart-popup-body" enhanced scroll-y>
+      <block wx:for="{{cartItems}}" wx:key="index">
+        <view class="cart-item">
+          <image class="item-image" src='{{AUrl}}/jy/wxUserImg/106/{{item.image}}' mode="aspectFit"></image>
+          <view class="item-info">
+            <text class="item-name">{{item.name}}</text>
+            <!-- 显示杯型、温度、甜度 -->
+            <view class="item-options" wx:if="{{item.add}}">
+              <text class="item-option-tag">{{item.add}}</text>
+            </view>
+            <!-- 显示数量 -->
+            <view class="stepper">
+              <button class="btn-minus" data-skucode="{{item.skuCode}}" bindtap="onDecrease">
+                <text class="jianhao">-</text>
+              </button>
+              <text class="num">{{item.num || 0}}</text>
+              <button class="btn-plus" data-skucode="{{item.skuCode}}" bindtap="onIncrease">
+                +
+              </button>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

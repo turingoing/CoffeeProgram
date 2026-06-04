@@ -1,0 +1,17 @@
+<view class="container">
+  <!-- 发票列表 -->
+  <view class="order-list">
+    <block wx:for="{{orders}}" wx:key="orderNo">
+      <view class="order-item" bindtap="viewOrderDetail" data-index="{{index}}">
+        <view class="order-header">
+          <text class="order-amount">发票金额：{{item.amount}}</text>
+          <text class="order-leixing">发票类型：{{item.title_type}}</text>
+          <text class="order-type">抬头类型：¥{{item.type}}</text>
+          <text class="order-time">申请时间：¥{{item.time}}</text>
+
+
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

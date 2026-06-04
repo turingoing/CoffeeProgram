@@ -1,0 +1,12 @@
+<view class="container">
+  <text class="name">{{storeNamegd}}</text>
+</view>
+<view>
+  <text class="ri" style="font-size: 35rpx;">每日收益:</text>
+  <block wx:for="{{dailyEarningsList}}" wx:key="*this">
+    <view class="list">
+      <text class="data">{{item.date}}</text>
+      <text class="amount">+ {{item.amount}}</text>
+    </view>
+  </block>
+</view>

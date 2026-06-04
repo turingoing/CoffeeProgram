@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="balance-card">
+    <view class="balance-row">
+      <text class="balance-label">{{assetName}}</text>
+      <text class="record-link" wx:if="{{scene === 'new_store'}}">充值记录</text>
+    </view>
+    <text class="balance-value">¥{{currentBalance}}</text>
+  </view>
+
+  <view class="section-title">选择充值金额</view>
+  <view class="amount-grid">
+    <block wx:for="{{amountOptions}}" wx:key="amount">
+      <view class="amount-item {{selectedAmount === item.amount ? 'active' : ''}}" data-value="{{item.amount}}" bindtap="selectAmount">
+        <text class="amount-text">{{item.amount}}</text>
+        <text wx:if="{{item.gift > 0}}" class="gift-text">赠送：{{item.gift}}元</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="section-title">选择支付方式</view>
+  <view class="pay-list">
+    <block wx:if="{{showDualPayMethods}}">
+      <view class="pay-item {{payMethod === 'wechat' ? 'active' : ''}}" data-method="wechat" bindtap="selectPayMethod">
+        <text class="pay-name">微信支付</text>
+        <view class="radio {{payMethod === 'wechat' ? 'checked' : ''}}"></view>
+      </view>
+      <view class="pay-item {{payMethod === 'bankcard' ? 'active' : ''}}" data-method="bankcard" bindtap="selectPayMethod">
+        <text class="pay-name">银行卡支付</text>
+        <view class="radio {{payMethod === 'bankcard' ? 'checked' : ''}}"></view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="pay-item {{payMethod === 'wechat' ? 'active' : ''}}" data-method="wechat" bindtap="selectPayMethod">
+        <text class="pay-name">银行卡支付</text>
+        <view class="radio {{payMethod === 'wechat' ? 'checked' : ''}}"></view>
+      </view>
+    </block>
+  </view>
+
+  <view wx:if="{{tips}}" class="scene-tips">{{tips}}</view>
+
+  <view class="submit-btn {{selectedAmount ? 'active' : ''}}" bindtap="createOrder">立即充值</view>
+  <view class="agreement">
+    <view class="agreement-check {{agreementChecked ? 'checked' : ''}}" bindtap="toggleAgreementChecked">
+      <view wx:if="{{agreementChecked}}" class="agreement-check-inner"></view>
+    </view>
+    <text class="agreement-text">我已阅读并同意</text>
+    <text class="agreement-link" bindtap="goRechargeAgreement">《充值协议》</text>
+  </view>
+</view>

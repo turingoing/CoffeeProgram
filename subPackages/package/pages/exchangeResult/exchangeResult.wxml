@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="result" bindtap="onResultTap">
+    <image class="dingwei" src="/subPackages/package/pages/images/地点定位.png"></image>
+    <text class="title">{{selectedAddress.address}}</text>
+    <text class="phone">{{selectedAddress.phone}} {{selectedAddress.username}}先生</text>
+    <text class="biao">></text>
+    <view class="dashed-line"></view>
+  </view>
+  <view class="dingdan">
+    <image class="tu" src="{{tupianUrl}}/info/kadibiao.png " mode="aspectFill"></image>
+    <view class="ming">卡狄自营</view>
+    <text class="min">{{selectedItemName}}</text>
+    <text class="jia" style="position: absolute;left: 580rpx; top: 100rpx; font-size: 30rpx;">￥{{selectedItemPrice}}</text>
+    <image class="tupian" src="{{currentImage}}" mode="aspectFill"></image>
+    <view class="heng" style="width: 690rpx;height: 2rpx; background-color: #6b696948;position: relative; top: 90rpx;left: 50%;transform: translateX(-50%);"></view>
+    <text class="w" style="font-size: 33rpx; position: relative;left: 500rpx; top: 20rpx;">应付 ￥{{selectedItemPrice}}</text>
+  </view>
+
+  <view class="zhifu-button-container">
+    <text class="heji">合计：</text>
+    <text class="jia">￥{{selectedItemPrice}}</text>
+    <button class="zhifu" bindtap="onzhifu">去支付</button>
+  </view>
+</view>
+
+<!-- 交易码弹窗 -->
+<!-- <view wx:if="{{showCodeDialog}}" class="code-dialog-mask" style="position: fixed; top:30%;transform: translateY(-50%); left:50%;transform: translateX(-50%); right:0; bottom:0;  z-index: 1;background-color: rgb(255, 255, 255); height: 350rpx; width: 90%;  box-shadow: -5px  -5rpx 10px 10px rgba(129, 128, 128, 0.2); border-radius: 20rpx;">
+  <view class="title1">请输入六位数交易码</view>
+  <view class="input-container">
+    <block wx:for="{{inputBoxes}}" wx:key="index">
+      <view class="input-box">
+        -- input 输入框 --
+        <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+      </view>
+      -- 蒙层 --
+      <view class="overlay" bind:tap="handleGetFocus"></view> 
+    </block>
+  </view>
+  <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+  <view class="dialog-buttons">
+    <button class="dialog-btn cancel" bindtap="closeDialog">取消</button>
+    <button class="dialog-btn confirm" bindtap="verifyCode">确认</button>
+  </view>
+</view> -->
+
+
+<!-- 新版交易码弹窗 -->
+<view wx:if="{{showCodeDialog}}" class="code-dialog-mask">
+  <view class="code-content">
+    <view class="img">
+      <image bindtap="closeDialog" src="{{tupianUrl}}/new/close.png" mode=""/>
+    </view>
+    <view class="title1">请输入交易码</view>
+    <view class="input-container">
+      <block wx:for="{{inputBoxes}}" wx:key="index">
+        <view class="input-box">
+          <!-- input 输入框 -->
+          <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+        </view>
+        <view class="overlay" bind:tap="handleGetFocus"></view> <!-- 蒙层 -->
+      </block>
+    </view>
+    <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+    <view class="dialog-buttons">
+      <view class="btn" bindtap="verifyCode">确定</view>
+    </view>
+  </view>
+</view>

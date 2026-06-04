@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="empty-wrap" wx:if="{{!loading && !detail.title && !detail.contentBlocks.length && !detail.contentHtml}}">
+    <text class="empty-text">{{emptyText}}</text>
+  </view>
+
+  <view wx:else>
+    <image
+      wx:if="{{detail.coverImage}}"
+      class="detail-cover"
+      src="{{detail.coverImage}}"
+      mode="aspectFit"
+    ></image>
+
+    <view class="detail-head">
+      <text class="detail-title">{{detail.title}}</text>
+      <view class="detail-time-row">
+        <text class="detail-time-label">发布时间</text>
+        <text class="detail-time">{{detail.publishTimeText}}</text>
+      </view>
+    </view>
+
+    <view class="detail-content-wrap">
+      <view wx:if="{{detail.summary}}" class="detail-paragraph-card">
+        <text class="detail-paragraph">{{detail.summary}}</text>
+      </view>
+
+      <block wx:if="{{detail.contentBlocks.length}}">
+        <view class="detail-paragraph-card" wx:for="{{detail.contentBlocks}}" wx:key="index">
+          <text class="detail-paragraph">{{item}}</text>
+        </view>
+      </block>
+
+      <view wx:elif="{{detail.contentHtml}}" class="detail-rich-card">
+        <rich-text nodes="{{detail.contentHtml}}"></rich-text>
+      </view>
+    </view>
+  </view>
+</view>

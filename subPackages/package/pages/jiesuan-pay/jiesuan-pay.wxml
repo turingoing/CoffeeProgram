@@ -1,0 +1,20 @@
+<!--subPackages/package/pages/jiesuan-pay/jiesuan-pay.wxml-->
+<view class="header">
+  <view class="img">
+    <image src="/images/收银台.png" mode="" />
+  </view>
+</view>
+<view class="body">
+  <view>支付订单：{{ orderid }}</view>
+  <view class="money">
+    付款金额：
+    <view class="amt">￥{{ amt/100 }}</view>
+    <view wx:if="{{orderType === '2'}}" class="delivery-note"></view>
+  </view>
+</view>
+
+<!-- <sqb-pay return_url="{{return_url}}" total_amount="{{amt}}" terminal_sn="{{terminal}}" client_sn="{{orderid}}" subject="商品" sign="{{sign}}" bindnavigateTo="navigateTo">
+  <button class="btn">去支付</button>
+</sqb-pay> -->
+
+<button class="btn {{invokingWxPay ? 'disabled' : ''}}" bind:tap="pay" disabled="{{invokingWxPay}}">{{invokingWxPay ? '正在唤起微信支付...' : '去支付'}}</button>

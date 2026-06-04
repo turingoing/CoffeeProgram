@@ -1,0 +1,16 @@
+page { background: #f6f7fb; }
+.container { padding-bottom: 120rpx; }
+.list { background: #fff; margin: 20rpx; border-radius: 16rpx; box-shadow: 0 6rpx 20rpx rgba(0,0,0,0.04); padding: 10rpx 0; }
+.coupon-card { display:flex; align-items:center; padding: 20rpx; border-bottom: 1rpx solid #f0f0f0; }
+.coupon-card:last-child { border-bottom: none; }
+.coupon-card.disabled { opacity: 0.5; }
+.left { width: 140rpx; display:flex; align-items:center; justify-content:center; }
+.amount { width: 110rpx; height: 110rpx; border-radius: 12rpx; background:#5e4ddb; color:#fff; display:flex; align-items:center; justify-content:center; font-weight: 600; }
+.center { flex:1; display:flex; flex-direction:column; padding-left: 10rpx; }
+.title { color:#333; font-size: 30rpx; }
+.sub { color:#999; font-size: 24rpx; margin-top: 8rpx; }
+.right { width: 60rpx; display:flex; align-items:center; justify-content:center; }
+.tick { width: 32rpx; height: 32rpx; border-radius: 50%; border: 2rpx solid #cfcfdf; }
+.coupon-card.selected .tick { background: #5e4ddb; border-color: #5e4ddb; }
+.footer { position: fixed; left:0; right:0; bottom:0; padding: 20rpx; background: linear-gradient(180deg, rgba(246,247,251,0) 0%, rgba(246,247,251,1) 60%); }
+.btn { width:90%; margin:0 auto; height: 88rpx; line-height:88rpx; text-align:center; color:#fff; border-radius:44rpx; background: linear-gradient(90deg, #5e4ddb, #8b6cff); }

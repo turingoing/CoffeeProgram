@@ -1,0 +1,33 @@
+<!--subPackages/package/pages/orderDetail/orderDetail.wxml-->
+<view class="container">
+  <view wx:if="{{orderList.length === 0}}" class="empty-tip">暂无订单信息</view>
+  <view wx:else>
+    <view class="order-item" wx:for="{{orderList}}" wx:key="id">
+      <view>
+        <view class="order-header">
+          <text class="order-id">订单号：{{item.id}}</text>
+          <text class="order-date">下单时间：{{item.date}}</text>
+        </view>
+        <view class="order-body">
+          <view class="product-item" wx:for="{{item.products}}" wx:key="productName">
+            <image class="product-image" src="{{item.image_url}}" />
+            <view class="product-info">
+              <text class="product-name">{{item.productName}}</text>
+              <view class="product-add">规格：{{item.add}}</view>
+              <view class="price-line">
+                <text class="price-text">单价：￥{{item.price}}</text>
+                <text class="price-text">数量：x{{item.quantity}}</text>
+              </view>
+              <text class="product-total">小计：￥{{item.total}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="order-footer">
+          <text class="order-status">{{item.statusText}}</text>
+          <text class="order-total">总价：￥{{item.total}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

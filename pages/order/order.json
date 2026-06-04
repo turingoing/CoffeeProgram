@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "styleIsolation": "apply-shared",
+  "lazyCodeLoading": false,
+  "usingComponents": {
+    "t-search": "tdesign-miniprogram/search/search"
+  }
+}

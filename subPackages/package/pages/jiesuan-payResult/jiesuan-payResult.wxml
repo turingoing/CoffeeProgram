@@ -1,0 +1,22 @@
+<view class="page-container">
+  <view class="custom-nav-bar">
+    <view class="back-btn" bindtap="handleBackToOrderPage">
+      <view class="back-icon"></view>
+    </view>
+    <text class="nav-title">支付结果</text>
+  </view>
+  <view wx:if="{{is_success}}" class="comment">
+    <view class="img">
+      <image src="/images/成功.png" mode="" />
+    </view>
+    <view class="txt">订单支付成功！</view>
+    <button class="btn" bind:tap="goBackOrders">返回</button>
+  </view>
+  <view wx:else class="comment">
+    <view class="img">
+      <image src="/images/失败.png" mode="" />
+    </view>
+    <view class="txt">支付失败！请重新下单</view>
+    <button class="btn" bind:tap="goBackOrder">返回</button>
+  </view>
+</view>

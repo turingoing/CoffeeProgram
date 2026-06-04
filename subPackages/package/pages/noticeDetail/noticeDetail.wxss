@@ -1,0 +1,83 @@
+page {
+  background: #f6f6f6;
+}
+
+.page {
+  min-height: 100vh;
+  background: #f6f6f6;
+  padding-bottom: 48rpx;
+  box-sizing: border-box;
+}
+
+.detail-cover {
+  width: 100%;
+  height: 320rpx;
+  background: #ececec;
+}
+
+.detail-head {
+  padding: 34rpx 32rpx 0;
+  box-sizing: border-box;
+}
+
+.detail-title {
+  display: block;
+  color: #2f2f2f;
+  font-size: 56rpx;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.detail-time-row {
+  display: flex;
+  align-items: baseline;
+  margin-top: 22rpx;
+}
+
+.detail-time-label {
+  color: #414141;
+  font-size: 32rpx;
+  line-height: 1.4;
+}
+
+.detail-time {
+  margin-left: 16rpx;
+  color: #a8a8a8;
+  font-size: 32rpx;
+  line-height: 1.4;
+}
+
+.detail-content-wrap {
+  padding: 34rpx 32rpx 0;
+  box-sizing: border-box;
+}
+
+.detail-paragraph-card,
+.detail-rich-card {
+  background: #ffffff;
+  padding: 22rpx 24rpx;
+  box-sizing: border-box;
+  margin-bottom: 24rpx;
+}
+
+.detail-paragraph {
+  display: block;
+  color: #3d3d3d;
+  font-size: 28rpx;
+  line-height: 1.85;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.empty-wrap {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-text {
+  color: #b3b3b3;
+  font-size: 30rpx;
+  line-height: 1.5;
+}

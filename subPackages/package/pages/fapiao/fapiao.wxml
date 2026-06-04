@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="a">
+    <!-- <view class="zi">按门店订单开票<text class="fuhao">></text></view> -->
+    <navigator url="/subPackages/package/pages/kaquankaipiao/kaquankaipiao" class="zi">按订单开票<text class="fuhao">></text></navigator>
+    <!-- <navigator url="/subPackages/package/pages/chongzhikaipiao/chongzhikaipiao" class="zi">充值开票<text class="fuhao">></text></navigator> -->
+  </view>
+
+  <navigator url="/subPackages/package/pages/fapiaojilu/fapiaojilu" class="b">
+    <view class="zi">发票记录<text class="fuhao">></text></view>
+  </navigator>
+</view>

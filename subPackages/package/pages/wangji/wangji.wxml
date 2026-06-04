@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="title">
+    {{confirmStep === 1 ? '请再次输入六位数交易码以确认' : '请设置六位数交易码'}}
+  </view>
+
+  <!-- 输入框布局 -->
+  <view class="input-container">
+    <block wx:for="{{inputBoxes}}" wx:key="index">
+      <view class="input-box">
+        <input id="input-{{index}}" focus="false" type="number" value="{{item}}" data-index="{{index}}" disabled="true" maxlength="1" />
+      </view>
+      <view class="overlay" bind:tap="handleGetFocus"></view>
+    </block>
+  </view>
+
+  <!-- 主输入框 -->
+  <input class="ipt" value="{{codeValue}}" focus="{{testFocus}}" type="number" bindinput="handleTestInput" maxlength="6" bind:tap="handleNotFocus" />
+
+  <!-- 确认按钮 -->
+  <view class="confirm-btn" bindtap="confirmUpgrade" hover-class="button-hover">
+    {{confirmStep === 1 ? '确认提交' : '确认设置'}}
+  </view>
+
+  <!-- 提示信息 -->
+  <view wx:if="{{confirmStep === 1}}" class="tip-text">
+    请确认交易码无误后再次点击提交
+  </view>
+</view>

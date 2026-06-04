@@ -1,0 +1,99 @@
+<wxs module="utils">
+  function toNumber(str) {
+    return +str;  // 或者 parseFloat(str)
+  }
+  module.exports = {
+    toNumber: toNumber
+  };
+</wxs>
+
+<!-- <view class="container">
+  顶部导航栏
+  <view class="beijing">
+    <image class="jifentu" src="/subPackages/package/pages/images/暂无积分明细.png">
+    </image>
+    <text class="logo">我的积分</text>
+    <text class="user-score">{{score}}</text>
+  </view>
+</view> -->
+
+
+<!-- 新版“积分商城” -->
+<view class="view-comtainer">
+  <view class="account">
+    <image src="{{tupianUrl}}/new/gd-bgimg.png" mode="" />
+    <view class="content">
+      <view class="money">{{score}}</view>
+      <view class="txt">可用消费券</view>
+    </view>
+  </view>
+</view>
+
+<!-- 新版“积分商城 Tab” -->
+<view class="shop-tab">
+  <view class="{{showAll ? 'item active' : 'item'}}" style="width: 100rpx;" bind:tap="changeShowTab" data-tab="all">
+    <view class="txt">全部</view>
+  </view>
+  <view class="{{showAll ? 'item' : 'item active'}}" style="width: 150rpx;" bind:tap="changeShowTab" data-tab="my">
+    <view class="txt">我能兑换</view>
+  </view>
+</view>
+
+<!-- 商品列表 -->
+<view wx:if="{{showAll}}">
+  <!-- <view class="lan">
+    <text class="huangou">积分换购</text>
+  </view> -->
+  <view class="category-item" wx:for="{{ships}}" wx:key="id">
+    <!-- <text class="category-name">{{item.text}}</text> -->
+    <view class="product-list">
+      <view class="product-item" wx:for="{{item.children}}" wx:for-item="dItem" wx:key="id">
+        <view class="product-image-container">
+          <image style="width: 100%; height: 100%; border-radius: 18rpx;" src='{{AUrl}}/jy/wxUserImg/106/{{dItem.image}}' />
+        </view>
+        <text class="product-name">{{dItem.name}}</text>
+        <text class="product-price">{{dItem.price}}<text style="font-size: 18rpx; color: gray; margin-left: 10rpx;">消费券</text></text>
+        <!-- <text class="product-desc" wx:if="{{dItem.desc}}">{{dItem.desc}}</text> -->
+        <view wx:if="{{utils.toNumber(score) >= utils.toNumber(dItem.price)}}" class="exchange-button" data-itemid="{{dItem.id}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">立即兑换</view>
+        <!-- <view wx:if="{{utils.toNumber(score) >= utils.toNumber(dItem.price)}}" class="exchange-button" bindtap="navigateToduihuan" data-itemid="{{dItem.id}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">立即兑换</view> -->
+        <view wx:else class="exchange-button exchange-gray" data-itemid="{{dItem.id}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">消费券不足</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 我能兑换 -->
+<view wx:else>
+  <block wx:if="{{isNotEmpty}}">
+    <view class="category-item" wx:for="{{ships}}" wx:key="id">
+      <!-- <text class="category-name">{{item.text}}</text> -->
+      <view class="product-list">
+        <view class="product-item" wx:for="{{item.children}}" wx:for-item="dItem" wx:if="{{utils.toNumber(score) >= utils.toNumber(dItem.price)}}" wx:key="id">
+          <view class="product-image-container">
+            <image style="width: 100%; height: 100%; border-radius: 18rpx;" src='{{AUrl}}/jy/wxUserImg/106/{{dItem.image}}' />
+          </view>
+          <text class="product-name">{{dItem.name}}</text>
+          <text class="product-price">{{dItem.price}}<text style="font-size: 18rpx; color: gray; margin-left: 10rpx;">消费券</text></text>
+          <!-- <text class="product-desc" wx:if="{{dItem.desc}}">{{dItem.desc}}</text> -->
+          <view wx:if="{{utils.toNumber(score) >= utils.toNumber(dItem.price)}}" class="exchange-button" data-itemid="{{dItem.id}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">立即兑换</view>
+          <!-- <view wx:if="{{utils.toNumber(score) >= utils.toNumber(dItem.price)}}" class="exchange-button" bindtap="navigateToduihuan" data-itemid="{{dItem.id}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">立即兑换</view> -->
+          <view wx:else class="exchange-button exchange-gray" data-itemid="{{dItem.id}}" data-index1="{{cIndex}}" data-index2="{{dIndex}}">消费券不足</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="empty" wx:else>
+    <view>
+      <view class="img">
+        <image src="{{tupianUrl}}/new/jfsc-empty.png" mode="" />
+      </view>
+      <view class="txt">
+        <text>积分不足，暂无可兑换商品</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 加载动画 -->
+<view class="loading" wx:if="{{loading}}">
+  <text>加载中...</text>
+</view>

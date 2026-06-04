@@ -1,0 +1,80 @@
+<!-- pages/home/home.wxml -->
+
+<view class="page-wrapper">
+  <!-- 轮播图 -->
+  <view class="swiper-list">
+    <t-swiper current="{{0}}" autoplay="{{true}}" duration="{{1000}}" interval="{{2000}}" list="{{swiperList}}" navigation="{{ { type: 'none' } }}" style="--td-swiper-radius: 0;" height="{{swiperHeight}}rpx"></t-swiper>
+  </view>
+  <view class="container" style="display: flex; flex-direction: column; padding: 0; margin: 0; flex: 1;">
+    <view class="home-actions">
+      <view class="box box-top" hover-class="pressed-parent">
+        <view class="login-banner" wx:if="{{!isLoginSuccess}}" bindtap="gotoLogin">
+          <text class="login-text">亲！登录后有更多惊喜哟！</text>
+        </view>
+        <view class="login-banner logged" wx:else>
+          <text class="login-text">{{name || '已登录'}}</text>
+        </view>
+        <view class="top-actions">
+          <view class="action" bindtap="gotoOrderPickUp">
+            <view class="icon">
+              <image src="{{tupianUrl}}/new/order1.png" mode="aspectFill" />
+            </view>
+            <view class="texts">
+              <view class="title">到店取</view>
+              <view class="desc">提前点单免排队</view>
+            </view>
+          </view>
+          <navigator url="/subPackages/package/pages/chooseLocation/chooseLocation?type=order" class="action" hover-class="none">
+            <view class="icon">
+              <image src="{{tupianUrl}}/new/order2.png" mode="aspectFill" />
+            </view>
+            <view class="texts">
+              <view class="title">卡狄送</view>
+              <view class="desc">外卖及时送达</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class="box-bottom-anchor">
+        <view class="box box-bottom">
+          <view class="order-full tile" hover-class="pressed" bindtap="gotoOrderPickUp">
+            <view class="tile-icon">
+              <image src="{{tupianUrl}}/new/order1.png" mode="aspectFill" />
+            </view>
+            <view class="texts">
+                <view class="title">点单</view>
+                <view class="desc">快速点单，解困解渴</view>
+            </view>
+          </view>
+          <view class="right-stack">
+            <view class="tile" hover-class="pressed" bindtap="handleNavigate2">
+            <view class="tile-icon right-stack-icon">
+                <view class="placeholder">
+                  <image src="{{tupianUrl}}/new/home/chuzhi.svg" mode="widthFix" />
+                </view>
+              </view>
+              <view class="txt">储值有礼</view>
+            </view>
+            <view class="tile" hover-class="pressed" bindtap="handleNavigate3">
+            <view class="tile-icon right-stack-icon">
+                <view class="placeholder">
+                  <image src="{{tupianUrl}}/new/home/fuli.svg" mode="widthFix" />
+                </view>
+              </view>
+              <view class="txt">会员福利</view>
+            </view>
+            <!-- <view class="tile" hover-class="pressed" bindtap="handleNavigateNewStoreRecharge">
+            <view class="tile-icon right-stack-icon">
+                <view class="placeholder">
+                  <image src="{{tupianUrl}}/new/home/xindian.svg" mode="widthFix" />
+                </view>
+              </view>
+              <view class="txt">新店储值</view>
+            </view> -->
+            <!-- 这个新店储值先不要 -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

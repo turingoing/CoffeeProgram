@@ -1,0 +1,185 @@
+page {
+  background: #f6f7fb;
+}
+
+.page {
+  padding: 24rpx;
+  padding-bottom: 40rpx;
+}
+
+.hero-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32rpx 28rpx;
+  border-radius: 28rpx;
+  background: linear-gradient(135deg, #8a5acf 0%, #7546af 100%);
+  color: #ffffff;
+  box-shadow: 0 18rpx 40rpx rgba(117, 70, 175, 0.18);
+}
+
+.hero-main {
+  flex: 1;
+  padding-right: 24rpx;
+}
+
+.hero-title {
+  display: block;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+
+.hero-desc {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.hero-count {
+  min-width: 112rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.16);
+  text-align: center;
+}
+
+.hero-count-num {
+  display: block;
+  font-size: 38rpx;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-count-unit {
+  display: block;
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.state-card {
+  margin-top: 24rpx;
+  padding: 120rpx 32rpx;
+  border-radius: 24rpx;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 10rpx 28rpx rgba(31, 45, 61, 0.05);
+}
+
+.state-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2c2f36;
+}
+
+.state-desc {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.goods-list {
+  margin-top: 24rpx;
+}
+
+.goods-card {
+  display: flex;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 28rpx rgba(31, 45, 61, 0.05);
+}
+
+.goods-image {
+  width: 176rpx;
+  height: 176rpx;
+  margin-right: 24rpx;
+  border-radius: 20rpx;
+  background: #eef1f7;
+  flex-shrink: 0;
+}
+
+.goods-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.goods-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1f2430;
+  word-break: break-all;
+}
+
+.spec-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.spec-tag {
+  margin-right: 12rpx;
+  margin-bottom: 12rpx;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  background: #f8f4ff;
+  border: 1rpx solid #eadfff;
+  color: #7546af;
+  font-size: 22rpx;
+  line-height: 1.2;
+}
+
+.goods-footer {
+  margin-top: auto;
+  padding-top: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-wrap {
+  display: flex;
+  align-items: baseline;
+  color: #ff7b54;
+}
+
+.price-symbol {
+  font-size: 24rpx;
+  font-weight: 600;
+  margin-right: 4rpx;
+}
+
+.goods-price {
+  font-size: 36rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cancel-btn {
+  flex-shrink: 0;
+  margin-left: 20rpx;
+  min-width: 136rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 999rpx;
+  border: 1rpx solid #eadfff;
+  background: #f8f4ff;
+  color: #7546af;
+  font-size: 22rpx;
+  line-height: 1.2;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.cancel-btn-loading {
+  background: #f4effb;
+  border-color: #ede3fb;
+  color: #a28ac6;
+}

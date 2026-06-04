@@ -1,0 +1,90 @@
+<!-- <view class="container">
+  <view class="image" style="width: 100%;height: 520rpx;position: absolute;top: 0rpx;">
+    <block wx:for="{{currentImage}}" wx:key="unique">
+      <image src="{{currentImage}}" class="image-item" mode="aspectFit"></image>
+    </block>
+  </view>
+</view>
+<view class="dan" style="position: absolute; left: 375rpx; top: 430rpx">
+  <text class="mingchen">{{selectedDishName}}</text>
+  <view class="option-group">
+    <text class="option-label">杯型</text>
+    <view class="option-buttons"> </view>
+    <button class="option-button5 {{selectedSize === '大杯' ? 'selected' : ''}}" bindtap="selectSize" data-size="大杯" style="width: 200rpx;height: 70rpx; position: relative; left: 113rpx; top: -22rpx">大杯</button> -->
+<!-- <button class="option-button6 {{selectedSize === '中杯' ? 'selected' : ''}}" bindtap="selectSize" data-size="中杯" style="position: relative; left: 65rpx; top: -102rpx; width: 200rpx;height: 70rpx;">中杯</button> -->
+<!-- </view>
+
+  <view class="option-group2">
+    <text class="option-label2">温度</text>
+    <view class="option-buttons" style="position: relative; top: -7rpx; left: 0rpx">
+      <button class="option-button11 {{selectedTemperature === '冰' ? 'selected' : ''}}" bindtap="selectTemperature" data-temperature="冰" style="width: 200rpx;height: 70rpx; position: relative; left: 33rpx; top: -10rpx">冰</button>
+      <button class="option-button12 {{selectedTemperature === '热' ? 'selected' : ''}}" bindtap="selectTemperature" data-temperature="热" style="width: 200rpx;height: 70rpx; position: relative; left: -125rpx; top: -10rpx">热</button>
+    </view>
+  </view>
+
+  <view class="option-group3">
+    <text class="option-label3">糖度</text>
+    <view class="option-buttons" style="position: relative; top: -41rpx; left: -20rpx; width: 100%; height: 200rpx">
+      <button class="option-button1 {{selectedSweetness === '标准甜' ? 'selected' : ''}}" bindtap="selectSweetness" data-sweetness="标准甜" style="position: relative; left: 105rpx; top: 21rpx; width: 200rpx; display: flex; box-sizing: border-box; height: 70rpx">标准甜</button>
+      <button class="option-button2 {{selectedSweetness === '少甜' ? 'selected' : ''}}" bindtap="selectSweetness" data-sweetness="少甜" style="position: relative; left: 70rpx; top: 21rpx; width: 200rpx; display: flex; box-sizing: border-box; height: 70rpx">少甜</button>
+      <button class="option-button3 {{selectedSweetness === '少少甜' ? 'selected' : ''}}" bindtap="selectSweetness" data-sweetness="少少甜" style="position: relative; left: 30rpx; top: 21rpx;width: 200rpx; height: 70rpx;">少少甜</button>
+      <button class="option-button4 {{selectedSweetness === '微甜' ? 'selected' : ''}}" bindtap="selectSweetness" data-sweetness="微甜" style="position: relative; left: 45rpx; top: 30rpx; width: 200rpx; height: 70rpx">微甜</button>
+      <button class="option-button4 {{selectedSweetness === '不另外加糖' ? 'selected' : ''}}" bindtap="selectSweetness" data-sweetness="不另外加糖" style="position: relative; left: -114rpx; top: 30rpx; width: 200rpx; height: 70rpx;font-size: 26rpx;">不另外加糖</button>
+    </view>
+  </view> -->
+<swiper indicator-dots autoplay circular style="height: 500rpx;">
+  <block wx:for="{{mainPictures}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" mode="aspectFit" class="product-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<text class="mingchen" style="margin-left: 30rpx;position: relative;top: 15rpx;">{{dishName}}</text>
+<!-- 价格展示 [2,6](@ref) -->
+<view class="price-section">
+  <text class="current-price">￥{{currentPrice}}</text>
+  <text wx:if="{{oldPrice > currentPrice}}" class="old-price">￥{{oldPrice}}</text>
+</view>
+
+<!-- 规格选择器 [2,6](@ref) -->
+<view wx:for="{{specList}}" wx:key="name" class="spec-group">
+  <text class="spec-title">{{item.name}}：</text>
+  <view class="spec-values">
+    <view wx:for="{{item.list}}" wx:for-item="i" wx:key="name" class="spec-btn {{selectedSpecs[item.name] === i.name ? 'active' : ''}} {{i.disabled ? 'disabled' : ''}}" bindtap="onSelectSpec" data-specname="{{item.name}}" data-valuename="{{i.name}}" data-disabled="{{i.disabled}}">
+      <text class="spec-text">{{i.name}}</text>
+    </view>
+  </view>
+</view>
+<view class="favorite-button" bindtap="onFavorite" style="position: absolute; right: 30rpx; top: 530rpx; display: grid; align-items: center; justify-content: center; padding: 10rpx; background-color: #fff; border-radius: 10rpx; ">
+  <image src="{{isFavorited ? '/subPackages/package/pages/images/ic_like.png': '/subPackages/package/pages/images/收藏.png'}}" class="favorite-icon" style="width: 40rpx; height: 40rpx; margin-right: 10rpx;position: relative;left: 50%;transform: translateX(-50%);"></image>
+  <text>{{isFavorited ? '保存口味' : '保存口味'}}</text>
+
+</view>
+<view class="selection-result">
+
+  <view class="selected-specs" style="display: flex;flex-wrap: wrap;gap: 10rpx; margin: 10rpx 0 20rpx 20rpx;">
+    <text class="section-title">您的选择：</text>
+    <block wx:for="{{specList}}" wx:key="name">
+      <view class="spec-item">
+        <text class="spec-name">{{item.name}}：</text>
+        <text class="spec-value">{{selectedSpecs[item.name]}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="shu">
+    <view class="decrease" data-quantity="{{quantity}}" bindtap="onDecrease"><text>-</text></view>
+    <text class="quantity-text">{{quantity}}</text>
+    <view class="increase" data-quantity="{{quantity}}" bindtap="onIncrease"><text>+</text></view>
+    <view bind:tap="goBackOrder" class="cart-button" open-type="switchTab">
+      <view class="iconfont icon-gouwuche"></view>
+      <text>加入购物车</text>
+    </view>
+    <view bind:tap="goToJiesuanNow" class="jiesuan-button">
+      <text>{{isGuestBuying ? '免登录中' : '立即购买'}}</text>
+    </view>
+  </view>
+
+</view>

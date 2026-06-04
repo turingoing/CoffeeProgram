@@ -1,0 +1,46 @@
+<view class="search-page">
+  <view class="search-container">
+    <view class="search-field">
+      <icon class="search-icon" type="search" size="16"></icon>
+      <input
+        class="search-input"
+        placeholder="搜索商品"
+        placeholder-class="search-placeholder"
+        bindinput="onSearchInput"
+        value="{{searchValue}}"
+      />
+    </view>
+    <button class="search-button" bindtap="onSearch">
+      <text class="search-button-text">搜索</text>
+    </button>
+  </view>
+
+  <view wx:if="{{searchResults.length > 0}}" class="results-section">
+    <view class="dishItem" wx:for="{{searchResults}}" wx:key="id">
+      <view class="item-container">
+        <view class="item-media">
+          <image class="result-image" src="{{AUrl}}/jy/wxUserImg/106/{{item.image}}" mode="aspectFit" />
+        </view>
+        <view class="item-content">
+          <view class="name">{{item.name}}</view>
+          <view class="item-bottom">
+            <view class="price-wrap">
+              <text class="price-unit">￥</text>
+              <text class="price">{{item.price}}</text>
+            </view>
+            <button class="add-button" bindtap="navigateToDianDan" data-dishid="{{item.id}}" data-img="{{item.image}}" data-index1="{{index}}" data-index2="{{index}}">
+              +
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="empty-state">
+    <view class="empty-state-card">
+      <text class="empty-title">暂无相关商品</text>
+      <text class="empty-desc">换个关键词试试看</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,257 @@
+.nav-back {
+  position: fixed;
+  top: var(--navBarHeight, 40px);
+  left: 20rpx;
+  z-index: 1000;
+  padding: 10rpx;
+  background: #FFFFFF;
+  border-radius: 40rpx;
+  border: 1px solid #D7D7D7;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80rpx;
+}
+
+.avatar-wrapper {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-tip {
+  font-size: 25rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.form-section {
+  margin: 40rpx 30rpx;
+}
+
+/* 注册方式切换 */
+.register-switch {
+  display: flex;
+  justify-content: center;
+  gap: 40rpx;
+  margin: 40rpx 0;
+}
+
+.switch-item {
+  color: #07c160;
+  font-size: 28rpx;
+  text-decoration: underline;
+}
+
+.kd-imgCon {
+  display: flex;
+  /*设置为flex布局*/
+  justify-content: center;
+  /*水平居中*/
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.kd-imgCon image {
+  width: 200rpx;
+  height: 130rpx;
+}
+
+.kd-head {
+  display: flex;
+  margin-bottom: 150rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.kd-textarea {
+  display: flex;
+  /*设置为flex布局*/
+  justify-content: center;
+  /*水平居中*/
+  width: 490rpx;
+  padding-left: 65px;
+  padding-right: 70px;
+  margin-bottom: 90px;
+  flex-direction: column;
+}
+
+.kd-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  line-height: 25px;
+  white-space: pre-line;
+}
+
+/* 手机注册样式 */
+.phone-register {
+  /* margin: 40rpx 30rpx; */
+  text-align: center;
+}
+
+.phone-tip {
+  color: rgb(205, 174, 242);
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+
+.phone-tip-active {
+  color: #666;
+}
+
+.phone-btn {
+  width: 88%;
+  background: rgb(205, 174, 242);
+  color: white;
+  border-radius: 50rpx;
+}
+
+.user-btn {
+  width: 88%;
+  background: rgb(18, 231, 71);
+  color: white;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+}
+
+/* .rejectGetPhone{
+  font-size: 35rpx;
+  color:#666;
+  margin-top: 30rpx;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+} */
+
+.rejectGetPhone {
+  width: 88%;
+  background: rgb(205, 174, 242);
+  color: white;
+  border-radius: 50rpx;
+  margin-top: 10px;
+}
+
+.openidLogin {
+  width: 88%;
+  background: rgb(205, 174, 242);
+  color: white;
+  border-radius: 50rpx;
+  margin-top: 10px;
+}
+
+.openidLogin-disabled {
+  opacity: 0.72;
+}
+
+/* 邮箱注册样式 */
+.email-register {
+  margin: 40rpx 30rpx;
+}
+
+.form-item {
+  margin: 40rpx 30rpx;
+
+}
+
+.email-input,
+.code-input {
+  border: 1px solid #eee;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.code-item {
+  display: flex;
+  gap: 50rpx;
+}
+
+.code-btn {
+  min-width: 200rpx;
+  background: #07c160;
+  color: white;
+  border-radius: 10rpx;
+}
+
+.shengqin_botton1 {
+  width: 78%;
+  background: rgb(205, 174, 242);
+  color: white;
+  text-align: center;
+  padding: 30rpx;
+  border-radius: 50rpx;
+}
+
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* 使容器占满整个屏幕高度 */
+  justify-content: space-between;
+  /* 使内容和按钮分布在上下两端 */
+}
+
+/* 提交按钮区域 */
+.submit-section {
+  display: flex;
+  justify-content: center;
+  margin: 60rpx 0;
+  /* 调整上下外边距，底部留出空间 */
+}
+
+.gender-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50rpx;
+
+}
+
+.gendertxt {
+  font-size: 31rpx;
+  color: rgb(0, 0, 0);
+  margin-right: 30rpx;
+}
+
+.gender_input {
+  flex: 1;
+  padding: 20rpx;
+
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.invite-id {
+  margin: 50rpx 90rpx;
+  /* position: absolute; */
+  /* top: 500rpx; */
+
+}
+
+.agreement-fixed {
+  display: flex;
+  margin-bottom: 50rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: rgb(205, 174, 242);
+  text-decoration: underline;
+  white-space: normal;
+  word-wrap: break-word;
+}

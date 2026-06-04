@@ -1,0 +1,280 @@
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+.container {
+  background: linear-gradient(to bottom, rgb(219, 234, 243), #fff);
+  /* 波浪形背景 */
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.earnings-list {
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  width: 95%;
+  position: absolute;
+  top: 650rpx;
+}
+
+.earnings-month {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 10rpx;
+  border-bottom: 1px solid #eee;
+  height: 80rpx;
+}
+
+.earnings-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  border-bottom: 1px solid #eee;
+  height: 60rpx;
+}
+
+.earnings-date {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.earnings-amount {
+  font-size: 28rpx;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transfer-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 半透明背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* 确保这个值比页面上其他元素的z-index都要高 */
+}
+
+.transfer-popup::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  /* 确保这个值比页面上其他元素的z-index都要高，但低于弹窗内容 */
+}
+
+.popup-content {
+  width: 600rpx;
+  height: 400rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  z-index: 1001;
+  /* 弹窗内容的z-index值比背景遮罩层更高 */
+}
+
+.popup-title {
+  font-size: 33rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  top: -10rpx;
+}
+
+.popup-input {
+  width: 60%;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  font-size: 38rpx;
+  position: relative;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480rpx;
+  margin-top: 60rpx;
+}
+
+.confirm-button,
+.cancel-button {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 10rpx;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+
+}
+
+.confirm-button {
+  background-color: #5491d6;
+  color: #fff;
+
+}
+
+.cancel-button {
+  background-color: #fff;
+  color: #333;
+  border: 1rpx solid #ddd;
+}
+
+.return-records {
+  margin: 40rpx 20rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 600rpx;
+  width: 98%;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24rpx 32rpx;
+  background: #f8f9fa;
+  border-bottom: 2rpx solid #eee;
+}
+
+.header-text {
+  font-size: 28rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.record-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.record-item:last-child {
+  border-bottom: none;
+}
+
+.record-date {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.record-score {
+  font-size: 28rpx;
+  color: #07c160;
+  font-weight: bold;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 交易码弹窗样式 */
+.title1 {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  left: 210rpx;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin: 0 2px;
+  text-align: center;
+  font-size: 18px;
+}
+
+button {
+  background-color: #007aff;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.ipt {
+  position: absolute;
+  margin: 0 auto;
+  top: -1000rpx;
+  width: 200rpx;
+  height: 10rpx;
+  border: 0px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+
+.dialog-btn {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 32rpx;
+}
+
+.confirm {
+  background: #07c160;
+  color: white;
+}
+
+.cancel {
+  background: #f0f0f0;
+  color: #333;
+}

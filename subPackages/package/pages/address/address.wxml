@@ -1,0 +1,32 @@
+<!--subPackages/package3/pages/address/address.wxml-->
+<view class="main-content">
+  <view class="alter-btn" wx:if="{{addressDesc}}">
+    <view class="txt">
+      <text>{{addressDesc}}</text>
+      <text class="desc">{{address}}</text>
+    </view>
+    <view class="btn">
+      <t-button theme="primary" size="large" variant="outline" bind:tap="chooseAddress">修改地址</t-button>
+    </view>
+  </view>
+  <view class="choose-btn" wx:else>
+    <t-button style="width: 94%; top: 30rpx; margin-bottom: 30rpx;" theme="primary" size="large" variant="outline" block bind:tap="chooseAddress">选择地址></t-button>
+  </view>
+
+  <t-input label="门牌号" placeholder="请输入详细地址" value="{{door}}" bind:change="onDoorInput" />
+  <t-input label="联系人" placeholder="请输入联系人" value="{{username}}" bind:change="onUsernameInput">
+    <t-radio-group slot="suffix" value="{{gender}}" borderless t-class="box" bind:change="changeGender">
+      <t-radio block="{{false}}" label="先生" value="0" />
+      <t-radio block="{{false}}" label="女士" value="1" />
+    </t-radio-group>
+  </t-input>
+
+  <t-input label="手机号" placeholder="请输入手机号" value="{{phone}}" type="number" bind:change="onPhoneInput" />
+
+
+  <!-- <t-checkbox checked="{{isIndex===1 ? true:false}}" label="设置为默认地址" /> -->
+  <t-radio checked="{{isIndex}}" allow-uncheck icon="circle" bind:change="changeIsindex" label="设置为默认地址" />
+
+  <t-button style="width: 94%; margin-top: 80rpx;" theme="primary" size="large" block bind:tap="fetchData">提交</t-button>
+
+</view>

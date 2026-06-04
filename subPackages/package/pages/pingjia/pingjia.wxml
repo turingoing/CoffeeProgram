@@ -1,0 +1,34 @@
+<!--subPackages/package/pages/pingjia/pingjia.wxml-->
+<view class="pingjia-container">
+  <block wx:if="{{pingjiaList.length}}">
+    <view class="pingjia-item" wx:for="{{pingjiaList}}">
+      <view class="pingjia-avatar">
+        <image src="{{tupianUrl}}/new/avatar.png" mode=""/>
+        <view class="pingjia-name">萨芬瑞特日月潭</view>
+      </view>
+      <view class="pingjia-star">
+        <!-- <view class="star-item"> -->
+          <image wx:for="{{star}}" src="{{tupianUrl}}/new/star.png" mode=""/>
+        <!-- </view> -->
+        <!-- <view class="star-item"> -->
+          <image wx:for="{{5-star}}" src="{{tupianUrl}}/new/star2.png" mode=""/>
+        <!-- </view> -->
+      </view>
+      <view class="pingjia-content">
+        <text>趁着意犹未尽赶紧好评一下!他家的味道真的是我吃过的最好吃的，服务也很周到。</text>
+      </view>
+      <view class="pingjia-image">
+        <image src="{{tupianUrl}}/new/bgimg1.png" mode=""/>
+      </view>
+      <view class="divider"></view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="pingjia-empty">
+      <view class="img">
+        <image src="{{tupianUrl}}/new/pl-empty.png" mode=""/>
+      </view>
+      <view class="txt">该商品暂无评论</view>
+    </view>
+  </block>
+</view>

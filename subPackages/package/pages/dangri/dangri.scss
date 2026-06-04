@@ -1,0 +1,86 @@
+.header {
+  text-align: center;
+  margin-bottom: 20rpx;
+  background-color: #a2a7ad;
+  color: #fff;
+  padding: 20rpx 0;
+  width: 750rpx;
+  height: 390rpx;
+  position: relative;
+  top: 0rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 80rpx;
+}
+
+.total-earnings {
+  font-size: 78rpx;
+  margin: 10rpx 0;
+  color: rgb(0, 0, 0);
+  position: relative;
+  top: 100rpx;
+}
+
+.rule-link {
+  color: rgb(73, 71, 71);
+  font-size: 24rpx;
+  width: 200rpx;
+  position: relative;
+  top: 170rpx;
+  left: 540rpx;
+}
+
+.earnings-list {
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.earnings-month {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 10rpx;
+  border-bottom: 1px solid #eee;
+  height: 80rpx;
+}
+
+.earnings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* 垂直居中 */
+  padding: 10rpx;
+  border-bottom: 1px solid #eee;
+  height: 60rpx;
+}
+
+.store-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* 确保占满整个容器宽度 */
+}
+
+.earnings-date {
+  font-size: 30rpx;
+  color: #333;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.earnings-amount {
+  font-size: 30rpx;
+  color: #ff4d4f;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}

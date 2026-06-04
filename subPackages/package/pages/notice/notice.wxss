@@ -1,0 +1,105 @@
+page {
+  background: #f6f6f6;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 22rpx 24rpx 56rpx;
+  box-sizing: border-box;
+}
+
+.notice-group {
+  margin-bottom: 28rpx;
+}
+
+.notice-time {
+  display: block;
+  margin-bottom: 20rpx;
+  text-align: center;
+  color: #b7b7b7;
+  font-size: 30rpx;
+  line-height: 1.4;
+}
+
+.notice-card {
+  background: #ffffff;
+  padding: 30rpx 30rpx 0;
+  box-sizing: border-box;
+}
+
+.notice-title {
+  display: block;
+  color: #222222;
+  font-size: 32rpx;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.notice-cover {
+  display: block;
+  width: 100%;
+  margin-top: 22rpx;
+  background: #efefef;
+}
+
+.notice-summary {
+  display: block;
+  margin-top: 26rpx;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.7;
+}
+
+.notice-footer {
+  margin-top: 24rpx;
+  min-height: 92rpx;
+  border-top: 1rpx solid #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notice-more {
+  color: #9f9f9f;
+  font-size: 30rpx;
+  line-height: 1;
+}
+
+.notice-arrow {
+  color: #c1c1c1;
+  font-size: 40rpx;
+  line-height: 1;
+}
+
+.finished-wrap {
+  margin-top: 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finished-line {
+  width: 118rpx;
+  height: 2rpx;
+  background: #ececec;
+}
+
+.finished-text {
+  margin: 0 22rpx;
+  color: #b9b9b9;
+  font-size: 28rpx;
+  line-height: 1;
+}
+
+.empty-wrap {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-text {
+  color: #b3b3b3;
+  font-size: 30rpx;
+  line-height: 1.5;
+}
